@@ -347,9 +347,8 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1170px;
   margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
-  padding: 0px 15px;
 }
 
 .header, .offer {
@@ -368,8 +367,31 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /*
+      select {
+          cursor: pointer;
+          background-color: #A95094;
+          border: none;
+          color:#fff;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          min-width: 25px;
+          padding: 0 10px;
+          outline: none;
+          option {
+              background-color: #fff;
+              color: #000;
+          }
+          &:active {
+              border: none;
+          }
+      }
+  */
 }
 .header__container .logo {
+  transform: translate(0, -1px);
+  -webkit-transform: translate(0, -4px);
   max-width: 112px;
   max-height: 33px;
   cursor: pointer;
@@ -391,29 +413,61 @@ body {
 .header__container .header__nav li + li {
   margin-left: 41px;
 }
-.header__container select {
-  cursor: pointer;
-  background-color: #A95094;
-  border: none;
-  color: #fff;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  min-width: 25px;
-  padding: 0 10px;
-  outline: none;
+.header__container .select {
+  position: relative;
+  width: 110px;
 }
-.header__container select option {
+.header__container .select .select__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+.header__container .select .select__current {
+  line-height: 24px;
+  padding: 8px 0 8px 28px;
+}
+.header__container .select .select__icon {
+  height: 20px;
+  width: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: auto;
+  position: absolute;
+  top: 11px;
+}
+.header__container .select .select__body {
+  width: 112px;
+  position: absolute;
+  border-top: none;
+  left: 0;
+  right: 0;
+  top: 100%;
+}
+.header__container .select .select__item {
+  position: relative;
+  padding: 8px;
   background-color: #fff;
   color: #000;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
 }
-.header__container select:active {
-  border: none;
+.header__container .select .select__item:hover {
+  background-color: #f2f2f2;
 }
-.header__container .header__geo {
-  max-width: 20px;
-  max-height: 20px;
-  margin-left: 162px;
+.header__container .select .select__item .select__icon-item {
+  position: absolute;
+  left: 1px;
+  height: 20px;
+  width: 20px;
+}
+.header__container .select .select__item span {
+  position: absolute;
+  left: 28px;
+}
+.header__container .select .select-hide {
+  display: none;
 }
 
 .button-call {

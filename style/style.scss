@@ -28,9 +28,9 @@ body {
 
 }
 .container {
-        max-width: 1200px; //1170 + 30 на padding
+        max-width: 1170px; //1170 + 30 на padding
         margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
-        padding: 0px 15px;
+        //padding: 0px 15px;
 }
 .header, .offer {
     background-color: #A95094;
@@ -43,6 +43,8 @@ body {
     justify-content: space-between;
     align-items: center;
     .logo {
+        transform: translate(0,-1px);
+        -webkit-transform: translate(0,-4px);
         max-width: 112px;
         max-height: 33px;
         cursor: pointer;
@@ -62,7 +64,7 @@ body {
         }
     }
 
-
+/*
     select {
         cursor: pointer;
         background-color: #A95094;
@@ -82,10 +84,59 @@ body {
             border: none;
         }
     }
-    .header__geo {
-        max-width: 20px;
-        max-height: 20px;
-        margin-left: 162px;
+*/
+    .select {
+        position: relative;
+        width:110px;
+        .select__header {
+            display: flex;
+            cursor: pointer;
+        }
+        .select__current {
+            line-height: 24px;
+            padding: 8px 0 8px 28px;
+        }
+        .select__icon {
+            height: 20px;
+            width: 20px;
+            flex-shrink: 0;
+            margin-left: auto;
+            position: absolute;
+            top: 11px;
+        }
+        .select__body {
+            width:112px;
+            position: absolute;
+            border-top: none;
+            left: 0;
+            right: 0;
+            top: 100%;
+        }
+        .select__item {
+            position: relative;
+            padding: 8px;
+            background-color: #fff;
+            color: #000;
+            height: 20px;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                background-color: #f2f2f2;
+            }
+            .select__icon-item {
+                position: absolute;
+                left: 1px;
+                height: 20px;
+                width: 20px;
+            }
+            span {
+                position: absolute;
+                left: 28px;
+            }
+        }
+        .select-hide{
+            display: none;
+        }
     }
 }
 .button-call {
