@@ -1,0 +1,99 @@
+@import "reset.scss";
+
+@font-face {
+    font-family: 'Normal TT';
+    font-weight: 500;
+    src: url('/font/TTNorms-Medium.woff');
+}
+@font-face {
+    font-family: 'Normal TT';
+    font-weight: 800;
+    src: url('/font/TTNorms-ExtraBold.woff');
+}
+@font-face {
+    font-family: 'Normal TT';
+    font-weight: 700;
+    src: url('/font/TTNorms-Bold.woff');
+}
+@font-face {
+    font-family: 'Normal TT';
+    font-weight: 400;
+    src: url('/font/TTNorms-Regular.woff');
+}
+//----ALL-----
+body {
+    font-family: 'Normal TT';
+    font-size: 16px;
+    font-weight: 500;
+
+}
+.container {
+        max-width: 1200px; //1170 + 30 на padding
+        margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
+        padding: 0px 15px;
+}
+.header, .offer {
+    background-color: #A95094;
+}
+
+.header__container {
+    min-height: 113px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        max-width: 112px;
+        max-height: 33px;
+        cursor: pointer;
+    }
+    nav {
+        margin-left: 72px;
+       // cursor: pointer;
+    }
+    .header__nav {
+        display: flex;
+        justify-content: space-between;
+        li {
+            cursor: pointer;
+        }
+        li + li {
+            margin-left: 41px;
+        }
+    }
+
+
+    select {
+        cursor: pointer;
+        background-color: #A95094;
+        border: none;
+        color:#fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        min-width: 25px;
+        padding: 0 10px;
+        outline: none;
+        option {
+            background-color: #fff;
+            color: #000;
+        }
+        &:active {
+            border: none;
+        }
+    }
+    .header__geo {
+        max-width: 20px;
+        max-height: 20px;
+        margin-left: 162px;
+    }
+}
+.button-call {
+    color: #FFC464;
+    border-radius: 15px;
+    border: 2px solid #FFC464;
+    padding: 18px 40px;
+    background-color: #A95094;
+    margin-right: 0;
+    cursor: pointer;
+}
