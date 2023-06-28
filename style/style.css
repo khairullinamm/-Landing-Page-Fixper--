@@ -6,6 +6,11 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -29,6 +34,7 @@ body {
  */
 main {
   display: block;
+  margin: 0;
 }
 
 /**
@@ -37,7 +43,7 @@ main {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 
 /* Grouping content
@@ -349,45 +355,23 @@ body {
 .container {
   max-width: 1170px;
   margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
+  padding: 0px 10px;
 }
 
 .header, .offer {
   background-color: #A95094;
 }
 
+/*-----HEADER-----*/
 .header__container {
-  min-height: 113px;
+  min-height: 112px;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*
-      select {
-          cursor: pointer;
-          background-color: #A95094;
-          border: none;
-          color:#fff;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          min-width: 25px;
-          padding: 0 10px;
-          outline: none;
-          option {
-              background-color: #fff;
-              color: #000;
-          }
-          &:active {
-              border: none;
-          }
-      }
-  */
 }
 .header__container .logo {
   transform: translate(0, -1px);
@@ -397,7 +381,7 @@ body {
   cursor: pointer;
 }
 .header__container nav {
-  margin-left: 72px;
+  margin-left: 74px;
 }
 .header__container .header__nav {
   display: -webkit-box;
@@ -414,6 +398,7 @@ body {
   margin-left: 41px;
 }
 .header__container .select {
+  margin-left: 160px;
   position: relative;
   width: 110px;
 }
@@ -471,6 +456,7 @@ body {
 }
 
 .button-call {
+  margin-left: 40px;
   color: #FFC464;
   border-radius: 15px;
   border: 2px solid #FFC464;
@@ -478,4 +464,41 @@ body {
   background-color: #A95094;
   margin-right: 0;
   cursor: pointer;
+}
+
+/*-----MAIN----*/
+.main {
+  background-color: #A95094;
+}
+
+/*-----OFFER----*/
+.offer__container {
+  max-width: 1406px;
+  min-height: 850px;
+}
+.offer__container .offer__main-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.offer__container .offer__background {
+  position: relative;
+  min-height: 741px;
+  min-width: 889px;
+}
+.offer__container .offer__background .offer__graphics {
+  position: absolute;
+  bottom: 0;
+  left: 213px;
+}
+.offer__container .offer__background .offer__wash {
+  position: absolute;
+  left: 0;
+  bottom: 22px;
+}
+.offer__container .offer__background .offer__repairman {
+  position: absolute;
 }

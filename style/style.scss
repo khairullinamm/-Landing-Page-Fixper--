@@ -25,22 +25,21 @@ body {
     font-family: 'Normal TT';
     font-size: 16px;
     font-weight: 500;
-
 }
 .container {
-        max-width: 1170px; //1170 + 30 на padding
-        margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
-        //padding: 0px 15px;
+    max-width: 1170px; //1170 + 30 на padding
+    margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
+    padding: 0px 10px;
 }
 .header, .offer {
     background-color: #A95094;
 }
-
+/*-----HEADER-----*/
 .header__container {
-    min-height: 113px;
+    min-height: 112px;
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     align-items: center;
     .logo {
         transform: translate(0,-1px);
@@ -50,8 +49,7 @@ body {
         cursor: pointer;
     }
     nav {
-        margin-left: 72px;
-       // cursor: pointer;
+        margin-left: 74px;
     }
     .header__nav {
         display: flex;
@@ -63,29 +61,8 @@ body {
             margin-left: 41px;
         }
     }
-
-/*
-    select {
-        cursor: pointer;
-        background-color: #A95094;
-        border: none;
-        color:#fff;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        min-width: 25px;
-        padding: 0 10px;
-        outline: none;
-        option {
-            background-color: #fff;
-            color: #000;
-        }
-        &:active {
-            border: none;
-        }
-    }
-*/
     .select {
+        margin-left: 160px;
         position: relative;
         width:110px;
         .select__header {
@@ -140,6 +117,7 @@ body {
     }
 }
 .button-call {
+    margin-left: 40px;
     color: #FFC464;
     border-radius: 15px;
     border: 2px solid #FFC464;
@@ -147,4 +125,42 @@ body {
     background-color: #A95094;
     margin-right: 0;
     cursor: pointer;
+}
+/*-----MAIN----*/
+.main {
+    background-color: #A95094;   
+}
+/*-----OFFER----*/
+.offer__container {
+    max-width: 1406px;
+    min-height: 850px;
+    .offer__main-part {
+        display: flex;
+        justify-content: space-between;
+    }
+    .offer__background {
+        position: relative;
+        min-height: 741px;
+        min-width: 889px;
+
+        .offer__graphics {
+           // z-index: 1;
+            position: absolute;
+            bottom: 0;
+            left: 213px;
+
+        }
+        .offer__wash {
+           // z-index: 2;
+            position: absolute;
+            left: 0;
+            bottom: 22px;
+
+        }
+        .offer__repairman {
+            position: absolute;
+            //z-index: 3;
+
+        }
+    }
 }
