@@ -133,34 +133,79 @@ body {
 /*-----OFFER----*/
 .offer__container {
     max-width: 1406px;
-    min-height: 850px;
+    min-height: 741px;
+    color: #FFF;
+    position: relative;
     .offer__main-part {
         display: flex;
-        justify-content: space-between;
-    }
-    .offer__background {
         position: relative;
-        min-height: 741px;
-        min-width: 889px;
+        .offer__background {
+            position: relative;
+            min-height: 741px;
+            min-width: 889px;
 
-        .offer__graphics {
-           // z-index: 1;
+            .offer__graphics {
             position: absolute;
             bottom: 0;
-            left: 213px;
+            left: 206px;
 
-        }
-        .offer__wash {
-           // z-index: 2;
+            }
+            .offer__wash {
             position: absolute;
             left: 0;
-            bottom: 22px;
+            bottom: 27px;
+            left: 9px;
 
-        }
-        .offer__repairman {
+            }
+            .offer__repairman {
             position: absolute;
-            //z-index: 3;
-
+            left: 119px;
+            bottom: 2px;
+            }
         }
+        .offer__text {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 625px;
+            bottom: 251px;
+            .offer__title {
+                font-size: 67px;
+                font-weight: 800;
+                line-height: 95%;
+                letter-spacing: -1.005px;
+                margin-bottom: 25px;
+            }
+            .offer__subtitile {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 120%;
+                margin-bottom: 35px;
+
+                strong {
+                    color: #FFC464;
+                }
+            }
+            button {
+                background-color: #000;
+                border-radius: 15px;
+                color: #FFF;
+                border: 0px;
+                padding: 18px 50px;
+                max-width: 222px;
+            }
+        }
+    }
+    .offer__discount {
+        min-width: 1170px;
+        min-height: 49px;
+        border-radius: 5px;
+        background-color: #000;
+        z-index: 10;
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
     }
 }
