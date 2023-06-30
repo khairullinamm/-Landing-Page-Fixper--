@@ -26,6 +26,8 @@ body {
     font-family: 'Normal TT';
     font-size: 16px;
     font-weight: 500;
+   // max-width: 1440px;
+    overflow-x: hidden;
 }
 .container {
     max-width: 1170px; //1170 + 30 на padding
@@ -34,6 +36,16 @@ body {
 }
 .header, .offer {
     background-color: #A95094;
+}
+.title {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.675px;
+}
+.button {
+    border-radius: 15px;
+    text-align: center;
 }
 /*-----HEADER-----*/
 .header__container {
@@ -290,13 +302,13 @@ body {
     }
 }
 /*------------------------advantages------------------------*/
-.advantages {
+.adantages__container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     //justify-content: center;
-    margin-left: 135px;
-    margin-right: 198px;
+    margin-left: 125px;
+    margin-right: 188px;
     margin-top: 112px;
 
     
@@ -312,4 +324,102 @@ body {
     .advantages__el + .advantages__el {
         margin-left: 93px;
     }
+}
+/*--------------diagnostics--------------------*/
+.diagnostics {
+    background-color: #FAFAFA;
+    margin-top: 87px;
+}
+.diagnostics__container {
+
+    display: flex;
+    justify-content: space-between;
+    //position: relative;
+    //padding-left: 139px;
+    margin-right: 0;
+    //margin-left: 125px;
+    padding-right: 0;
+
+    max-width:1242px;
+   // margin-left: 62px;
+
+    .diagnostics__text {
+       // margin-left: 65px;
+       max-width: 624px;
+   
+    }
+    p:first-child {
+        padding-top: 115px;
+    }
+    .diagnostics__subtitle {
+        color: #A95094;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.65px;
+        text-transform: uppercase;
+
+    }
+
+    .diagnostics__title {
+        margin-top: 15px;
+    }
+
+    .diagnostics__nav {
+        margin-top: 52px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .diagnostics__button {
+        border: 1px solid #96317D;
+        color: #96317D;
+        background-color: transparent;
+
+        line-height: 24px;
+        font-weight: 500;
+
+        padding: 14px 28px;
+        margin-right: 15px;
+        margin-bottom: 20px;
+    }
+
+    .diagnoctics__notice {
+        margin-top: 25px;
+       
+        display: flex;
+        align-items: center;
+
+        font-family: Montserrat;
+        font-weight: 500;
+        line-height: 28px;
+
+        img {
+            margin-right: 15px;
+        }
+    }
+    .diagnostics__background {
+        position: relative;
+        right: 0;
+        
+        margin-right: 0;
+        .diagnoctics__graphics {
+            position: absolute;
+            top: 5px;
+            right: 0px;
+        }
+
+        .diagnoctics__washmachine {
+            position: absolute;
+            right: 61px;
+            top: 61px;
+            //margin-right: 61px;
+        }
+
+        .diagnoctics__square {
+            position: absolute;
+            bottom: 0px;
+            right: 514px;
+        }
+    }
+
 }

@@ -354,6 +354,7 @@ body {
   font-family: "Normal TT";
   font-size: 16px;
   font-weight: 500;
+  overflow-x: hidden;
 }
 
 .container {
@@ -364,6 +365,18 @@ body {
 
 .header, .offer {
   background-color: #A95094;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.675px;
+}
+
+.button {
+  border-radius: 15px;
+  text-align: center;
 }
 
 /*-----HEADER-----*/
@@ -600,7 +613,7 @@ body {
 }
 
 /*------------------------advantages------------------------*/
-.advantages {
+.adantages__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -610,18 +623,105 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-left: 135px;
-  margin-right: 198px;
+  margin-left: 125px;
+  margin-right: 188px;
   margin-top: 112px;
 }
-.advantages .advantages__el {
+.adantages__container .advantages__el {
   max-width: 207px;
   font-size: 20px;
   font-weight: 500;
 }
-.advantages .advantages__el img {
+.adantages__container .advantages__el img {
   margin-bottom: 28px;
 }
-.advantages .advantages__el + .advantages__el {
+.adantages__container .advantages__el + .advantages__el {
   margin-left: 93px;
+}
+
+/*--------------diagnostics--------------------*/
+.diagnostics {
+  background-color: #FAFAFA;
+  margin-top: 87px;
+}
+
+.diagnostics__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 0;
+  padding-right: 0;
+  max-width: 1242px;
+}
+.diagnostics__container .diagnostics__text {
+  max-width: 624px;
+}
+.diagnostics__container p:first-child {
+  padding-top: 115px;
+}
+.diagnostics__container .diagnostics__subtitle {
+  color: #A95094;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.65px;
+  text-transform: uppercase;
+}
+.diagnostics__container .diagnostics__title {
+  margin-top: 15px;
+}
+.diagnostics__container .diagnostics__nav {
+  margin-top: 52px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.diagnostics__container .diagnostics__button {
+  border: 1px solid #96317D;
+  color: #96317D;
+  background-color: transparent;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 14px 28px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+.diagnostics__container .diagnoctics__notice {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: 28px;
+}
+.diagnostics__container .diagnoctics__notice img {
+  margin-right: 15px;
+}
+.diagnostics__container .diagnostics__background {
+  position: relative;
+  right: 0;
+  margin-right: 0;
+}
+.diagnostics__container .diagnostics__background .diagnoctics__graphics {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+}
+.diagnostics__container .diagnostics__background .diagnoctics__washmachine {
+  position: absolute;
+  right: 61px;
+  top: 61px;
+}
+.diagnostics__container .diagnostics__background .diagnoctics__square {
+  position: absolute;
+  bottom: 0px;
+  right: 514px;
 }
