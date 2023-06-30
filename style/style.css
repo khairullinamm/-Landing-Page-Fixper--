@@ -655,6 +655,7 @@ body {
   margin-right: 0;
   padding-right: 0;
   max-width: 1242px;
+  min-height: 818px;
 }
 .diagnostics__container .diagnostics__text {
   max-width: 624px;
@@ -722,6 +723,58 @@ body {
 }
 .diagnostics__container .diagnostics__background .diagnoctics__square {
   position: absolute;
-  bottom: 0px;
+  bottom: 155px;
   right: 514px;
+}
+
+/*--------------------PRICE------------------------*/
+.price__container {
+  padding-top: 102px;
+  text-align: center;
+}
+.price__container .price__list {
+  max-width: 971px;
+  margin: 0 auto;
+  margin-top: 28px;
+}
+.price__container .price__list .price__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ECECEC;
+  text-align: right;
+  line-height: 24px;
+  font-weight: 500;
+}
+.price__container .price__list .price__list-header {
+  font-weight: 400;
+}
+.price__container .price__list .price__free {
+  color: #96317D;
+}
+.price__container .price__show {
+  margin-top: 51px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.price__container .price__show button {
+  background-color: transparent;
+  line-height: 24px;
+  font-weight: 500;
+  color: #96317D;
+  text-align: center;
+  border: 0px;
+  margin-right: 10px;
 }

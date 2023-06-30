@@ -341,6 +341,7 @@ body {
     padding-right: 0;
 
     max-width:1242px;
+    min-height: 818px;
    // margin-left: 62px;
 
     .diagnostics__text {
@@ -417,9 +418,53 @@ body {
 
         .diagnoctics__square {
             position: absolute;
-            bottom: 0px;
+            bottom: 155px;
             right: 514px;
         }
     }
-
+}
+/*--------------------PRICE------------------------*/
+.price__container {
+    padding-top: 102px;
+    text-align: center;
+    .price__list {
+        max-width: 971px;
+        margin: 0 auto;
+        margin-top: 28px;
+        .price__item {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #ECECEC;
+            text-align: right;
+            line-height: 24px;
+            font-weight: 500;
+        }
+        .price__list-header {
+            font-weight: 400;
+        }
+        .price__free {
+            color: #96317D;
+        }
+    }
+    .price__show {
+        
+        margin-top: 51px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+            background-color: transparent;
+            line-height: 24px;
+            font-weight: 500;
+            color: #96317D;
+            text-align: center;
+            border: 0px;
+            margin-right: 10px;
+        }
+        img {
+            
+        }
+    }
 }
