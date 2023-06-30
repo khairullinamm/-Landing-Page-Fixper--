@@ -6,6 +6,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -427,17 +428,17 @@ body {
 .header__container .select .select__body {
   width: 112px;
   position: absolute;
-  border-top: none;
   left: 0;
   right: 0;
   top: 100%;
+  border-top: none;
 }
 .header__container .select .select__item {
   position: relative;
   padding: 8px;
+  height: 20px;
   background-color: #fff;
   color: #000;
-  height: 20px;
   text-align: center;
   cursor: pointer;
 }
@@ -460,12 +461,12 @@ body {
 
 .button-call {
   margin-left: 40px;
-  color: #FFC464;
-  border-radius: 15px;
-  border: 2px solid #FFC464;
-  padding: 18px 40px;
-  background-color: #A95094;
   margin-right: 0;
+  padding: 18px 40px;
+  color: #FFC464;
+  border: 2px solid #FFC464;
+  background-color: #A95094;
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -543,17 +544,84 @@ body {
   border: 0px;
   padding: 18px 50px;
   max-width: 222px;
+  -webkit-transition: color 0.4s, background-color 0.4s;
+  transition: color 0.4s, background-color 0.4s;
+}
+.offer__container .offer__main-part .offer__text button:hover {
+  color: #FFC464;
+}
+.offer__container .offer__main-part .offer__text button:active {
+  color: #FFC464;
+  background-color: #1c1c1c;
 }
 .offer__container .offer__discount {
-  min-width: 1170px;
+  min-width: 1110px; /*+ 60 padding*/
   min-height: 49px;
-  border-radius: 5px;
-  background-color: #000;
   z-index: 10;
   position: absolute;
-  bottom: 5px;
+  bottom: 3px;
   left: 50%;
   margin-right: -50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 30px;
+}
+.offer__container .offer__discount .offer__elipse {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #78C23E;
+  margin-left: 68px;
+}
+.offer__container .offer__discount .offer__arrow {
+  margin-left: 25px;
+}
+.offer__container .offer__discount p {
+  margin-left: 9px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+.offer__container .offer__discount p strong {
+  color: #FFC464;
+}
+.offer__container .offer__discount button {
+  margin-left: 63px;
+  background-color: #000;
+  border: 0px;
+  color: #FFC464;
+}
+
+/*------------------------advantages------------------------*/
+.advantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 135px;
+  margin-right: 198px;
+  margin-top: 112px;
+}
+.advantages .advantages__el {
+  max-width: 207px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.advantages .advantages__el img {
+  margin-bottom: 28px;
+}
+.advantages .advantages__el + .advantages__el {
+  margin-left: 93px;
 }

@@ -20,6 +20,7 @@
     font-weight: 400;
     src: url('/font/TTNorms-Regular.woff');
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 //----ALL-----
 body {
     font-family: 'Normal TT';
@@ -38,14 +39,17 @@ body {
 .header__container {
     min-height: 112px;
     color: #fff;
+
     display: flex;
-    //justify-content: space-between;
     align-items: center;
+
     .logo {
         transform: translate(0,-1px);
         -webkit-transform: translate(0,-4px);
+
         max-width: 112px;
         max-height: 33px;
+
         cursor: pointer;
     }
     nav {
@@ -54,9 +58,11 @@ body {
     .header__nav {
         display: flex;
         justify-content: space-between;
+
         li {
             cursor: pointer;
         }
+
         li + li {
             margin-left: 41px;
         }
@@ -65,41 +71,53 @@ body {
         margin-left: 160px;
         position: relative;
         width:110px;
+
         .select__header {
             display: flex;
             cursor: pointer;
         }
+
         .select__current {
             line-height: 24px;
             padding: 8px 0 8px 28px;
         }
+
         .select__icon {
             height: 20px;
             width: 20px;
+
             flex-shrink: 0;
+
             margin-left: auto;
             position: absolute;
             top: 11px;
         }
+
         .select__body {
             width:112px;
+            
             position: absolute;
-            border-top: none;
             left: 0;
             right: 0;
             top: 100%;
+
+            border-top: none;
         }
         .select__item {
             position: relative;
             padding: 8px;
+            height: 20px;
+
             background-color: #fff;
             color: #000;
-            height: 20px;
+        
             text-align: center;
             cursor: pointer;
+
             &:hover {
                 background-color: #f2f2f2;
             }
+
             .select__icon-item {
                 position: absolute;
                 left: 1px;
@@ -118,12 +136,14 @@ body {
 }
 .button-call {
     margin-left: 40px;
-    color: #FFC464;
-    border-radius: 15px;
-    border: 2px solid #FFC464;
-    padding: 18px 40px;
-    background-color: #A95094;
     margin-right: 0;
+    padding: 18px 40px;
+
+    color: #FFC464;
+    border: 2px solid #FFC464;
+    background-color: #A95094;
+
+    border-radius: 15px;
     cursor: pointer;
 }
 /*-----MAIN----*/
@@ -134,13 +154,18 @@ body {
 .offer__container {
     max-width: 1406px;
     min-height: 741px;
+
     color: #FFF;
+
     position: relative;
+
     .offer__main-part {
         display: flex;
         position: relative;
+
         .offer__background {
             position: relative;
+            
             min-height: 741px;
             min-width: 889px;
 
@@ -166,20 +191,24 @@ body {
         .offer__text {
             display: flex;
             flex-direction: column;
+
             position: absolute;
             left: 625px;
             bottom: 251px;
+
             .offer__title {
                 font-size: 67px;
                 font-weight: 800;
                 line-height: 95%;
                 letter-spacing: -1.005px;
+
                 margin-bottom: 25px;
             }
             .offer__subtitile {
                 font-size: 20px;
                 font-weight: 700;
                 line-height: 120%;
+
                 margin-bottom: 35px;
 
                 strong {
@@ -191,21 +220,96 @@ body {
                 border-radius: 15px;
                 color: #FFF;
                 border: 0px;
+
                 padding: 18px 50px;
+
                 max-width: 222px;
+                
+                transition: color 0.4s, background-color 0.4s;
+
+                &:hover {
+                    color:#FFC464;
+                }
+                
+                &:active{
+                    color:#FFC464;
+                    background-color: #1c1c1c;
+                }
             }
         }
     }
     .offer__discount {
-        min-width: 1170px;
+        min-width: 1110px; /*+ 60 padding*/
         min-height: 49px;
-        border-radius: 5px;
-        background-color: #000;
         z-index: 10;
+
         position: absolute;
-        bottom: 5px;
+        bottom: 3px;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%)
+        transform: translate(-50%, -50%);
+
+        border-radius: 5px;
+        background-color: #000;
+
+        
+        display: flex;
+        align-items: center;
+        padding: 0px 30px;
+
+        .offer__elipse {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 10px;
+            background: #78C23E;
+
+            margin-left: 68px;
+        }
+        .offer__arrow {
+            margin-left: 25px;
+        }
+
+        p {
+            margin-left: 9px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+
+            strong {
+                color: #FFC464;
+            }
+        }
+
+        button {
+            margin-left: 63px;
+
+            background-color: #000;
+            border: 0px;
+            color: #FFC464;
+        }
+    }
+}
+/*------------------------advantages------------------------*/
+.advantages {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    //justify-content: center;
+    margin-left: 135px;
+    margin-right: 198px;
+    margin-top: 112px;
+
+    
+    .advantages__el {
+        max-width: 207px;
+        font-size: 20px;
+        font-weight: 500;
+        img {
+            margin-bottom: 28px;
+        }
+
+    }
+    .advantages__el + .advantages__el {
+        margin-left: 93px;
     }
 }
