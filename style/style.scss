@@ -47,6 +47,74 @@ body {
     border-radius: 15px;
     text-align: center;
 }
+
+.default__nav {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 35px;
+
+    .nav__indicator {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav__page {
+            background-color: #96317D;
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+        .active {
+            border-radius: 26px;
+            background-color: transparent;
+            border: 2px solid #96317D;
+
+            .nav__page {
+                margin: 8px;
+            }
+            margin-right: 10px;
+        }
+    }
+
+    .nav__farther {
+        display: flex;
+        align-items: center;
+        .nav__left {
+            margin-right: 40px;
+
+            background-color: transparent;
+            border: 0;
+
+            font-weight: 500;
+        }
+
+        .nav__right button{
+
+            color: #96317D;
+            font-weight: 500;
+
+            background-color: transparent;
+            border: 0;
+
+            margin-right: 13px;
+        }
+    }
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.status {
+    margin-top: 8px;
+}
+
 /*-----HEADER-----*/
 .header__container {
     min-height: 112px;
@@ -524,15 +592,6 @@ body {
                 border-radius: 15px 15px 0px 0px;
                 }
             
-            .team__name {
-                font-size: 24px;
-                font-weight: 500;
-            }
-
-            .team__status {
-                margin-top: 8px;
-            }
-
             .team__advantages {
                 
                 margin-top: 25px;
@@ -555,61 +614,5 @@ body {
         }
     }
 
-    .team__nav {
-        display: flex;
-        justify-content: space-between;
-
-        margin-top: 35px;
-
-        .team__indicator {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .team__page {
-                background-color: #96317D;
-                width: 8px;
-                height: 8px;
-                border-radius: 8px;
-
-                &:not(:last-child) {
-                    margin-right: 20px;
-                }
-            }
-            .active {
-                border-radius: 26px;
-                background-color: transparent;
-                border: 2px solid #96317D;
-
-                .team__page {
-                    margin: 8px;
-                }
-                margin-right: 10px;
-            }
-        }
-
-        .team__farther {
-            display: flex;
-            align-items: center;
-            .team__left {
-                margin-right: 40px;
-
-                background-color: transparent;
-                border: 0;
-
-                font-weight: 500;
-            }
-
-            .team__right button{
-
-                color: #96317D;
-                font-weight: 500;
-
-                background-color: transparent;
-                border: 0;
-
-                margin-right: 13px;
-            }
-        }
-    }
+    
 }
