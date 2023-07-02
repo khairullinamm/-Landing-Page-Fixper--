@@ -22,11 +22,22 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 //----ALL-----
+
+$lh: normal;
+$ls: -0.6px;
+
+$pink: #A95094;
+$gray: #FAFAFA;
+$blackPink: #96317D;
+$orange: #FFC464;
+
+$bc: transparent;
+
+$sz: 2px;
 body {
     font-family: 'Normal TT';
     font-size: 16px;
     font-weight: 500;
-   // max-width: 1440px;
     overflow-x: hidden;
 }
 .container {
@@ -34,18 +45,32 @@ body {
     margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
     padding: 0px 10px;
 }
+
 .header, .offer {
-    background-color: #A95094;
+    background-color: $pink;
 }
-.title {
+h2 {
     font-size: 45px;
     font-weight: 700;
     line-height: 40px;
     letter-spacing: -0.675px;
 }
-.button {
+
+@mixin h3-title($lh, $ls) {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: $ls;
+    line-height: $lh;
+}
+@mixin button($bc, $sz, $color, $pt, $pl,$buttonColor,$fw) {
     border-radius: 15px;
     text-align: center;
+    background-color: $bc;
+    border: $sz solid $color;
+    cursor: pointer;
+    padding: $pt $pl;
+    color: $buttonColor;
+    font-weight: $fw;
 }
 
 .default__nav {
@@ -60,7 +85,7 @@ body {
         align-items: center;
 
         .nav__page {
-            background-color: #96317D;
+            background-color: $blackPink;
             width: 8px;
             height: 8px;
             border-radius: 8px;
@@ -72,7 +97,7 @@ body {
         .active {
             border-radius: 26px;
             background-color: transparent;
-            border: 2px solid #96317D;
+            border: 2px solid $blackPink;
 
             .nav__page {
                 margin: 8px;
@@ -95,7 +120,7 @@ body {
 
         .nav__right button{
 
-            color: #96317D;
+            color: $blackPink;
             font-weight: 500;
 
             background-color: transparent;
@@ -214,22 +239,15 @@ body {
             display: none;
         }
     }
-}
-.button-call {
-    margin-left: 40px;
-    margin-right: 0;
-    padding: 18px 40px;
-
-    color: #FFC464;
-    border: 2px solid #FFC464;
-    background-color: #A95094;
-
-    border-radius: 15px;
-    cursor: pointer;
+    .button {
+        margin-left: 40px;
+        margin-right: 0;
+        @include button($bc,$sz,$orange,16px,38px,$orange,700);
+    }
 }
 /*-----MAIN----*/
 .main {
-    background-color: #A95094;   
+    background-color: $pink;   
 }
 /*-----OFFER----*/
 .offer__container {
@@ -293,27 +311,23 @@ body {
                 margin-bottom: 35px;
 
                 strong {
-                    color: #FFC464;
+                    color: $orange;
                 }
             }
-            button {
-                background-color: #000;
-                border-radius: 15px;
-                color: #FFF;
-                border: 0px;
-
-                padding: 18px 50px;
+            .button {
+                line-height: $lh;
+                @include button(#000,0px,transparent,18px,50px,#fff,500);
 
                 max-width: 222px;
                 
                 transition: color 0.4s, background-color 0.4s;
-
+                
                 &:hover {
-                    color:#FFC464;
+                    color:$orange;
                 }
                 
                 &:active{
-                    color:#FFC464;
+                    color:$orange;
                     background-color: #1c1c1c;
                 }
             }
@@ -357,7 +371,7 @@ body {
             font-family: 'Montserrat', sans-serif;
 
             strong {
-                color: #FFC464;
+                color: $orange;
             }
         }
 
@@ -366,7 +380,7 @@ body {
 
             background-color: #000;
             border: 0px;
-            color: #FFC464;
+            color: $orange;
         }
     }
 }
@@ -396,7 +410,7 @@ body {
 }
 /*--------------diagnostics--------------------*/
 .diagnostics {
-    background-color: #FAFAFA;
+    background-color: $gray;
     margin-top: 87px;
 }
 .diagnostics__container {
@@ -422,7 +436,7 @@ body {
         padding-top: 115px;
     }
     .diagnostics__subtitle {
-        color: #A95094;
+        color: $pink;
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 0.65px;
@@ -440,17 +454,13 @@ body {
         flex-wrap: wrap;
     }
 
-    .diagnostics__button {
-        border: 1px solid #96317D;
-        color: #96317D;
-        background-color: transparent;
-
+    .button {
         line-height: 24px;
-        font-weight: 500;
 
-        padding: 14px 28px;
         margin-right: 15px;
         margin-bottom: 20px;
+
+        @include button($bc,1px,$blackPink,14px,28px,$blackPink,500);
     }
 
     .diagnoctics__notice {
@@ -521,7 +531,7 @@ body {
         }
 
         .price__free {
-            color: #96317D;
+            color: $blackPink;
         }
 
     }
@@ -538,7 +548,7 @@ body {
             line-height: 24px;
             font-weight: 500;
 
-            color: #96317D;
+            color: $blackPink;
             text-align: center;
             
             border: 0px;
@@ -551,7 +561,7 @@ body {
 }
 /*---------------team----------------------*/
 .team {
-    background-color: #FAFAFA;
+    background-color: $gray;
 }
 
 .team__container {
@@ -562,7 +572,7 @@ body {
     text-align: center;
 
     .subtitle {
-        color: #96317D;
+        color: $blackPink;
         font-size: 20px;
         font-weight: 500;
         line-height: 120%;
@@ -597,7 +607,7 @@ body {
             .team__advantages {
                 
                 margin-top: 25px;
-                color: #96317D;
+                color: $blackPink;
                 
                 font-weight: 500;
 
@@ -626,10 +636,7 @@ body {
     text-align: center;
 
     .feedback__title {
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 130%;
-        letter-spacing: -0.6px;
+        @include h3-title(130%,$ls);
     }
 
     .feedback__cards {
@@ -638,7 +645,7 @@ body {
         display: flex;
 
         .feedback__item {
-            background-color: #FAFAFA;
+            background-color: $gray;
 
             padding: 75px 50px;
             text-align: left;
@@ -671,7 +678,7 @@ body {
 }
 /*---------------------------stars--------------------------*/
 .stars {
-    background-color: #FAFAFA;
+    background-color: $gray;
 }
 .stars__container {
     padding: 46px 135px;
@@ -744,10 +751,7 @@ body {
     .questions__text {
         
         .questions__title {
-
-            font-size: 40px;
-            font-weight: 700;
-            line-height: 100%;
+            @include h3-title(100%, 0px);         
         }
 
         .questions__subtitle {
@@ -762,9 +766,9 @@ body {
             span {
                 display: inline-block;
                 line-height: 13px;
-                color: #A95094;
+                color: $pink;
                 font-weight: 500;
-                border-bottom: 1px solid #A95094;
+                border-bottom: 1px solid $pink;
             }
         }
     }
@@ -783,7 +787,7 @@ body {
             max-height: 49px;
             border-radius: 5px;
 
-            background-color: #FAFAFA;
+            background-color: $gray;
 
             padding:18px 30px 18px 35px;
 
@@ -800,7 +804,7 @@ body {
                 width: 38px;
                 height: 38px;
                 border-radius: 38px;
-                background: #96317D;
+                background: $blackPink;
 
                 img {
                     padding: 12px;
@@ -825,13 +829,10 @@ body {
     border-radius: 15px;
 
     display: flex;
-align-items: center;
+    align-items: center;
 
     .container__title {
-        font-size: 40px;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: -0.6px;
+        @include h3-title($lh,$ls);
     }
 
     .container__subtitle {
@@ -865,15 +866,58 @@ align-items: center;
         }
 
         button {
-            margin-left: 30px;
-            padding: 25px 96px;
-
-            border-radius: 15px;
-            background: #A95094;
-            border: 0;
-
-            color: #fff;
+            margin-left: 28px;
+            line-height: $lh;
+            @include button($pink,0,transparent,25px,96px,#fff,500)
         }
     }
 
+}
+/*-------------------GEO----------------*/
+
+.geo__container {
+    padding-top: 100px;
+    padding-left: 15px;
+
+    display: flex;
+    align-items: center;
+
+    .geo__info {
+        margin-left: 65px;
+
+        h3 {
+            @include h3-title(100%,-0.6px);
+            margin-bottom: 50px;
+        }
+
+        .geo__street {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        .geo__time {
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        .geo__address {
+            margin-bottom: 35px;
+        }
+        
+        .geo__email {
+            line-height: 24px;
+            font-size: 18px;
+
+            margin-bottom: 35px;
+        }
+
+        .button {
+
+            @include button($bc, 2px, $blackPink, 16px, 38px, $blackPink, 700);
+        }
+
+    }
 }

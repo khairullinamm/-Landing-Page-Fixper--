@@ -367,16 +367,11 @@ body {
   background-color: #A95094;
 }
 
-.title {
+h2 {
   font-size: 45px;
   font-weight: 700;
   line-height: 40px;
   letter-spacing: -0.675px;
-}
-
-.button {
-  border-radius: 15px;
-  text-align: center;
 }
 
 .default__nav {
@@ -541,16 +536,17 @@ body {
 .header__container .select .select-hide {
   display: none;
 }
-
-.button-call {
+.header__container .button {
   margin-left: 40px;
   margin-right: 0;
-  padding: 18px 40px;
-  color: #FFC464;
-  border: 2px solid #FFC464;
-  background-color: #A95094;
   border-radius: 15px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #FFC464;
   cursor: pointer;
+  padding: 16px 38px;
+  color: #FFC464;
+  font-weight: 700;
 }
 
 /*-----MAIN----*/
@@ -620,20 +616,24 @@ body {
 .offer__container .offer__main-part .offer__text .offer__subtitile strong {
   color: #FFC464;
 }
-.offer__container .offer__main-part .offer__text button {
-  background-color: #000;
+.offer__container .offer__main-part .offer__text .button {
+  line-height: normal;
   border-radius: 15px;
-  color: #FFF;
-  border: 0px;
+  text-align: center;
+  background-color: #000;
+  border: 0px solid transparent;
+  cursor: pointer;
   padding: 18px 50px;
+  color: #fff;
+  font-weight: 500;
   max-width: 222px;
   -webkit-transition: color 0.4s, background-color 0.4s;
   transition: color 0.4s, background-color 0.4s;
 }
-.offer__container .offer__main-part .offer__text button:hover {
+.offer__container .offer__main-part .offer__text .button:hover {
   color: #FFC464;
 }
-.offer__container .offer__main-part .offer__text button:active {
+.offer__container .offer__main-part .offer__text .button:active {
   color: #FFC464;
   background-color: #1c1c1c;
 }
@@ -751,15 +751,18 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.diagnostics__container .diagnostics__button {
-  border: 1px solid #96317D;
-  color: #96317D;
-  background-color: transparent;
+.diagnostics__container .button {
   line-height: 24px;
-  font-weight: 500;
-  padding: 14px 28px;
   margin-right: 15px;
   margin-bottom: 20px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #96317D;
+  cursor: pointer;
+  padding: 14px 28px;
+  color: #96317D;
+  font-weight: 500;
 }
 .diagnostics__container .diagnoctics__notice {
   margin-top: 25px;
@@ -910,8 +913,8 @@ body {
 .feedback__container .feedback__title {
   font-size: 40px;
   font-weight: 700;
-  line-height: 130%;
   letter-spacing: -0.6px;
+  line-height: 130%;
 }
 .feedback__container .feedback__cards {
   margin-top: 50px;
@@ -1016,6 +1019,7 @@ body {
 .questions__container .questions__text .questions__title {
   font-size: 40px;
   font-weight: 700;
+  letter-spacing: 0px;
   line-height: 100%;
 }
 .questions__container .questions__text .questions__subtitle {
@@ -1087,8 +1091,8 @@ body {
 .call_container .container__title {
   font-size: 40px;
   font-weight: 700;
-  line-height: normal;
   letter-spacing: -0.6px;
+  line-height: normal;
 }
 .call_container .container__subtitle {
   margin-top: 10px;
@@ -1112,10 +1116,64 @@ body {
   width: 296px;
 }
 .call_container .call__form button {
-  margin-left: 30px;
-  padding: 25px 96px;
+  margin-left: 28px;
+  line-height: normal;
   border-radius: 15px;
-  background: #A95094;
-  border: 0;
+  text-align: center;
+  background-color: #A95094;
+  border: 0 solid transparent;
+  cursor: pointer;
+  padding: 25px 96px;
   color: #fff;
+  font-weight: 500;
+}
+
+/*-------------------GEO----------------*/
+.geo__container {
+  padding-top: 100px;
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.geo__container .geo__info {
+  margin-left: 65px;
+}
+.geo__container .geo__info h3 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  line-height: 100%;
+  margin-bottom: 50px;
+}
+.geo__container .geo__info .geo__street {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.geo__container .geo__info .geo__time {
+  font-weight: 400;
+  line-height: 24px;
+}
+.geo__container .geo__info .geo__address {
+  margin-bottom: 35px;
+}
+.geo__container .geo__info .geo__email {
+  line-height: 24px;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+.geo__container .geo__info .button {
+  border-radius: 15px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #96317D;
+  cursor: pointer;
+  padding: 16px 38px;
+  color: #96317D;
+  font-weight: 700;
 }
