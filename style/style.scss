@@ -921,3 +921,38 @@ h2 {
 
     }
 }
+/*---------------navigation---------------------------*/
+
+.navigation__container {
+    
+    padding-top: 97px;
+    text-align: center;
+    
+    .navigation__img {
+        margin-bottom: 32px;
+
+        .navigation__F {
+            margin-right: 8.5px;
+        }
+    }
+
+    .navigation__nav {
+
+    padding-left: 253px;
+    padding-right: 253px;
+        ul{
+
+            display: flex;
+            
+            .navigation__item {
+
+                line-height: 20px;
+                font-weight: 500;
+
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+            }
+        }
+    }
+}

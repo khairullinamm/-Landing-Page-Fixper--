@@ -1177,3 +1177,31 @@ h2 {
   color: #96317D;
   font-weight: 700;
 }
+
+/*---------------navigation---------------------------*/
+.navigation__container {
+  padding-top: 97px;
+  text-align: center;
+}
+.navigation__container .navigation__img {
+  margin-bottom: 32px;
+}
+.navigation__container .navigation__img .navigation__F {
+  margin-right: 8.5px;
+}
+.navigation__container .navigation__nav {
+  padding-left: 253px;
+  padding-right: 253px;
+}
+.navigation__container .navigation__nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.navigation__container .navigation__nav ul .navigation__item {
+  line-height: 20px;
+  font-weight: 500;
+}
+.navigation__container .navigation__nav ul .navigation__item:not(:last-child) {
+  margin-right: 40px;
+}
