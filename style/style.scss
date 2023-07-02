@@ -113,6 +113,7 @@ body {
 
 .status {
     margin-top: 8px;
+    font-weight: 400;
 }
 
 /*-----HEADER-----*/
@@ -555,6 +556,7 @@ body {
 
 .team__container {
     padding-top: 100px;
+    padding-bottom: 100px;
     margin-top: 100px;
 
     text-align: center;
@@ -615,4 +617,54 @@ body {
     }
 
     
+}
+/*-------------feedback---------------*/
+.feedback__container {
+    padding-top: 100px;
+
+    text-align: center;
+
+    .feedback__title {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 130%;
+        letter-spacing: -0.6px;
+    }
+
+    .feedback__cards {
+        margin-top: 50px;
+
+        display: flex;
+
+        .feedback__item {
+            background-color: #FAFAFA;
+
+            padding: 75px 50px;
+            text-align: left;
+
+            max-height: 470px;
+            width: 570px;
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+
+            .feedback__person {
+                display: flex;
+                align-items: center;
+
+                img {
+                    margin-right: 30px;
+                }
+            }
+
+            .feedback__description {
+                margin-top: 35px;
+
+                font-size: 18px;
+                line-height: 150%;
+                font-weight: 400;
+            }
+        }
+    }
 }
