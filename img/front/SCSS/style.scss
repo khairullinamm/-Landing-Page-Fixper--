@@ -1,0 +1,51 @@
+@import "reset.scss";
+
+//переменные
+$fz: 80px;
+$color: #fff;
+
+//ШАБЛОН
+%tplborder {
+    border-bottom: 1px solid #000;
+}
+
+//mixin
+// <--- ВЛОЖЕННОСТЬ --->
+.hello {
+    font-size: $fz;
+    >span {
+        font-size: 100px;
+    }
+    span {
+        color: $color;
+    }
+    .hello__text {
+        font-size: 70px;
+    }
+    @include fz(100px);
+    
+}
+
+//ОПЕРАТОР --- И ---  & заменяется на родителя
+//находит родителя и повторяет его описани
+.link {
+    color: blue;
+    &:hover {
+        color: green;
+    }
+    .block &{ /*.block .link*/
+        font-size: $fz;
+    }
+    @extend %tplborder;
+}
+
+//также можно использовать, когда несколько классов для лдного тега
+.block {
+    width: 300px / 960px * 100%;
+    background-color: #fdfd;
+    &.block__big {
+        color: green;
+    }
+}
+
+

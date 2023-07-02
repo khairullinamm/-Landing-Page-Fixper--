@@ -904,6 +904,7 @@ body {
 /*-------------feedback---------------*/
 .feedback__container {
   padding-top: 100px;
+  padding-bottom: 100px;
   text-align: center;
 }
 .feedback__container .feedback__title {
@@ -944,4 +945,62 @@ body {
   font-size: 18px;
   line-height: 150%;
   font-weight: 400;
+}
+
+/*---------------------------stars--------------------------*/
+.stars {
+  background-color: #FAFAFA;
+}
+
+.stars__container {
+  padding: 48px 135px;
+}
+.stars__container .stars__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.stars__container .stars__cards .stars__item {
+  border-radius: 15px;
+  background: #FFF;
+  padding: 35px;
+  width: 370px;
+  height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.stars__container .stars__cards .stars__item:not(:last-child) {
+  margin-right: 30px;
+}
+.stars__container .stars__cards .stars__item .stars__border {
+  width: 1px;
+  height: 65px;
+  background-color: #E3E3E3;
+}
+.stars__container .stars__cards .stars__item .stars__score .stars__five {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.stars__container .stars__cards .stars__item .stars__score .stars__five img {
+  margin-right: 10px;
+}
+.stars__container .stars__cards .stars__item .stars__score .stars__five .stars__numbers {
+  font-size: 25px;
+}
+.stars__container .stars__cards .stars__item .stars__score .stars__five .stars__numbers strong {
+  font-size: 35px;
+}
+.stars__container .stars__cards .stars__item .stars__score .stars__count {
+  margin-top: 5px;
 }
