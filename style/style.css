@@ -330,6 +330,11 @@ template {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 @font-face {
   font-family: "Normal TT";
   font-weight: 500;
@@ -475,6 +480,14 @@ h2 {
 }
 .header__container .header__nav li {
   cursor: pointer;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.header__container .header__nav li:hover {
+  color: #FFC464;
+}
+.header__container .header__nav li:active {
+  color: #dfac5c;
 }
 .header__container .header__nav li + li {
   margin-left: 41px;
@@ -489,10 +502,18 @@ h2 {
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.header__container .select .select__header:hover {
+  color: #FFC464;
+}
+.header__container .select .select__header:active {
+  color: #dfac5c;
 }
 .header__container .select .select__current {
   line-height: 24px;
-  padding: 8px 0 8px 28px;
+  padding: 9px 0 9px 29px;
 }
 .header__container .select .select__icon {
   height: 20px;
@@ -539,6 +560,8 @@ h2 {
 .header__container .button {
   margin-left: 40px;
   margin-right: 0;
+  -webkit-transition: color 0.4s, border-color 0.4s;
+  transition: color 0.4s, border-color 0.4s;
   border-radius: 15px;
   text-align: center;
   background-color: transparent;
@@ -547,6 +570,14 @@ h2 {
   padding: 16px 38px;
   color: #FFC464;
   font-weight: 700;
+}
+.header__container .button:hover {
+  border-color: #fff;
+  color: #fff;
+}
+.header__container .button:active {
+  border-color: #dadada;
+  color: #dadada;
 }
 
 /*-----MAIN----*/
@@ -598,7 +629,7 @@ h2 {
           flex-direction: column;
   position: absolute;
   left: 625px;
-  bottom: 251px;
+  bottom: 250px;
 }
 .offer__container .offer__main-part .offer__text .offer__title {
   font-size: 67px;
@@ -609,12 +640,12 @@ h2 {
 }
 .offer__container .offer__main-part .offer__text .offer__subtitile {
   font-size: 20px;
-  font-weight: 700;
   line-height: 120%;
   margin-bottom: 35px;
 }
 .offer__container .offer__main-part .offer__text .offer__subtitile strong {
   color: #FFC464;
+  font-weight: 700;
 }
 .offer__container .offer__main-part .offer__text .button {
   line-height: normal;
@@ -657,15 +688,20 @@ h2 {
           align-items: center;
   padding: 0px 30px;
 }
+.offer__container .offer__discount .offer__close-discount {
+  cursor: pointer;
+}
 .offer__container .offer__discount .offer__elipse {
   width: 10px;
   height: 10px;
   border-radius: 10px;
   background: #78C23E;
-  margin-left: 68px;
+  margin-left: 65px;
 }
 .offer__container .offer__discount .offer__arrow {
   margin-left: 25px;
+  -webkit-transition-duration: 1000ms;
+          transition-duration: 1000ms;
 }
 .offer__container .offer__discount p {
   margin-left: 9px;
@@ -680,6 +716,16 @@ h2 {
   background-color: #000;
   border: 0px;
   color: #FFC464;
+  cursor: pointer;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.offer__container .offer__discount button:hover + .offer__arrow {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+.offer__container .offer__discount button:active {
+  color: #fff;
 }
 
 /*------------------------advantages------------------------*/
@@ -763,6 +809,15 @@ h2 {
   padding: 14px 28px;
   color: #96317D;
   font-weight: 500;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+.diagnostics__container .button:hover {
+  background-color: #96317D;
+  color: #fff;
+}
+.diagnostics__container .button:active {
+  background-color: #641a52;
 }
 .diagnostics__container .diagnoctics__notice {
   margin-top: 25px;

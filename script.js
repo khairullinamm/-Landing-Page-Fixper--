@@ -16,9 +16,18 @@ selectHeader.forEach(item => { item.addEventListener("click", () => {
 selectItem.forEach(item => { item.addEventListener("click", () => {
     let arr = item.children;
     let current = arr[1].innerHTML; /*содержание span*/
+    console.log(current);
     const now =  document.querySelector('.select__current');
     now.innerHTML = current; //меняем текущий город
     selectBody.forEach(item => item.classList.add("select-hide")); //скрываем body
 });
 });
 
+document.addEventListener("click", function (e) { 
+
+    if (e.target.className !== 'select__body' && e.target.className !== 'select__item' && e.target.className !== 'select__header' && e.target.className !== 'select__current')
+        selectBody.forEach(item => item.classList.add("select-hide")); //скрываем body
+});
+
+//Решить проблему в select
+//Изменить цвет крестика при нажатии в discount

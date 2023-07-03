@@ -21,6 +21,7 @@
     src: url('/font/TTNorms-Regular.woff');
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 //----ALL-----
 
 $lh: normal;
@@ -30,16 +31,19 @@ $pink: #A95094;
 $gray: #FAFAFA;
 $blackPink: #96317D;
 $orange: #FFC464;
+$blackOrange: #dfac5c;
 
 $bc: transparent;
 
 $sz: 2px;
+
 body {
     font-family: 'Normal TT';
     font-size: 16px;
     font-weight: 500;
     overflow-x: hidden;
 }
+
 .container {
     max-width: 1170px; //1170 + 30 на padding
     margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
@@ -49,6 +53,7 @@ body {
 .header, .offer {
     background-color: $pink;
 }
+
 h2 {
     font-size: 45px;
     font-weight: 700;
@@ -62,6 +67,7 @@ h2 {
     letter-spacing: $ls;
     line-height: $lh;
 }
+
 @mixin button($bc, $sz, $color, $pt, $pl,$buttonColor,$fw) {
     border-radius: 15px;
     text-align: center;
@@ -142,7 +148,9 @@ h2 {
 }
 
 /*-----HEADER-----*/
+
 .header__container {
+
     min-height: 112px;
     color: #fff;
 
@@ -158,34 +166,61 @@ h2 {
 
         cursor: pointer;
     }
+
     nav {
         margin-left: 74px;
     }
+
     .header__nav {
+
         display: flex;
         justify-content: space-between;
 
         li {
             cursor: pointer;
+
+            transition: color 0.4s;
+
+            &:hover {
+                color: $orange;
+            }
+
+            &:active {
+                color: $blackOrange;
+            }
         }
 
         li + li {
             margin-left: 41px;
         }
     }
+
     .select {
+
         margin-left: 160px;
         position: relative;
+
         width:110px;
 
         .select__header {
+
             display: flex;
             cursor: pointer;
+
+            transition: color 0.4s;
+
+            &:hover {
+                color: $orange;
+            }
+
+            &:active {
+                color: $blackOrange;
+            }
         }
 
         .select__current {
             line-height: 24px;
-            padding: 8px 0 8px 28px;
+            padding: 9px 0 9px 29px;
         }
 
         .select__icon {
@@ -195,6 +230,7 @@ h2 {
             flex-shrink: 0;
 
             margin-left: auto;
+
             position: absolute;
             top: 11px;
         }
@@ -208,16 +244,24 @@ h2 {
             top: 100%;
 
             border-top: none;
+
+            
+
+            
         }
+
         .select__item {
             position: relative;
+            
             padding: 8px;
             height: 20px;
 
             background-color: #fff;
+            
             color: #000;
         
             text-align: center;
+            
             cursor: pointer;
 
             &:hover {
@@ -227,28 +271,49 @@ h2 {
             .select__icon-item {
                 position: absolute;
                 left: 1px;
+
                 height: 20px;
                 width: 20px;
             }
+
             span {
                 position: absolute;
                 left: 28px;
             }
+
         }
         .select-hide{
             display: none;
         }
     }
+
     .button {
+
         margin-left: 40px;
         margin-right: 0;
+
+        transition: color 0.4s, border-color 0.4s;
+
+        &:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        &:active {
+            border-color: #dadada;
+            color: #dadada;
+        }
+
         @include button($bc,$sz,$orange,16px,38px,$orange,700);
     }
 }
+
 /*-----MAIN----*/
+
 .main {
     background-color: $pink;   
 }
+
 /*-----OFFER----*/
 .offer__container {
     max-width: 1406px;
@@ -259,6 +324,7 @@ h2 {
     position: relative;
 
     .offer__main-part {
+
         display: flex;
         position: relative;
 
@@ -293,7 +359,7 @@ h2 {
 
             position: absolute;
             left: 625px;
-            bottom: 251px;
+            bottom: 250px;
 
             .offer__title {
                 font-size: 67px;
@@ -305,13 +371,14 @@ h2 {
             }
             .offer__subtitile {
                 font-size: 20px;
-                font-weight: 700;
+               // font-weight: 700;
                 line-height: 120%;
 
                 margin-bottom: 35px;
 
                 strong {
                     color: $orange;
+                    font-weight: 700;
                 }
             }
             .button {
@@ -334,13 +401,16 @@ h2 {
         }
     }
     .offer__discount {
+        
         min-width: 1110px; /*+ 60 padding*/
         min-height: 49px;
+        
         z-index: 10;
 
         position: absolute;
         bottom: 3px;
         left: 50%;
+        
         margin-right: -50%;
         transform: translate(-50%, -50%);
 
@@ -350,19 +420,27 @@ h2 {
         
         display: flex;
         align-items: center;
+       
         padding: 0px 30px;
 
+        .offer__close-discount {
+
+            cursor: pointer;
+        }
+
         .offer__elipse {
+            
             width: 10px;
             height: 10px;
 
             border-radius: 10px;
             background: #78C23E;
 
-            margin-left: 68px;
+            margin-left: 65px;
         }
         .offer__arrow {
             margin-left: 25px;
+            transition-duration: 1000ms;
         }
 
         p {
@@ -376,11 +454,23 @@ h2 {
         }
 
         button {
+           
             margin-left: 63px;
 
             background-color: #000;
             border: 0px;
             color: $orange;
+
+            cursor: pointer;
+            transition: color 0.4s;
+
+            &:hover + .offer__arrow{
+                transform: translateX(10px);
+            }
+
+            &:active {
+                color: #fff;
+            }
         }
     }
 }
@@ -455,12 +545,22 @@ h2 {
     }
 
     .button {
+
         line-height: 24px;
 
         margin-right: 15px;
         margin-bottom: 20px;
 
         @include button($bc,1px,$blackPink,14px,28px,$blackPink,500);
+
+        transition-duration: 0.5s;
+        &:hover {
+            background-color: $blackPink;
+            color: #fff;
+        }
+        &:active {
+            background-color: #641a52;
+        }
     }
 
     .diagnoctics__notice {
