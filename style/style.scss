@@ -512,21 +512,50 @@ h2 {
         margin: 0 auto;
         margin-top: 28px;
 
+        display: grid;
+      //  grid-template-columns: repeat(3, 1fr);
+        
+        grid-template-columns: 590px 202px 178px;
+        grid-template-rows: repeat(6, 74px);
+        column-gap: 1px;
+        align-items: center;
+
+        //background-color: #000;
+
+       
+
+        //align-content: center;
+
         .price__item {
-            display: flex;
-            justify-content: space-between;
+            
+          //  background-color: #fff;
+            /*justify-content: space-between;
 
             padding-top: 24px;
-            padding-bottom: 24px;
+            padding-bottom: 24px; */
 
+            
             border-bottom: 1px solid #ECECEC;
-
             text-align: right;
             line-height: 24px;
             font-weight: 500;
+
+            padding-top: 25px;
+            padding-bottom: 25px;
+            //padding-right: 50px;
+
+           // align-self: center;
+
+           &:nth-child(3n + 1) {
+            text-align: left;
+           }
         }
 
-        .price__list-header {
+        .space {
+            color: #fff;
+        }
+
+        .price__header {
             font-weight: 400;
         }
 
@@ -832,7 +861,7 @@ h2 {
     align-items: center;
 
     .container__title {
-        @include h3-title($lh,$ls);
+        @include h3-title($lh,-0.6px);
     }
 
     .container__subtitle {
@@ -845,7 +874,7 @@ h2 {
 
     .call__form {
 
-        margin-left: 60px;
+        margin-left: 20px;
 
         input {
             border: 0px;
@@ -866,7 +895,7 @@ h2 {
         }
 
         button {
-            margin-left: 28px;
+            margin-left: 20px;
             line-height: $lh;
             @include button($pink,0,transparent,25px,96px,#fff,500)
         }
