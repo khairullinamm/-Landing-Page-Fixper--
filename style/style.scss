@@ -115,6 +115,7 @@ h2 {
     .nav__farther {
         display: flex;
         align-items: center;
+
         .nav__left {
             margin-right: 40px;
 
@@ -122,6 +123,18 @@ h2 {
             border: 0;
 
             font-weight: 500;
+
+            cursor: pointer;
+            transition-duration: 0.5s;
+
+            &:hover {
+                color: #515151;
+            }
+            &:active {
+                color: #1c1c1c;
+            }
+
+
         }
 
         .nav__right button{
@@ -133,6 +146,20 @@ h2 {
             border: 0;
 
             margin-right: 13px;
+
+            &:hover + img{
+                transform: translateX(10px);
+            }
+
+            &:active {
+                color: #641a52;
+            }
+
+            cursor: pointer;
+        }
+
+        img {
+            transition-duration: 0.5s;
         }
     }
 }
@@ -479,18 +506,25 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    //justify-content: center;
+    
     margin-left: 125px;
     margin-right: 188px;
     margin-top: 112px;
 
     
     .advantages__el {
+
         max-width: 207px;
         font-size: 20px;
         font-weight: 500;
+        line-height: 120%;
+
         img {
-            margin-bottom: 28px;
+            margin-bottom: 26px;
+        }
+
+        &:first-child {
+            line-height: 130%;
         }
 
     }
@@ -548,7 +582,7 @@ h2 {
 
         line-height: 24px;
 
-        margin-right: 15px;
+        margin-right: 16px;
         margin-bottom: 20px;
 
         @include button($bc,1px,$blackPink,14px,28px,$blackPink,500);
@@ -564,7 +598,7 @@ h2 {
     }
 
     .diagnoctics__notice {
-        margin-top: 25px;
+        margin-top: 28px;
        
         display: flex;
         align-items: center;
@@ -574,7 +608,7 @@ h2 {
         line-height: 28px;
 
         img {
-            margin-right: 15px;
+            margin-right: 14px;
         }
     }
     .diagnostics__background {
@@ -604,13 +638,13 @@ h2 {
 }
 /*--------------------PRICE------------------------*/
 .price__container {
-    padding-top: 102px;
+    padding-top: 100px;
     text-align: center;
 
     .price__list {
         max-width: 971px;
         margin: 0 auto;
-        margin-top: 28px;
+        margin-top: 27px;
 
         display: grid;
       //  grid-template-columns: repeat(3, 1fr);
@@ -634,7 +668,7 @@ h2 {
             padding-top: 24px;
             padding-bottom: 24px; */
 
-            
+
             border-bottom: 1px solid #ECECEC;
             text-align: right;
             line-height: 24px;
@@ -649,8 +683,14 @@ h2 {
            &:nth-child(3n + 1) {
             text-align: left;
            }
+           span {
+            font-size: 18px;
+           }
         }
 
+        .price__prices {
+            font-size: 18px;
+        }
         .space {
             color: #fff;
         }
@@ -661,15 +701,18 @@ h2 {
 
         .price__free {
             color: $blackPink;
+            font-size: 18px;
         }
 
     }
     .price__show {
-        margin-top: 53px;
+        margin-top: 48px;
 
         display: flex;
         align-items: center;
         justify-content: center;
+
+        cursor: pointer;
 
         button {
             background-color: transparent;
@@ -682,9 +725,24 @@ h2 {
             
             border: 0px;
             margin-right: 10px;
+
+            cursor: pointer;
+
+            transition-duration: 0.5s;
+            &:hover {
+                color: #641a52;
+            }
+
+            &:hover + img{
+                transform: rotate(360deg);
+            }
+
+            &:active {
+                color: #2d0b24;
+            }
         }
         img {
-            
+            transition-duration: 1000ms;
         }
     }
 }
@@ -695,7 +753,7 @@ h2 {
 
 .team__container {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 174px;
     margin-top: 100px;
 
     text-align: center;
@@ -759,7 +817,7 @@ h2 {
 }
 /*-------------feedback---------------*/
 .feedback__container {
-    padding-top: 100px;
+    padding-top: 32px;
     padding-bottom: 100px;
 
     text-align: center;
@@ -769,7 +827,7 @@ h2 {
     }
 
     .feedback__cards {
-        margin-top: 50px;
+        margin-top: 45px;
 
         display: flex;
 
@@ -885,7 +943,7 @@ h2 {
 
         .questions__subtitle {
 
-            margin-top: 25px;
+            margin-top: 23px;
 
             font-size: 18px;
             font-weight: 400;
@@ -944,14 +1002,14 @@ h2 {
 }
 .call {
     background-image: url('/img/background/call_background.png');
-    max-height: 381px;
+    max-height: 384px;
     
     padding: 100px 51px;
 
 }
 .call_container {
 
-    padding: 50px 84px;
+    padding: 48px 84px;
 
     //min-height: 181px;
     background-color: #fff;
@@ -974,7 +1032,7 @@ h2 {
 
     .call__form {
 
-        margin-left: 20px;
+        margin-left: 60px;
 
         input {
             border: 0px;
@@ -995,9 +1053,18 @@ h2 {
         }
 
         button {
-            margin-left: 20px;
+            margin-left: 27px;
             line-height: $lh;
-            @include button($pink,0,transparent,25px,96px,#fff,500)
+            @include button($pink,0,transparent,25px,96px,#fff,500);
+
+            transition-duration: 0.5s;
+            &:hover {
+                background-color: $blackPink;
+                color: #fff;
+            }
+            &:active {
+                background-color: #641a52;
+            }
         }
     }
 
@@ -1046,6 +1113,15 @@ h2 {
         .button {
 
             @include button($bc, 2px, $blackPink, 16px, 38px, $blackPink, 700);
+
+            transition-duration: 0.5s;
+            &:hover {
+                background-color: $blackPink;
+                color: #fff;
+            }
+            &:active {
+                background-color: #641a52;
+            }
         }
 
     }
@@ -1060,6 +1136,8 @@ h2 {
     .navigation__img {
         margin-bottom: 32px;
 
+        cursor: pointer;
+
         .navigation__F {
             margin-right: 8.5px;
         }
@@ -1067,8 +1145,9 @@ h2 {
 
     .navigation__nav {
 
-    padding-left: 253px;
+    padding-left: 254px;
     padding-right: 253px;
+
         ul{
 
             display: flex;
@@ -1080,6 +1159,17 @@ h2 {
 
                 &:not(:last-child) {
                     margin-right: 40px;
+                }
+
+               
+                cursor: pointer;
+                transition-duration: 0.5s;
+    
+                &:hover {
+                    color: #515151;
+                }
+                &:active {
+                    color: #1c1c1c;
                 }
             }
         }
@@ -1099,8 +1189,8 @@ h2 {
     display: flex;
     align-items: center;
 
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 36px;
+    padding-bottom: 36px;
 
     padding-left: 270px;
 

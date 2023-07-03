@@ -430,6 +430,15 @@ h2 {
   background-color: transparent;
   border: 0;
   font-weight: 500;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+.default__nav .nav__farther .nav__left:hover {
+  color: #515151;
+}
+.default__nav .nav__farther .nav__left:active {
+  color: #1c1c1c;
 }
 .default__nav .nav__farther .nav__right button {
   color: #96317D;
@@ -437,6 +446,18 @@ h2 {
   background-color: transparent;
   border: 0;
   margin-right: 13px;
+  cursor: pointer;
+}
+.default__nav .nav__farther .nav__right button:hover + img {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+.default__nav .nav__farther .nav__right button:active {
+  color: #641a52;
+}
+.default__nav .nav__farther img {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .name {
@@ -747,9 +768,13 @@ h2 {
   max-width: 207px;
   font-size: 20px;
   font-weight: 500;
+  line-height: 120%;
 }
 .adantages__container .advantages__el img {
-  margin-bottom: 28px;
+  margin-bottom: 26px;
+}
+.adantages__container .advantages__el:first-child {
+  line-height: 130%;
 }
 .adantages__container .advantages__el + .advantages__el {
   margin-left: 93px;
@@ -799,7 +824,7 @@ h2 {
 }
 .diagnostics__container .button {
   line-height: 24px;
-  margin-right: 15px;
+  margin-right: 16px;
   margin-bottom: 20px;
   border-radius: 15px;
   text-align: center;
@@ -820,7 +845,7 @@ h2 {
   background-color: #641a52;
 }
 .diagnostics__container .diagnoctics__notice {
-  margin-top: 25px;
+  margin-top: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -832,7 +857,7 @@ h2 {
   line-height: 28px;
 }
 .diagnostics__container .diagnoctics__notice img {
-  margin-right: 15px;
+  margin-right: 14px;
 }
 .diagnostics__container .diagnostics__background {
   position: relative;
@@ -857,13 +882,13 @@ h2 {
 
 /*--------------------PRICE------------------------*/
 .price__container {
-  padding-top: 102px;
+  padding-top: 100px;
   text-align: center;
 }
 .price__container .price__list {
   max-width: 971px;
   margin: 0 auto;
-  margin-top: 28px;
+  margin-top: 27px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 590px 1px 202px 1px 178px;
@@ -964,6 +989,12 @@ h2 {
 .price__container .price__list .price__item:nth-child(3n+1) {
   text-align: left;
 }
+.price__container .price__list .price__item span {
+  font-size: 18px;
+}
+.price__container .price__list .price__prices {
+  font-size: 18px;
+}
 .price__container .price__list .space {
   color: #fff;
 }
@@ -972,9 +1003,10 @@ h2 {
 }
 .price__container .price__list .price__free {
   color: #96317D;
+  font-size: 18px;
 }
 .price__container .price__show {
-  margin-top: 53px;
+  margin-top: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -984,6 +1016,7 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
 }
 .price__container .price__show button {
   background-color: transparent;
@@ -993,7 +1026,25 @@ h2 {
   text-align: center;
   border: 0px;
   margin-right: 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
+.price__container .price__show button:hover {
+  color: #641a52;
+}
+.price__container .price__show button:hover + img {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.price__container .price__show button:active {
+  color: #2d0b24;
+}
+.price__container .price__show img {
+  -webkit-transition-duration: 1000ms;
+          transition-duration: 1000ms;
+}
+
 /*---------------team----------------------*/
 .team {
   background-color: #FAFAFA;
@@ -1001,7 +1052,7 @@ h2 {
 
 .team__container {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 174px;
   margin-top: 100px;
   text-align: center;
 }
@@ -1049,7 +1100,7 @@ h2 {
 
 /*-------------feedback---------------*/
 .feedback__container {
-  padding-top: 100px;
+  padding-top: 32px;
   padding-bottom: 100px;
   text-align: center;
 }
@@ -1060,7 +1111,7 @@ h2 {
   line-height: 130%;
 }
 .feedback__container .feedback__cards {
-  margin-top: 50px;
+  margin-top: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1166,7 +1217,7 @@ h2 {
   line-height: 100%;
 }
 .questions__container .questions__text .questions__subtitle {
-  margin-top: 25px;
+  margin-top: 23px;
   font-size: 18px;
   font-weight: 400;
   line-height: 150%;
@@ -1216,12 +1267,12 @@ h2 {
 
 .call {
   background-image: url("/img/background/call_background.png");
-  max-height: 381px;
+  max-height: 384px;
   padding: 100px 51px;
 }
 
 .call_container {
-  padding: 50px 84px;
+  padding: 48px 84px;
   background-color: #fff;
   border-radius: 15px;
   display: -webkit-box;
@@ -1245,7 +1296,7 @@ h2 {
   line-height: normal;
 }
 .call_container .call__form {
-  margin-left: 20px;
+  margin-left: 60px;
 }
 .call_container .call__form input {
   border: 0px;
@@ -1259,7 +1310,7 @@ h2 {
   width: 296px;
 }
 .call_container .call__form button {
-  margin-left: 20px;
+  margin-left: 27px;
   line-height: normal;
   border-radius: 15px;
   text-align: center;
@@ -1269,6 +1320,15 @@ h2 {
   padding: 25px 96px;
   color: #fff;
   font-weight: 500;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+.call_container .call__form button:hover {
+  background-color: #96317D;
+  color: #fff;
+}
+.call_container .call__form button:active {
+  background-color: #641a52;
 }
 
 /*-------------------GEO----------------*/
@@ -1319,6 +1379,15 @@ h2 {
   padding: 16px 38px;
   color: #96317D;
   font-weight: 700;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+.geo__container .geo__info .button:hover {
+  background-color: #96317D;
+  color: #fff;
+}
+.geo__container .geo__info .button:active {
+  background-color: #641a52;
 }
 
 /*---------------navigation---------------------------*/
@@ -1328,12 +1397,13 @@ h2 {
 }
 .navigation__container .navigation__img {
   margin-bottom: 32px;
+  cursor: pointer;
 }
 .navigation__container .navigation__img .navigation__F {
   margin-right: 8.5px;
 }
 .navigation__container .navigation__nav {
-  padding-left: 253px;
+  padding-left: 254px;
   padding-right: 253px;
 }
 .navigation__container .navigation__nav ul {
@@ -1344,9 +1414,18 @@ h2 {
 .navigation__container .navigation__nav ul .navigation__item {
   line-height: 20px;
   font-weight: 500;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 .navigation__container .navigation__nav ul .navigation__item:not(:last-child) {
   margin-right: 40px;
+}
+.navigation__container .navigation__nav ul .navigation__item:hover {
+  color: #515151;
+}
+.navigation__container .navigation__nav ul .navigation__item:active {
+  color: #1c1c1c;
 }
 
 /*------------------pay-------------------------*/
@@ -1364,8 +1443,8 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 35px;
-  padding-bottom: 35px;
+  padding-top: 36px;
+  padding-bottom: 36px;
   padding-left: 270px;
 }
 .pay__container .pay__text {
