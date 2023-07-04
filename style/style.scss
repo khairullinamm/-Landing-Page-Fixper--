@@ -1002,6 +1002,8 @@ h2 {
 }
 .call {
     background-image: url('/img/background/call_background.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     max-height: 384px;
     
     padding: 100px 51px;
@@ -1242,4 +1244,45 @@ h2 {
         font-weight: 400;
         line-height: 20px;
     }
+}
+
+/*------------------ADAPTIV------------------------*/
+
+@media (max-width: 1400px) {
+    .offer__container .offer__main-part .offer__text .offer__title 
+    {
+        font-size: 60px;
+    }
+
+    .stars__container .stars__cards .stars__item .stars__score .stars__five .stars__numbers {
+        font-size: 20px;
+
+        strong {
+            font-size: 30px;
+        }
+    }
+.call {
+   // max-height: 384px;
+   // padding-bottom: 0;
+}
+    .call_container {
+
+        .container__subtitle {
+            font-size: 18px;
+        }
+    
+    
+    .call__form {
+        
+        
+
+        input {
+            width: 250px;
+
+        }
+
+        button {
+            padding: 25px 60px;
+        }
+    }}
 }
