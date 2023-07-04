@@ -46,14 +46,14 @@
                     <div class="offer__text">
                         <h1 class="offer__title">Ремонт стиральных машин на дому c годовой гарантией</h1>
                         <p class="offer__subtitile"><strong>Отремонтируем на дому</strong> или бесплатно завезем <br>и доставим обратно из сервисного центра</p>
-                        <button class="button">Заказать звонок</button>
+                        <button class="button button-call">Заказать звонок</button>
                     </div>
                 </div>
                 <div class="offer__discount">
                     <img src="/img/icons/cross.svg" alt="cross" class="offer__close-discount">
                     <div class="offer__elipse"></div>
                     <p><strong>Мы открыты и принимаем заказы до 21:00,</strong> позвоните сейчас и мы сделаем скидку 15%</p>
-                    <button>Получить скидку</button>
+                    <button class="button__discount">Получить скидку</button>
                     <img src="/img/icons/arrow.svg" alt="arrow" class="offer__arrow">
                 </div>
             </div>
@@ -96,20 +96,28 @@
                         <button class="diagnostics__button button">Не крутится барабан</button>
                         <button class="diagnostics__button button">Не работает кнопка включения</button>
                     </nav>
-                    <div class="diagnoctics__notice">
+                    <div class="diagnoctics__notice diagnoctics__notice-desktop">
                         <img src="/img/icons/notice.png" alt="notice">
                         <p>Выберите проблему и узнайте её решение</p>
                     </div>
                 </div>
                 <form class="diagnostics__input">
                     <select name="fffff" id="">Выберите вашу проблему
-                        <option value="Moscow">Moscow</option>
+                        <option value="off">Не включается</option>
+                        <option value="off">Не крутится барабан</option>
+                        <option value="off">Не выключается</option>
+                        <option value="off">Все работет, но мне скучно и я хочу пообщаться с мастером</option>
+                        <option value="off">Иная проблема</option>
                     </select>
                 </form>
             <div class="diagnostics__background">
                 <img src="/img/background/graphics2.png" alt="graphics" class="diagnoctics__graphics">
                 <img src="/img/background/wash2.png" alt="washmachine" class="diagnoctics__washmachine">
                 <img src="/img/background/square.png" alt="square" class="diagnoctics__square">
+            </div>
+            <div class="diagnoctics__notice diagnoctics__notice-mobile">
+                <img src="/img/icons/notice.png" alt="notice">
+                <p>Выберите проблему и узнайте её решение</p>
             </div>
         </div>
         </section>
@@ -403,7 +411,7 @@
                 </div>
                     <form action="" class="call__form">
                         <input type="text" value="Номер телефона">
-                        <button class="button">Заказать звонок</button>
+                        <button class="button button-call">Заказать звонок</button>
                     </form>
 
                 
@@ -458,6 +466,29 @@
                     <div class="pay__item"><img src="/img/icons/googlePay.png" alt="" class="pay__logo"></div>
                     <div class="pay__item">Наличные</div>
                 </div>
+            </div>
+        </section>
+        <section class="alert">
+            <div class="alert__container">
+                <p class="alert__title">Заказать звонок</p>
+                
+                <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="alert__cross">
+                    <g id="Group 417">
+                    <path class="svgInternalID" d="M1.5 1L10.5 10" stroke="white" stroke-width="2"/>
+                    <path class="svgInternalID" d="M10.5 1L1.5 10" stroke="white" stroke-width="2"/>
+                    </g>
+                </svg>
+
+                <form name="test" method="post" action="input1.php" class="alert__form">
+                    <p>Имя</p>
+                    <input type="text" value="" placeholder="Как Вас зовут?">
+
+                    <p>Телефон</p>
+                    <input type="text" placeholder="+7">
+
+                    <button class="button">Перезвонить</button>
+                </form>
+                
             </div>
         </section>
     </main>
