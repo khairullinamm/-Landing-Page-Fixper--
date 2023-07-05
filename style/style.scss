@@ -1432,18 +1432,30 @@ h2 {
 .offer__text .button {
     margin-top: 415px;
 }
-
+.offer__elipse {
+    margin-left: 25px;
+}
 .offer__discount {
     
     height: 112px;
     top: 925px;
 
-    max-width: 780px;
+    min-width: 780px - 60px;
+    //width: 100%;
+    //display: block;
+    p {
+        margin-left: 20px;
+        max-width: 400px;
+    }
 
-    display: block;
+    button {
+//margin-left: 40px;
+    }
+    
   }
-
-
+.offer__arrow {
+    margin-left: 10px;
+}
 /*----advantages----*/
 .adantages__container {
     flex-wrap: wrap;
@@ -1568,7 +1580,8 @@ margin: 0 auto;
 }
 .feedback__container {
     padding-top: 100px;
-  //  margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .feedback__cards {
     justify-content: center;
@@ -1580,4 +1593,132 @@ margin: 0 auto;
     margin-right: 0px;
 }
 }
+.stars__container {
+    padding: 50px 30px;
+}
+.stars__cards {
+    justify-content: center;
+}
+.stars__item {
+    flex-wrap: wrap;
+    height: 207px - 70px;
+    width: 220px - 70px;
+}
+.stars__border {
+    width: 65px;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 15px;
+}
+.stars__numbers {
+    font-size: 25px;
+    
+    strong {
+        font-size: 35px;
+    }
+}
+.questions__container {
+    flex-direction: column;
+}
+.questions__text {
+    text-align: center;
+}
+.questions__title {
+    font-size: 45px;
+}
+.questions__list {
+        
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 50px;
+}
+.call {
+    max-height: 500px;
+    background-size: cover;
+    padding: 50px 30px;
+}
+.call_container {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+}
+.call__text {
+    text-align: center;
+   // margin-top: 75px;
+   
+}
+.container__subtitle {
+    font-size: 20px;
+}
+.call__form {
+    margin-top: 35px;
+    width: 390px;
+    margin-left: 0;
+   // margin-bottom: 75px;
+
+    input {
+        margin-bottom: 20px;
+        width: 390px - 30px;
+        //margin: 0 auto;
+    }
+    button {
+        width: 390px;
+        margin-left: 0;
+        //margin: 0 auto;
+    }
+    
+}
+
+.geo__container  {
+    flex-direction: column;
+    align-items: stretch;
+
+    h3 {
+        @include h3-title(100%,-0.6px);
+        margin-bottom: 35px;
+    }
+}
+
+.geo__info {
+    margin-top: 35px;
+    margin-left: 20px;
+    display: grid;
+    //grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 390px 165px;
+   // grid-template-rows: repeat(2,1fr);
+    grid-template-rows: 70px 55px;
+    grid-auto-flow: column;
+   // grid-template-columns: 380px 200px;
+
+}
+.geo__map {
+    margin: 0 auto;
+}
+.navigation__nav {
+display: block;
+    padding: 0;
+    ul {
+    //margin: 0 auto;
+    justify-content: center;
+    }
+}
+.pay {
+    width: 100%;
+    margin: 0;
+}
+.pay__container {
+    padding-left: 0;
+    flex-direction: column;
+}
+.pay__text {
+    margin-bottom: 15px;
+}
+.footer__container {
+    padding: 35px 20px;
+    justify-content: space-between;
+}
+
 }
