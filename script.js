@@ -78,62 +78,11 @@ crossDiscount.forEach(item => { item.addEventListener("click", () => {
 
 const screenWidth = window.screen.width;
 const screenHeight = window.screen.height;
-
-const noticeMobile = document.querySelector('.diagnoctics__notice-mobile');
-const noticeDesktop = document.querySelector('.diagnoctics__notice-desktop');
-
-const geoTitleMobile = document.querySelector('.geo__title-mobile');
-const geoTitleDesktop = document.querySelector('.geo__title-desktop');
-
-const teamPerson = document.querySelectorAll('.team__person');
-
-const feedbackItem = document.querySelectorAll('.feedback__item');
-
-const questionsText = document.querySelector('.questions__text');
-const questionsBr = questionsText.getElementsByTagName('br');
-
-const geoMap = document.querySelector('.geo__map').getElementsByTagName('iframe');
-console.log(geoMap);
+//const geoMap = document.querySelector('.geo__map').getElementsByTagName('iframe');
+///console.log(geoMap);
 
 if (screenWidth <= 1024) {
 
-    noticeMobile.style.display = 'flex';
-    noticeDesktop.style.display = 'none';
-
-    geoTitleMobile.style.display = 'block';
-    geoTitleDesktop.style.display = 'none';
-
-    if (teamPerson.length === 3) {
-        teamPerson[2].style.display = 'none';
-    }
-
-    if (feedbackItem.length === 2) {
-        feedbackItem[1].style.display = 'none';
-    }
-
-    const lengthBr = questionsBr.length; //количество всех тегов br
-    for (let i = 0; i < lengthBr-1; i++) //проходимся по всем, кроме последнего, так как он нам нужен
-    {
-        questionsBr[0].remove(); //каждый раз удаляем 0-ой индекс, так как при удалении все сдвигается
-    }  
-
-    geoMap[0].setAttribute("width", "720px");
-    geoMap[0].setAttribute("height", "372px");
-}
-
-else if (screenWidth > 1024) {
-
-    noticeMobile.style.display = 'none';
-    noticeDesktop.style.display = 'flex';
-
-    geoTitleMobile.style.display = 'none';
-    geoTitleDesktop.style.display = 'block';
-
-    if (teamPerson.length < 3) {
-        teamPerson[2].style.display = 'block';
-    }
-
-    if (feedbackItem.length < 2) {
-        feedbackItem[1].style.display = 'block';
-    }
+   // geoMap[0].setAttribute("width", "720px");
+   // geoMap[0].setAttribute("height", "372px");
 }

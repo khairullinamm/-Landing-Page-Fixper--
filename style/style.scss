@@ -470,6 +470,7 @@ h2 {
 
         &:hover + .offer__arrow{
             transform: translateX(10px);
+            
         }
 
         &:active {
@@ -497,6 +498,7 @@ h2 {
 .offer__arrow {
     margin-left: 25px;
     transition-duration: 1000ms;
+    transform: translateY(2px);
 }
 
 /*------------------------advantages------------------------*/
@@ -757,7 +759,7 @@ h2 {
 
 .team__workers {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     margin-top: 50px;
 }
@@ -919,7 +921,8 @@ h2 {
 }
 
 .questions__title {
-    @include h3-title(100%, 0px);         
+    @include h3-title(100%, 0px);  
+    max-width: 329px;       
 }
 
 .questions__subtitle {
@@ -929,6 +932,8 @@ h2 {
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.9px;
+
+    max-width: 301px;
 
     span {
         display: inline-block;
@@ -1000,11 +1005,11 @@ h2 {
     align-items: center;
 }
 
-.container__title {
+.call__title {
     @include h3-title($lh,-0.6px);
 }
 
-.container__subtitle {
+.call__subtitle {
     margin-top: 10px;
     color: #171717;
     font-size: 20px;
@@ -1105,6 +1110,7 @@ h2 {
     margin-bottom: 35px;
 }
 
+
 /*---------------navigation---------------------------*/
 
 .navigation__container {
@@ -1159,8 +1165,8 @@ h2 {
 .pay {
     background-color: $gray;
    
-    margin-left: 51px;
-    margin-right: 51px;
+  //  margin-left: 51px;
+   // margin-right: 51px;
 }
 
 .pay__container {
@@ -1215,7 +1221,7 @@ h2 {
     padding-bottom: 30px;
     
     display: flex;
-    //justify-content: space-between;
+    justify-content: space-between;
 
     p {
         font-weight: 400;
@@ -1310,11 +1316,57 @@ h2 {
 }
 /*------------------ADAPTIV------------------------*/
 
-@media (max-width: 1400px) {
+@media (max-width: 1920px) {
     
-    .offer__title 
-    {
-        font-size: 60px;
+    .diagnoctics__notice-desktop {
+        display: flex;
+    }
+    .diagnoctics__notice-mobile {
+        display: none;
+    }
+
+    .team__person {
+        display: block;
+    }
+
+    .feedback__item {
+        display: block;
+    }
+
+    .geo__title-desktop {
+        display: flex;
+    }
+    .geo__title-mobile {
+        display: none;
+    }
+    .geo__map-iframe {
+        width: 731px;
+        height: 580px;
+    }
+
+}
+
+@media (min-width: 1600px)
+ {
+    .adantages__container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .diagnostics__container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+ }
+
+@media (max-width: 1400px) {
+   
+    .diagnoctics__notice-desktop {
+        display: flex;
+    }
+    
+    .diagnoctics__notice-mobile {
+        display: none;
     }
 
     .stars__numbers {
@@ -1325,23 +1377,103 @@ h2 {
         }
     }
 
-    .container__subtitle {
+    .call__subtitle {
         font-size: 18px;
     }
 
     .call__form {
-        
         input {
             width: 250px;
         }
-
-        button {
-            padding: 25px 60px;
-        }
+    }
+    .geo__title-desktop {
+        display: flex;
+    }
+    
+    .geo__title-mobile {
+        display: none;
     }
 }
 
 @media (max-width: 1024px) {
+
+    .team__nav {
+        //Вычитаем из ширины экрана 30*2 - отуступы контейнера, 375*2 - ширину карточек и делим на 3, так как между карточками 3 отступа
+        //margin: 0 auto;
+        margin-left: calc((100vw - 60px - 690px) / 3); 
+        margin-right: calc((100vw - 60px - 690px) / 3);
+    }
+
+    .team__workers {
+        justify-content: space-evenly;
+    }
+
+    .team__person {
+        min-width: 345px;
+        min-height: 622px;
+
+        &:nth-child(n+3) { /*все элементы кроме первых 2*/
+            display: none;
+        }
+    }
+
+    .team__container {
+        padding: 100px 30px;
+    }
+
+    .team__photo {
+        width: 345px;
+    }
+
+    .feedback__nav {
+        margin-left: calc((100vw - 60px - 720px)/2);
+        margin-right: calc((100vw - 60px - 720px)/2);
+    }
+
+    .feedback__container {
+        padding-top: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .feedback__cards {
+        justify-content: center;
+    }
+
+    .feedback__item{
+        width: 596px;
+        padding: 50px 62px;
+        &:not(:last-child) {
+            margin-right: 0px;
+        }
+    }
+
+    .questions__title {
+        max-width: 700px;
+        font-size: 45px;
+    }
+    .questions__subtitle {
+        max-width: 530px;
+    }
+    .questions__container {
+        flex-direction: column;
+    }
+    .questions__text {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .questions__list {   
+        margin-left: 20px;
+        margin-right: 30px;
+        margin-top: 50px;
+    }
+    
+
+    .feedback__item {
+        &:nth-child(n+2) {
+            display: none;
+        }
+    }
 
 /*---header------*/
     .logo {
@@ -1387,6 +1519,7 @@ h2 {
     }
 
     /*----offer----*/
+
 .offer__container {
     min-height: 980px;
 }
@@ -1423,45 +1556,41 @@ h2 {
 
 .offer__graphics {
 
-  //  width: 574px;
     height: 547px;
-
     left: 375px;
 }
 
 .offer__text .button {
     margin-top: 415px;
 }
+
 .offer__elipse {
     margin-left: 25px;
 }
+
 .offer__discount {
     
     height: 112px;
     top: 925px;
 
-    min-width: 780px - 60px;
-    //width: 100%;
-    //display: block;
+    min-width: calc(100vw - 60px);
     p {
         margin-left: 20px;
         max-width: 400px;
     }
-
-    button {
-//margin-left: 40px;
-    }
-    
   }
+
 .offer__arrow {
     margin-left: 10px;
 }
 /*----advantages----*/
+
 .adantages__container {
     flex-wrap: wrap;
     margin: 70px 30px;
 
     min-width: 700px;
+    justify-content: space-around;
 }
 
 .advantages__el {
@@ -1491,23 +1620,37 @@ h2 {
 .diagnostics {
     margin-top: 0px;
 }
+
 .diagnostics__container {
     flex-direction: column;
     padding-bottom: 48px;
 }
+
+.diagnoctics__notice-desktop {
+    display: none;
+}
+
+.diagnoctics__notice-mobile {
+    display: flex;
+}
+
 .diagnostics__text {
     text-align: center;
     margin: 0 auto;
 
     order: 1;
 
+    margin-bottom: 16px;
+
     p:first-child {
         padding-top: 100px;
     }
 }
+
 .diagnostics__nav {
     display: none;
 }
+
 .diagnostics__input {
     display: block;
     order: 3;
@@ -1524,11 +1667,13 @@ h2 {
     max-height: 600px;
     max-width: 400px;
 }
+
 .diagnoctics__square {
     bottom: 230px;
     right: 530px;
     width: 64px;
 }
+
 .diagnoctics__graphics {
     transform: rotate(90deg);
     max-width: 273px;
@@ -1536,11 +1681,13 @@ h2 {
     top: 125px;
     right:138px;
 }
+
 .diagnoctics__notice {
     order: 4;
     margin: 0 auto;
     margin-top: 28px;
 }
+
 .diagnostics__input {
 margin: 0 auto;
     select {
@@ -1562,37 +1709,13 @@ margin: 0 auto;
     text-align: center;
     }
 }
+
 .price__list {
     max-width: 720px;
     grid-template-columns: 390px 150px 178px;
     grid-template-rows: repeat(6, 74px);
 }
-.team__container {
-    padding: 100px 30px;
-}
-.team__person {
-    min-width: 345px;
-    min-height: 622px;
-}
-.team__photo {
-    width: 345px;
 
-}
-.feedback__container {
-    padding-top: 100px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-.feedback__cards {
-    justify-content: center;
-}
-.feedback__item{
-    width: 596px;
-    padding: 50px 62px;
-&:not(:last-child) {
-    margin-right: 0px;
-}
-}
 .stars__container {
     padding: 50px 30px;
 }
@@ -1618,21 +1741,8 @@ margin: 0 auto;
         font-size: 35px;
     }
 }
-.questions__container {
-    flex-direction: column;
-}
-.questions__text {
-    text-align: center;
-}
-.questions__title {
-    font-size: 45px;
-}
-.questions__list {
-        
-    margin-left: 20px;
-    margin-right: 30px;
-    margin-top: 50px;
-}
+
+
 .call {
     max-height: 500px;
     background-size: cover;
@@ -1650,7 +1760,7 @@ margin: 0 auto;
    // margin-top: 75px;
    
 }
-.container__subtitle {
+.call__subtitle {
     font-size: 20px;
 }
 .call__form {
@@ -1684,7 +1794,7 @@ margin: 0 auto;
 
 .geo__info {
     margin-top: 35px;
-    margin-left: 20px;
+    margin-left: calc((100vw - 720px) / 2);
     display: grid;
     //grid-template-columns: repeat(2,1fr);
     grid-template-columns: 390px 165px;
@@ -1697,6 +1807,19 @@ margin: 0 auto;
 .geo__map {
     margin: 0 auto;
 }
+.geo__map-iframe {
+    width: 720px;
+    height: 372px;
+}
+.geo__title-desktop {
+    display: none;
+}
+
+.geo__title-mobile {
+    display: block;
+    margin: 0 auto;
+}
+
 .navigation__nav {
 display: block;
     padding: 0;
@@ -1705,6 +1828,7 @@ display: block;
     justify-content: center;
     }
 }
+
 .pay {
     width: 100%;
     margin: 0;
@@ -1716,9 +1840,77 @@ display: block;
 .pay__text {
     margin-bottom: 15px;
 }
+
 .footer__container {
     padding: 35px 20px;
     justify-content: space-between;
 }
 
+}
+
+@media (width: 960px) {
+    .header__container nav {
+        margin-left: 200px;
+    }
+    .offer__background {
+        margin-left: 90px;
+    }
+    .offer__discount button {
+        margin-left: 190px;
+    }
+    .diagnoctics__washmachine {
+        left: 279px;
+    }
+    .diagnoctics__square {
+        right: 630px;
+    }
+}
+
+@media (max-width: 770px) {
+    
+    .team__workers {
+        justify-content: space-between;
+    }
+    .team__nav {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .stars__numbers {
+        font-size: 20px;
+    }
+
+    .header__container nav {
+        margin-right: 10px;
+    }
+    .select {
+        margin-left: 10px;
+    }
+    .logo {
+        margin-left: 10px;
+    }
+    .header__container .button {
+        margin-right: 10px;
+    }
+    
+    .offer__title {
+        font-size: 60px;
+    }
+    .offer__discount button{
+        margin-left: 40px;
+    }
+}
+@media (width: 1024px) {
+    .offer__discount button {
+        margin-left: 264px;
+    }
+    .header__container nav {
+        margin-left: 200px;
+    }
+    .offer__background {
+        margin-left: 110px;
+    }
+    .diagnoctics__square {
+        right: 700px;
+    }
 }

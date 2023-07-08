@@ -778,6 +778,8 @@ h2 {
   margin-left: 25px;
   -webkit-transition-duration: 1000ms;
           transition-duration: 1000ms;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
 }
 
 /*------------------------advantages------------------------*/
@@ -1139,9 +1141,8 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-top: 50px;
 }
 
@@ -1302,6 +1303,7 @@ h2 {
   font-weight: 700;
   letter-spacing: 0px;
   line-height: 100%;
+  max-width: 329px;
 }
 
 .questions__subtitle {
@@ -1310,6 +1312,7 @@ h2 {
   font-weight: 400;
   line-height: 150%;
   letter-spacing: -0.9px;
+  max-width: 301px;
 }
 .questions__subtitle span {
   display: inline-block;
@@ -1377,14 +1380,14 @@ h2 {
           align-items: center;
 }
 
-.container__title {
+.call__title {
   font-size: 40px;
   font-weight: 700;
   letter-spacing: -0.6px;
   line-height: normal;
 }
 
-.container__subtitle {
+.call__subtitle {
   margin-top: 10px;
   color: #171717;
   font-size: 20px;
@@ -1536,8 +1539,6 @@ h2 {
 /*------------------pay-------------------------*/
 .pay {
   background-color: #FAFAFA;
-  margin-left: 51px;
-  margin-right: 51px;
 }
 
 .pay__container {
@@ -1595,6 +1596,9 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .footer__container p {
   font-weight: 400;
@@ -1692,9 +1696,52 @@ h2 {
 }
 
 /*------------------ADAPTIV------------------------*/
+@media (max-width: 1920px) {
+  .diagnoctics__notice-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .diagnoctics__notice-mobile {
+    display: none;
+  }
+  .team__person {
+    display: block;
+  }
+  .feedback__item {
+    display: block;
+  }
+  .geo__title-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .geo__title-mobile {
+    display: none;
+  }
+  .geo__map-iframe {
+    width: 731px;
+    height: 580px;
+  }
+}
+@media (min-width: 1600px) {
+  .adantages__container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .diagnostics__container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media (max-width: 1400px) {
-  .offer__title {
-    font-size: 60px;
+  .diagnoctics__notice-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .diagnoctics__notice-mobile {
+    display: none;
   }
   .stars__numbers {
     font-size: 20px;
@@ -1702,17 +1749,90 @@ h2 {
   .stars__numbers strong {
     font-size: 30px;
   }
-  .container__subtitle {
+  .call__subtitle {
     font-size: 18px;
   }
   .call__form input {
     width: 250px;
   }
-  .call__form button {
-    padding: 25px 60px;
+  .geo__title-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .geo__title-mobile {
+    display: none;
   }
 }
 @media (max-width: 1024px) {
+  .team__nav {
+    margin-left: calc((100vw - 60px - 690px) / 3);
+    margin-right: calc((100vw - 60px - 690px) / 3);
+  }
+  .team__workers {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .team__person {
+    min-width: 345px;
+    min-height: 622px;
+  }
+  .team__person:nth-child(n+3) { /*все элементы кроме первых 2*/
+    display: none;
+  }
+  .team__container {
+    padding: 100px 30px;
+  }
+  .team__photo {
+    width: 345px;
+  }
+  .feedback__nav {
+    margin-left: calc((100vw - 60px - 720px) / 2);
+    margin-right: calc((100vw - 60px - 720px) / 2);
+  }
+  .feedback__container {
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .feedback__cards {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .feedback__item {
+    width: 596px;
+    padding: 50px 62px;
+  }
+  .feedback__item:not(:last-child) {
+    margin-right: 0px;
+  }
+  .questions__title {
+    max-width: 700px;
+    font-size: 45px;
+  }
+  .questions__subtitle {
+    max-width: 530px;
+  }
+  .questions__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .questions__text {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .questions__list {
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 50px;
+  }
+  .feedback__item:nth-child(n+2) {
+    display: none;
+  }
   /*---header------*/
   .logo {
     -webkit-box-ordinal-group: 5;
@@ -1804,7 +1924,7 @@ h2 {
   .offer__discount {
     height: 112px;
     top: 925px;
-    min-width: 720px;
+    min-width: calc(100vw - 60px);
   }
   .offer__discount p {
     margin-left: 20px;
@@ -1819,6 +1939,8 @@ h2 {
         flex-wrap: wrap;
     margin: 70px 30px;
     min-width: 700px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .advantages__el {
     display: -webkit-box;
@@ -1850,12 +1972,21 @@ h2 {
             flex-direction: column;
     padding-bottom: 48px;
   }
+  .diagnoctics__notice-desktop {
+    display: none;
+  }
+  .diagnoctics__notice-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .diagnostics__text {
     text-align: center;
     margin: 0 auto;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    margin-bottom: 16px;
   }
   .diagnostics__text p:first-child {
     padding-top: 100px;
@@ -1996,33 +2127,6 @@ h2 {
     -ms-grid-row: 6;
     -ms-grid-column: 3;
   }
-  .team__container {
-    padding: 100px 30px;
-  }
-  .team__person {
-    min-width: 345px;
-    min-height: 622px;
-  }
-  .team__photo {
-    width: 345px;
-  }
-  .feedback__container {
-    padding-top: 100px;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .feedback__cards {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .feedback__item {
-    width: 596px;
-    padding: 50px 62px;
-  }
-  .feedback__item:not(:last-child) {
-    margin-right: 0px;
-  }
   .stars__container {
     padding: 50px 30px;
   }
@@ -2050,23 +2154,6 @@ h2 {
   .stars__numbers strong {
     font-size: 35px;
   }
-  .questions__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .questions__text {
-    text-align: center;
-  }
-  .questions__title {
-    font-size: 45px;
-  }
-  .questions__list {
-    margin-left: 20px;
-    margin-right: 30px;
-    margin-top: 50px;
-  }
   .call {
     max-height: 500px;
     background-size: cover;
@@ -2086,7 +2173,7 @@ h2 {
   .call__text {
     text-align: center;
   }
-  .container__subtitle {
+  .call__subtitle {
     font-size: 20px;
   }
   .call__form {
@@ -2120,7 +2207,7 @@ h2 {
   }
   .geo__info {
     margin-top: 35px;
-    margin-left: 20px;
+    margin-left: calc((100vw - 720px) / 2);
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 390px 165px;
@@ -2146,6 +2233,17 @@ h2 {
     -ms-grid-column: 2;
   }
   .geo__map {
+    margin: 0 auto;
+  }
+  .geo__map-iframe {
+    width: 720px;
+    height: 372px;
+  }
+  .geo__title-desktop {
+    display: none;
+  }
+  .geo__title-mobile {
+    display: block;
     margin: 0 auto;
   }
   .navigation__nav {
@@ -2176,5 +2274,68 @@ h2 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+}
+@media (width: 960px) {
+  .header__container nav {
+    margin-left: 200px;
+  }
+  .offer__background {
+    margin-left: 90px;
+  }
+  .offer__discount button {
+    margin-left: 190px;
+  }
+  .diagnoctics__washmachine {
+    left: 279px;
+  }
+  .diagnoctics__square {
+    right: 630px;
+  }
+}
+@media (max-width: 770px) {
+  .team__workers {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .team__nav {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .stars__numbers {
+    font-size: 20px;
+  }
+  .header__container nav {
+    margin-right: 10px;
+  }
+  .select {
+    margin-left: 10px;
+  }
+  .logo {
+    margin-left: 10px;
+  }
+  .header__container .button {
+    margin-right: 10px;
+  }
+  .offer__title {
+    font-size: 60px;
+  }
+  .offer__discount button {
+    margin-left: 40px;
+  }
+}
+@media (width: 1024px) {
+  .offer__discount button {
+    margin-left: 264px;
+  }
+  .header__container nav {
+    margin-left: 200px;
+  }
+  .offer__background {
+    margin-left: 110px;
+  }
+  .diagnoctics__square {
+    right: 700px;
   }
 }
