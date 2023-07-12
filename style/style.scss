@@ -211,6 +211,9 @@ h2 {
     display: none;
 }
 
+.header__burger {
+    display: none;
+}
 .logo {
     transform: translate(0,-1px);
     -webkit-transform: translate(0,-4px);
@@ -1913,4 +1916,391 @@ display: block;
     .diagnoctics__square {
         right: 700px;
     }
+}
+
+@media (max-width: 505px) {
+    
+    h2, h3 {
+        font-size: 30px;
+    }
+    .header__container {
+        justify-content: space-between;
+    }
+    .header__container nav {
+        display: none;
+    }
+
+    .header__burger {
+        display: block;
+        
+        order: 2;
+        margin-right: 10px;
+        margin-left: 220px;
+
+    }
+
+    .header__burger-line {
+        background-color: #fff;
+        
+        height: 1.5px;
+        width: 20px;
+        &:not(:last-child) {
+            margin-bottom: 3px;
+        }
+    }
+
+    .header__container .button {
+        padding: 12px 30px;
+        margin-left: 20px;
+    }
+
+    .offer__container {
+        min-height: 700px;
+    }
+
+    .offer__text {
+        left: 15px;
+        right: 0;
+        text-align: left;
+    }
+    .offer__title {
+        font-size: 38px;
+    }
+
+    .offer__subtitile {
+        font-size: 18px;
+
+        br {
+            display: none;
+        }
+    }
+
+    .offer__wash {
+        width: 215px;
+        height: 292.523px;
+    }
+
+    .offer__graphics {
+        width: 181.994px;
+        height: 272.989px;
+
+        left: 217px;
+    }
+
+    .offer__repairman {
+        width: 349px;
+        height: 335px;
+
+        left: 130px;
+    }
+
+    .offer__background {
+        min-height: 350px;
+        top: 250px;
+    }
+
+    .offer__text .button {
+        margin-top: 250px;
+    }
+
+    .offer__discount {
+        top: 660px;
+
+        height: 142px;
+        padding: 0 10px;
+        flex-wrap: wrap;
+
+        font-size: 16px;
+
+        p {
+            text-align: center;
+            max-width: 301px;
+        }
+    }
+
+    .offer__discount-btn {
+        margin: 0 auto;
+    }
+    .offer__elipse {
+        margin-left: 15px;
+    }
+
+    .adantages__container {
+        
+        flex-direction: column;
+        align-items: center;
+
+        min-width: calc(100vw - 60px);
+        padding: 0;
+    }
+
+    .advantages__el:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .diagnostics__title {
+        font-size: 30px;
+        margin-top: 5px;
+    }
+
+    .diagnoctics__washmachine {
+        
+        max-width: 296px;
+        $mw: max-width;
+        max-height: 458px;
+
+        left: calc((100vw - 296px)/2);
+    }
+
+    .diagnoctics__graphics {
+        right: 0;
+    }
+
+    .diagnostics__input select {
+        width: calc(100vw - 60px);
+    }
+
+    .price__container {
+        padding-top: 75px;
+    }
+
+    .price__list-desktop {
+        display: none;
+    }
+
+    .price__list {
+       // grid-template-columns: repeat(2, 2fr);
+       grid-template-columns: 2fr 1fr;
+       //grid-auto-rows: 1fr;
+
+    }
+    .price__item {
+        font-size: 16px;
+        //font-weight: 400;
+        text-align: left;
+        //padding: 0 20px;
+        &:nth-child(2n) {
+            text-align: right;
+        }
+    }
+
+    .price__show {
+        margin-top: 0;
+    }
+
+    .team__container  {
+        margin-top: 75px;
+        padding-top: 75px;
+    }
+
+    .team__workers {
+        justify-content: center;
+
+    }
+    
+    .team__person {
+        &:nth-child(n+2) { /*все элементы кроме первого*/
+            display: none;
+        }
+    }
+    .feedback__container {
+        padding-top: 75px;
+    }
+    .feedback__title {
+        font-size: 30px;
+    }
+
+    .feedback__cards {
+        margin-top: 35px;
+    }
+
+    .feedback__item {
+        width: 360px;
+        height: 360px;
+
+        padding: 30px;
+    }
+
+    .feedback__description {
+        margin-top: 30px;
+    }
+
+    .feedback__person img {
+        width: 54px;
+        height: 54px;
+    }
+    .name {
+        font-size: 18px;
+    }
+
+    .status {
+        font-size: 16px;
+    }
+
+    .feedback__nav {
+        margin-left: calc((100vw - 60px - 360px) / 2);
+        margin-right: calc((100vw - 60px - 360px) / 2);
+    }
+
+    .stars__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stars__item {
+        margin-right: 0;
+        padding: 20px;
+        
+        width: auto;
+
+        justify-content: space-between;
+
+        max-height: 105px - 20px - 20px;
+        width: 360px - 20px - 20px;
+    }
+
+    .stars__item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    .stars__border {
+        width: 1px;
+        height: 65px;
+
+        margin-left: 15px;
+    }
+
+    .questions__title {
+        font-size: 30px;
+    }
+
+    .questions__subtitle {
+        text-align: left;
+        max-width: 340px;
+    }
+
+    .questions__item {
+        min-width: 360px - 35px - 30px;
+    }
+
+    .questions__question {
+        font-size: 18px;
+    }
+
+    .questions__list {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 35px;
+    }
+
+   // .container {
+   //     padding-top: 75px;
+   ////     padding-bottom: 75px;
+   // }
+    .call_container {
+        padding: 75px 30px;
+    }
+    .call__title {
+        font-size: 30px;
+    }
+
+    .call__subtitle {
+        font-size: 16px;
+    }
+
+    .call__form {
+        width: 300px;
+
+        input {
+            width: 300px - 30px;
+        }
+
+        button {
+            width: 300px;
+            padding: 25px 0;
+        }
+    }
+
+    .geo__container {
+        
+        h3 {
+            font-size: 30px;
+        }
+    }
+
+    .geo__map-iframe {
+        width: 360px;
+        height: 231px;
+    }
+
+    .geo__info {
+        display: flex;
+        flex-direction: column;
+
+        margin-left: calc((100vw - 360px) / 2);
+
+        .button {
+            width: 162px;
+        }
+    }
+
+    .navigation__container {
+        padding-bottom: 75px - 15px;
+    }
+
+    .navigation__nav ul{
+        flex-wrap: wrap;
+
+        li {
+            margin-bottom: 15px;
+        }
+    }
+    .pay__container {
+        padding-top: 35px;
+        padding-bottom: 35px - 15px;
+
+        margin-top: 0;
+    }
+    .pay__cards {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .pay__item {
+        margin-bottom: 15px;
+    }
+
+    .pay__text {
+        margin-right: 0;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+
+        p {
+            &:first-child {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .header__burger {
+        display: block;
+        
+        order: 2;
+        margin-right: 10px;
+        margin-left: 100px;
+
+    }
+    .header__container .button {
+        padding: 10px 28px;
+        margin-left: 20px;
+        font-size: 12px;
+    }
+
 }
