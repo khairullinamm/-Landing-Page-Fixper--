@@ -2038,9 +2038,26 @@ display: block;
         margin-bottom: 30px;
     }
 
+    .advantages__el {
+        
+        img {
+        margin-bottom: 0;
+        margin-right: 0;
+        }
+
+        p {
+            position: absolute;
+            left: 140px;
+        }
+    }
+
     .diagnostics__title {
         font-size: 30px;
         margin-top: 5px;
+    }
+
+    .diagnostics__background {
+        min-height: 520px;
     }
 
     .diagnoctics__washmachine {
@@ -2054,6 +2071,7 @@ display: block;
 
     .diagnoctics__graphics {
         right: 0;
+        top: 80px;
     }
 
     .diagnostics__input select {
@@ -2170,6 +2188,13 @@ display: block;
 
         margin-left: 15px;
     }
+    .questions {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .questions__text {
+        text-align: left;
+    }
 
     .questions__title {
         font-size: 30px;
@@ -2194,10 +2219,6 @@ display: block;
         margin-top: 35px;
     }
 
-   // .container {
-   //     padding-top: 75px;
-   ////     padding-bottom: 75px;
-   // }
     .call_container {
         padding: 75px 30px;
     }
@@ -2259,6 +2280,7 @@ display: block;
     .pay__container {
         padding-top: 35px;
         padding-bottom: 35px - 15px;
+        padding-left: 10px;
 
         margin-top: 0;
     }
@@ -2270,6 +2292,14 @@ display: block;
 
     .pay__item {
         margin-bottom: 15px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0px;
+        }
     }
 
     .pay__text {
@@ -2288,7 +2318,55 @@ display: block;
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
+
+    .offer__text {
+        text-align: center;
+        left: 0px;
+    }
+
+    .offer__title {
+        font-size: 32px;
+    }
+
+    .offer__subtitile {
+        font-size: 16px;
+    }
+
+    .offer__background {
+        top: 230px;
+    }
+
+    .offer__repairman {
+        left: 110px;
+    }
+
+    .offer__discount {
+        top: 640px;
+    }
+
+    .offer__elipse {
+        display: none;
+    }
+    
+    .offer__discount p {
+        font-size: 14px;
+    }
+
+    .offer__close-discount {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .offer__discount-btn {
+        font-size: 14px;
+    }
+
+    .advantages__el {
+        font-size: 18px;
+    }
+
     .header__burger {
         display: block;
         
@@ -2302,5 +2380,180 @@ display: block;
         margin-left: 20px;
         font-size: 12px;
     }
+
+    .team__person {
+        min-width: 300px;
+        min-height: 600px;
+    }
+
+    .team__photo {
+        width: 300px;
+    }
+
+    .default__nav {
+        margin-left: calc((100vw - 40px - 300px) / 3);
+        margin-right: calc((100vw - 40px - 300px) / 3);
+    }
+
+    .feedback__description {
+        font-size: 16px;
+        margin-top: 16px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .status {
+        font-size: 14px;
+    }
+
+    .active {
+        margin-right: 5px;
+    }
+
+    .nav__page {
+        width: 6px;
+        height: 6px;
+    }
+
+    .nav__page:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .active .nav__page {
+        margin: 4px;
+    }
+
+    .nav__farther {
+        font-size: 14px;
+    }
+
+    .nav__left {
+        margin-right: 50px;
+    }
+
+    .stars__item {
+        width: 250px
+    }
+
+    .stars__numbers strong {
+        font-size: 25px;
+    }
+
+    .stars__count {
+        font-size: 14px;
+    }
+
+    .stars__border {
+        margin-left: 10px;
+        margin-right: 10px; 
+    }
+
+    .questions__subtitle {
+        font-size: 16px;
+    }
+
+    .questions__item {
+        min-width: 200px;
+
+        padding: 12px;
+    }
+
+    .questions__question {
+        font-size: 16px;
+    }
+
+    .call_container {
+        padding: 60px 10px;
+    }
+
+    .call__form {
+
+    width: 230px;
+    
+        input {
+            width: 200px;
+        }
+
+        button {
+            width: 230px;
+        }
+    }
+
+    .geo__map-iframe {
+        width: 290px;
+        height: 211px;
+    }
+
+    .geo__info {
+        margin-left: calc((100vw - 290px) / 2);
+    }
+
+    .geo__street {
+        font-size: 16px;
+    }
+
+    .navigation__item {
+    
+        &:not(:nth-child(3n)) {
+            margin-right: 10px;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+}
+
+    
+    
+}
+
+@media (max-width: 320px) {
+    .advantages__el {
+        
+        p {
+            position: absolute;
+            left: 130px;
+            font-size: 16px;
+        }
+
+        img {
+            max-width: 70px;
+        }
+
+        &:nth-child(3) {
+            
+            img {
+                max-width: 60px;
+            
+            }
+        }
+    }
+
+    
+    .team__person {
+        min-width: 260px;
+        min-height: 530px;
+
+        img {
+            max-width: 260px;
+        }
+    }
+
+    .default__nav {
+        margin-left: calc((100vw - 40px - 260px) / 3);
+        margin-right: calc((100vw - 40px - 260px) / 3);
+    }
+
+    .feedback__description {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .nav__left {
+        margin-right: 40px;
+    }
+
 
 }
