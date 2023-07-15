@@ -338,22 +338,22 @@ a {
 @font-face {
   font-family: "Normal TT";
   font-weight: 500;
-  src: url("/font/TTNorms-Medium.woff");
+  src: url("./font/TTNorms-Medium.woff");
 }
 @font-face {
   font-family: "Normal TT";
   font-weight: 800;
-  src: url("/font/TTNorms-ExtraBold.woff");
+  src: url("./font/TTNorms-ExtraBold.woff");
 }
 @font-face {
   font-family: "Normal TT";
   font-weight: 700;
-  src: url("/font/TTNorms-Bold.woff");
+  src: url("./font/TTNorms-Bold.woff");
 }
 @font-face {
   font-family: "Normal TT";
   font-weight: 400;
-  src: url("/font/TTNorms-Regular.woff");
+  src: url("./font/TTNorms-Regular.woff");
 }
 body {
   font-family: "Normal TT";
