@@ -34,7 +34,7 @@ document.addEventListener("click", function (e) {
 //Изменить цвет крестика при нажатии в discount
 
 
-/*------------------------------ALERT-------------------------------*/
+/*------------------------------ALERT-CALL-------------------------------*/
 const ButtonCall = document.querySelectorAll('.button-call');
 const ButtonDiscount = document.querySelectorAll('.button__discount');
 const Alert = document.querySelectorAll('.alert');
@@ -76,13 +76,83 @@ crossDiscount.forEach(item => { item.addEventListener("click", () => {
 });
 });
 
-const screenWidth = window.screen.width;
-const screenHeight = window.screen.height;
-//const geoMap = document.querySelector('.geo__map').getElementsByTagName('iframe');
-///console.log(geoMap);
+//const screenWidth = window.screen.width;
+//const screenHeight = window.screen.height;
 
-if (screenWidth <= 1024) {
+/*---------Нажатие на ДАЛЕЕ и изменение активного индикатора ---------*/
+const defaultNavNextBtn = document.querySelectorAll('.nav__right');
+const defaultNavIndicatorFeedback = document.querySelector('.nav__indicator.feedback');
+const defaultNavIndicatorTeam = document.querySelector('.nav__indicator.team');
 
-   // geoMap[0].setAttribute("width", "720px");
-   // geoMap[0].setAttribute("height", "372px");
-}
+defaultNavNextBtn.forEach(item => { item.addEventListener("click", () => {
+   if (item.classList.contains('feedback'))
+   {
+    for (let i = 0; i < defaultNavIndicatorFeedback.children.length; i++) //проходимся по всем кружочкам и ищем эктив
+    {
+        if (defaultNavIndicatorFeedback.children[i].className === 'active') 
+            {
+                    const active = defaultNavIndicatorFeedback.children[i];
+                    const deepCopy = active.cloneNode(true);
+
+                    if (i!==3) /*если это не последний кружок*/
+                    {
+                        active.after(deepCopy); //добавляем active после текущего active
+                        active.remove(); //удаляем старый active
+
+                        const activenew = defaultNavIndicatorFeedback.querySelector('.active'); //находим новый active
+
+                        const navPage = document.createElement('div');
+                        navPage.classList.add('nav__page');
+
+                        activenew.before(navPage); //добавляем перед ним (взамен прошлого active) обычный кружок
+
+                        const navPagesAll = defaultNavIndicatorFeedback.querySelectorAll('.nav__page');
+                        navPagesAll[navPagesAll.length - 1].remove(); //удаляем кружок в конце
+                    }
+                    else //если мы на концеы
+                    {
+                        defaultNavIndicatorFeedback.prepend(deepCopy); //добавляем active в самое начало
+                        active.remove(); //удаляем старый из конца
+                    }
+                    break;
+            }   
+    }
+
+   }
+
+   else if (item.classList.contains('team'))
+   {
+
+    for (let i = 0; i < defaultNavIndicatorTeam.children.length; i++)
+    {
+        if (defaultNavIndicatorTeam.children[i].className === 'active') 
+            {
+                    const active = defaultNavIndicatorTeam.children[i];
+                    const deepCopy = active.cloneNode(true);
+
+                    if (i!==3) /*если это не последний кружок*/
+                    {
+                        active.after(deepCopy); //добавляем active после текущего active
+                        active.remove(); //удаляем старый active
+
+                        const activenew = defaultNavIndicatorTeam.querySelector('.active'); //находим новый active
+
+                        const navPage = document.createElement('div');
+                        navPage.classList.add('nav__page');
+
+                        activenew.before(navPage); //добавляем перед ним (взамен прошлого active) обычный кружок
+
+                        const navPagesAll = defaultNavIndicatorTeam.querySelectorAll('.nav__page');
+                        navPagesAll[navPagesAll.length - 1].remove(); //удаляем кружок в конце
+                    }
+                    else //если мы на концеы
+                    {
+                        defaultNavIndicatorTeam.prepend(deepCopy); //добавляем active в самое начало
+                        active.remove(); //удаляем старый из конца
+                    }
+                    break;
+            }   
+    }
+
+   }
+}); });
