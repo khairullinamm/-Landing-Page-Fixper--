@@ -96,7 +96,7 @@ teamPersonWidth = Number(teamPersonWidth);
 if (screenWidth > 505 || screenWidth < 361)
     teamPersonWidth+=30;
 else
-    teamPersonWidth+=60;
+    teamPersonWidth+=50;
 
 console.log(screenWidth);
 console.log(teamPersonWidth);
