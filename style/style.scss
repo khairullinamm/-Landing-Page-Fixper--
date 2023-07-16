@@ -662,6 +662,10 @@ h2 {
     align-items: center;
 }
 
+.price__list-mobile {
+    display: none;
+}
+
 .price__item {
     border-bottom: 1px solid #ECECEC;
     text-align: right;
@@ -750,6 +754,8 @@ h2 {
     margin-top: 100px;
 
     text-align: center;
+
+    overflow: hidden;
 }
 
 .team__subtitle {
@@ -763,9 +769,11 @@ h2 {
 
 .team__workers {
     display: flex;
-    justify-content: space-around;
+    //justify-content: space-around;
 
     margin-top: 50px;
+
+   transition-duration:  2s;
 }
 
 .team__person {
@@ -778,9 +786,17 @@ h2 {
 
     text-align: left;
 
+    margin-right: 30px;
+
+    
+
     img {
         border-radius: 15px 15px 0px 0px;
         }
+    
+  //  &:nth-child(n+4) {
+   //     display: none;
+   // }
 }
 
 .team__description {
@@ -1399,7 +1415,7 @@ h2 {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
 
     .team__nav {
         //Вычитаем из ширины экрана 30*2 - отуступы контейнера, 375*2 - ширину карточек и делим на 3, так как между карточками 3 отступа
@@ -1409,24 +1425,28 @@ h2 {
     }
 
     .team__workers {
-        justify-content: space-evenly;
+        //justify-content: space-evenly;
+        width: 800px; //370px*2px+60px;
+        margin-left: 30px;
+       
     }
 
     .team__person {
-        min-width: 345px;
+        //min-width: 345px;
         min-height: 622px;
 
-        &:nth-child(n+3) { /*все элементы кроме первых 2*/
-            display: none;
-        }
+      //  &:nth-child(n+3) { /*все элементы кроме первых 2*/
+     //       display: none;
+      //  }
     }
 
     .team__container {
-        padding: 100px 30px;
+        max-width: 800px;
+        padding: 100px 0px;
     }
 
     .team__photo {
-        width: 345px;
+       // width: 345px;
     }
 
     .feedback__nav {
@@ -1870,11 +1890,25 @@ display: block;
     }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 780px) {
     
-    .team__workers {
-        justify-content: space-between;
+    .team__container {
+        max-width: 100vw;
+        padding: 100px 30px;
     }
+    .team__workers {
+        //justify-content: space-between;
+        margin-left: 0;
+    }
+
+    .team__person {
+        min-width: 345px;
+    }
+
+    .team__photo {
+        width: 345px;
+    }
+
     .team__nav {
         margin-left: 0;
         margin-right: 0;
@@ -1904,6 +1938,7 @@ display: block;
         margin-left: 40px;
     }
 }
+
 @media (width: 1024px) {
     .offer__discount button {
         margin-left: 264px;
@@ -1919,8 +1954,44 @@ display: block;
     }
 }
 
+@media (max-width: 765px) {
+    
+    .team__workers {
+        width: auto;
+        
+    }
+    .team__person {
+        min-width: 335px;
+    }
+
+    .team__photo {
+        width: 335px;
+    }
+
+}
+
+@media (max-width: 751px) {
+    .team__container {
+        padding: 100px 30px 100px 25px;
+    }
+}
+
+@media (max-width: 648px) {
+    .team__person {
+        min-width: 285px;
+    }
+
+    .team__photo {
+        width: 285px;
+    }
+}
+
+
 @media (max-width: 505px) {
     
+    .price__list-mobile {
+        display: grid;
+    }
     h2, h3 {
         font-size: 30px;
     }
@@ -2109,19 +2180,23 @@ display: block;
 
     .team__container  {
         margin-top: 75px;
-        padding-top: 75px;
+        
+        padding: 75px 30px;
     }
 
     .team__workers {
-        justify-content: center;
+        //margin-left: 20px;
+    }
 
-    }
-    
     .team__person {
-        &:nth-child(n+2) { /*все элементы кроме первого*/
-            display: none;
-        }
+        min-width: 370px;
+        margin-left: 30px;
     }
+
+    .team__photo {
+        width: 370px;
+    }
+
     .feedback__container {
         padding-top: 75px;
     }
@@ -2385,6 +2460,8 @@ display: block;
     .team__person {
         min-width: 300px;
         min-height: 600px;
+
+        margin-left: 0;
     }
 
     .team__photo {
