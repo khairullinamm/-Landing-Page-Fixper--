@@ -2189,12 +2189,12 @@ display: block;
     }
 
     .team__person {
-        min-width: 370px;
-        margin-left: 20px;
+        min-width: 345px;
+        //margin-left: 10px;
     }
 
     .team__photo {
-        width: 370px;
+        width: 345px;
     }
 
     .feedback__container {
@@ -2394,7 +2394,7 @@ display: block;
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 376px) {
 
     .offer__text {
         text-align: center;
@@ -2457,20 +2457,29 @@ display: block;
         font-size: 12px;
     }
 
+    .team__container {
+        padding: 75px 20px;
+    }
+
     .team__person {
-        min-width: 300px;
+        min-width: 335px;
         min-height: 600px;
 
-        margin-left: 0;
+        margin-left: 0px;
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+        
     }
 
     .team__photo {
-        width: 300px;
+        width: 335px;
     }
 
     .default__nav {
-        margin-left: calc((100vw - 40px - 300px) / 3);
-        margin-right: calc((100vw - 40px - 300px) / 3);
+        margin-left: calc((100vw - 40px - 335px) / 3);
+        margin-right: calc((100vw - 40px - 335px) / 3);
     }
 
     .feedback__description {
