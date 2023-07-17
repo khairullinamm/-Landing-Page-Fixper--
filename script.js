@@ -44,6 +44,7 @@ Alert.forEach(item => item.classList.add("select-hide"));
 
 /*При нажатии на кнопку звонка или скидки вылезает окно*/
 ButtonCall.forEach(item => { item.addEventListener("click", () => {
+    console.log('sheeesh')
     Alert.forEach(item => item.classList.remove("select-hide"));
 }); });
 

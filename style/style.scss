@@ -1256,15 +1256,31 @@ h2 {
 
 /*-------ALERT-CALL----------*/
 .alert {
-    position: absolute;
-    top: 20%;
-    bottom: 50%;
+
+    position: fixed;
+    top: 50%;
+    //bottom: 50%;
+
+    //min-height: 510px;
+
+    z-index: 11;
+    max-width: 490px;
+    border-radius: 15px;
+    //left: 10vw;
+    //right: 10vw;
+
+   // top: 50%;
     left: 50%;
-    right: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
 
     opacity: 0;
     animation: ani 0.5s forwards;
+
+    box-shadow: 5px 5px 8px 1px rgba(34, 60, 80, 0.24);
   
+    border:1px solid #fff;
+
   @keyframes ani {
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -1276,11 +1292,8 @@ h2 {
 
     position: relative;
 
-    width: 490px;
-    height: 490px;
-
     background-color: #fff;
-    border-radius: 15px;
+    //border-radius: 15px;
 
     padding: 10px;
 
@@ -1298,12 +1311,11 @@ h2 {
     font-size: 36px;
     font-weight: 700;
     margin-top: 30px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .alert__form {
-    margin-top: 20px;
-    margin-left: 30px;
+    margin: 20px;
 
     font-size: 24px;
 
@@ -1315,7 +1327,8 @@ h2 {
         padding: 20px;
         color: #515151;
         
-        min-width: 385px;
+        min-width: 350px;
+
         font-weight: 500;
         border-radius: 3px;
         border: 1px solid #b7b7b7;
@@ -1949,6 +1962,10 @@ display: block;
     .offer__discount button{
         margin-left: 40px;
     }
+
+    .alert {
+        //top: 25%;
+    }
 }
 
 @media (width: 1024px) {
@@ -1996,6 +2013,21 @@ display: block;
     .team__photo {
         width: 285px;
     }
+
+    .alert__title {
+        font-size: 32px;
+    }
+
+    .alert__form {
+        font-size: 18px;
+
+        input {
+            &:first-of-type {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    
 }
 @media (max-width: 601px) 
 {
@@ -2425,6 +2457,16 @@ display: block;
             }
         }
     }
+
+    .alert {
+        max-width: 400px
+    }
+
+    .alert__form {
+        input {
+             min-width: 300px;
+        }
+    }
 }
 @media (max-width: 435px) { 
     .team__person {
@@ -2473,6 +2515,20 @@ display: block;
 
     .team__photo {
         width: 335px;
+    }
+
+    .alert {
+        max-width: 300px
+    }
+
+    .alert__form {
+        input {
+             min-width: 200px;
+        }
+    }
+
+    .alert__title {
+        font-size: 28px;
     }
 }
 
