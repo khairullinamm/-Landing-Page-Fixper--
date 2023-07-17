@@ -2410,16 +2410,34 @@ display: block;
         min-width: 370px;
         min-height: 600px;
 
-        margin-left: 10px;
+        margin-left: 0px;
 
         &:not(:first-child) {
-        //    margin-left: 15px;
+            margin-left: 10px;
         }
         
     }
 
     .team__photo {
         width: 370px;
+    }
+}
+
+@media (max-width: 391px) {
+    .team__person {
+        min-width: 335px;
+        min-height: 600px;
+
+        margin-left: 0px;
+
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+        
+    }
+
+    .team__photo {
+        width: 335px;
     }
 }
 
@@ -2621,8 +2639,6 @@ display: block;
         }
 }
 
-    
-    
 }
 
 @media (max-width: 320px) {
