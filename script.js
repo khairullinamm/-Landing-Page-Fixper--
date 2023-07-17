@@ -1,5 +1,24 @@
 
 
+/*---кнопки навигации в header и nav секциях----*/
+const navigationBtn = document.querySelectorAll('.document__nav');
+navigationBtn.forEach(item => { item.addEventListener("click", () => {
+    console.log(item.classList[1]);
+    const section = document.querySelector(`.${item.classList[1].split('__section')[0]}`);
+    
+    console.log(section);
+    section.scrollIntoView({
+        //start,center,end,nearest - по умолчанию start
+        block: "center", //вертикальное позиционирование
+    
+        //start,center,end,nearest - по умолчанию nearest
+        inline: "center", //горизонтальное позиционирование
+    
+      //auto,smooth - по умолчанию auto
+        behavior: "smooth"
+    });
+  }); });
+
 /*----CUSTOM SELECT---*/
 const selectHeader = document.querySelectorAll('.select__header');
 const selectItem = document.querySelectorAll('.select__item');
@@ -43,9 +62,14 @@ const Alert = document.querySelectorAll('.alert');
 Alert.forEach(item => item.classList.add("select-hide"));
 
 /*При нажатии на кнопку звонка или скидки вылезает окно*/
-ButtonCall.forEach(item => { item.addEventListener("click", () => {
-    console.log('sheeesh')
+ButtonCall.forEach(item => { item.addEventListener("click", (e) => {
+  //  console.log('sheeesh');
+    e.preventDefault();
+    //const windowScrollTop = window.scrollY;
+    //window.scrollTo(0,0);
+   // console.log(windowScrollTop);
     Alert.forEach(item => item.classList.remove("select-hide"));
+
 }); });
 
 ButtonDiscount.forEach(item => { item.addEventListener("click", () => {

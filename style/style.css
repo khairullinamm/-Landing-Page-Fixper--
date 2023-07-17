@@ -738,6 +738,9 @@ h2 {
   margin-right: -50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 5px;
   background-color: #000;
   display: -webkit-box;
@@ -798,15 +801,13 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-left: 125px;
-  margin-right: 188px;
   margin-top: 112px;
+  padding-bottom: 87px;
 }
 
 .advantages__el {
@@ -946,6 +947,7 @@ h2 {
 .price__container {
   padding-top: 100px;
   text-align: center;
+  padding-bottom: 170px;
 }
 
 .price__list {
@@ -1515,6 +1517,7 @@ h2 {
 /*---------------navigation---------------------------*/
 .navigation__container {
   padding-top: 97px;
+  padding-bottom: 49px;
   text-align: center;
 }
 
@@ -1716,7 +1719,7 @@ h2 {
 }
 
 /*------------------ADAPTIV------------------------*/
-@media (max-width: 1920px) {
+@media (max-width: 2048px) {
   .diagnoctics__notice-desktop {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1784,7 +1787,7 @@ h2 {
     display: none;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .team__nav {
     margin-left: calc((100vw - 60px - 690px) / 3);
     margin-right: calc((100vw - 60px - 690px) / 3);
@@ -1846,55 +1849,6 @@ h2 {
   .feedback__item:nth-child(n+2) {
     display: none;
   }
-  /*---header------*/
-  .logo {
-    -webkit-box-ordinal-group: 5;
-        -ms-flex-order: 4;
-            order: 4;
-    margin-left: 20px;
-    margin-top: 30px;
-  }
-  .header__border {
-    display: block;
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
-    height: 1px;
-    background-color: #994786;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-  .header__container {
-    min-height: 136px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .header__container nav {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    margin-right: 20px;
-    margin-top: 3px;
-  }
-  .header__container .button {
-    -webkit-box-ordinal-group: 6;
-        -ms-flex-order: 5;
-            order: 5;
-    margin-right: 20px;
-    margin-top: 20px;
-  }
-  .select {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    margin-left: 20px;
-  }
   /*----offer----*/
   .offer__container {
     min-height: 980px;
@@ -1902,6 +1856,7 @@ h2 {
   .offer__background {
     min-height: 880px;
     min-width: 780px;
+    margin: 0 auto;
   }
   .offer__text {
     left: 58px;
@@ -1948,34 +1903,39 @@ h2 {
   .offer__arrow {
     margin-left: 10px;
   }
-  /*----advantages----*/
+  /*----advantages----
+
   .adantages__container {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    margin: 70px 30px;
-    min-width: 700px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 70px 30px;
+
+      min-width: 700px;
+      justify-content: space-around;
   }
+
   .advantages__el {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    min-width: 320px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+
+      display: flex;
+      min-width: 320px;
+      align-items: center;
+
+
+      &:nth-child(-n+2) {
+          margin-bottom: 30px; 
+      }
+
+      &:first-child {
+         // margin-right: 60px;
+      }
+      p {
+          min-width: 210px;
+      }
+      img {
+          margin-right: 25px;
+          max-width: 90px;
+      }
   }
-  .advantages__el:nth-child(-n+2) {
-    margin-bottom: 30px;
-  }
-  .advantages__el p {
-    min-width: 210px;
-  }
-  .advantages__el img {
-    margin-right: 25px;
-    max-width: 90px;
-  }
+
   /*--------------diagnostics-------------*/
   .diagnostics {
     margin-top: 0px;
@@ -2022,14 +1982,17 @@ h2 {
             order: 2;
   }
   .diagnoctics__washmachine {
-    top: 13px;
-    left: 179px;
+    top: 300px;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     max-height: 600px;
     max-width: 400px;
   }
   .diagnoctics__square {
     bottom: 230px;
-    right: 530px;
+    right: 63vw;
     width: 64px;
   }
   .diagnoctics__graphics {
@@ -2291,6 +2254,66 @@ h2 {
             justify-content: space-between;
   }
 }
+@media (max-width: 1199px) {
+  .offer__discount button {
+    margin-left: 264px;
+  }
+  .header__container nav {
+    margin-left: 200px;
+  }
+  .diagnoctics__square {
+    right: 700px;
+  }
+  /*---header------*/
+  .logo {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  .header__border {
+    display: block;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    height: 1px;
+    background-color: #994786;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  .header__container {
+    min-height: 136px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header__container nav {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-right: 20px;
+    margin-top: 3px;
+  }
+  .header__container .button {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  .select {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-left: 20px;
+  }
+}
 @media (width: 960px) {
   .header__container nav {
     margin-left: 200px;
@@ -2351,20 +2374,6 @@ h2 {
   }
   .offer__discount button {
     margin-left: 40px;
-  }
-}
-@media (width: 1024px) {
-  .offer__discount button {
-    margin-left: 264px;
-  }
-  .header__container nav {
-    margin-left: 200px;
-  }
-  .offer__background {
-    margin-left: 110px;
-  }
-  .diagnoctics__square {
-    right: 700px;
   }
 }
 @media (max-width: 765px) {
