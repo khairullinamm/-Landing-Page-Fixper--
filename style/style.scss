@@ -1897,6 +1897,11 @@ display: block;
     }
 }
 
+@media (max-width: 835px) {
+    .team__workers {
+        margin-left: 15px;
+    }
+}
 @media (max-width: 780px) {
     
     .team__container {
@@ -1992,7 +1997,28 @@ display: block;
         width: 285px;
     }
 }
+@media (max-width: 601px) 
+{
+    .team__person {
+        min-width: 370px;
+        margin-left: 100px;
+    }
 
+    .team__photo {
+        width: 370px;
+    }
+}
+
+@media (max-width: 541px) {
+    .team__person {
+        min-width: 370px;
+        margin-left: 70px;
+    }
+
+    .team__photo {
+        width: 370px;
+    }
+}
 
 @media (max-width: 505px) {
     
@@ -2196,12 +2222,12 @@ display: block;
     }
 
     .team__person {
-        min-width: 345px;
-        //margin-left: 10px;
+        min-width: 370px;
+        margin-left: 40px;
     }
 
     .team__photo {
-        width: 345px;
+        width: 370px;
     }
 
     .feedback__container {
@@ -2400,30 +2426,39 @@ display: block;
         }
     }
 }
-
-@media (max-width: 450px) { 
+@media (max-width: 435px) { 
+    .team__person {
+        margin-left: 5px;
+    }
+}
+@media (max-width: 429px) { 
+    .team__person {
+        margin-left: 1px;
+    }
+}
+@media (max-width: 420px) { 
     .team__container {
      //   padding: 75px 30px;
     }
 
     .team__person {
-        min-width: 370px;
+        min-width: 360px;
         min-height: 600px;
 
         margin-left: 0px;
 
         &:not(:first-child) {
-            margin-left: 10px;
+           // margin-left: 10px;
         }
         
     }
 
     .team__photo {
-        width: 370px;
+        width: 360px;
     }
 }
 
-@media (max-width: 391px) {
+@media (max-width: 401px) {
     .team__person {
         min-width: 335px;
         min-height: 600px;
@@ -2431,7 +2466,7 @@ display: block;
         margin-left: 0px;
 
         &:not(:first-child) {
-            margin-left: 8px;
+            margin-left: 10px;
         }
         
     }
@@ -2639,6 +2674,24 @@ display: block;
         }
 }
 
+}
+
+@media (max-width: 360px) {
+    .team__person {
+        min-width: 300px;
+        min-height: 600px;
+
+        margin-left: 10px;
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+        
+    }
+
+    .team__photo {
+        width: 300px;
+    }
 }
 
 @media (max-width: 320px) {
