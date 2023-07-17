@@ -89,14 +89,17 @@ const teamWorkers = document.querySelector('.team__workers');
 const screenWidth = window.screen.width;
 const screenHeight = window.screen.height;
 
+let teamPersonMarginLeft = window.getComputedStyle(teamPersons[1]).marginLeft.split('px')[0];
+
+teamPersonMarginLeft = Number(teamPersonMarginLeft);
 
 let teamPersonWidth = window.getComputedStyle(teamPersons[0]).minWidth.split('px')[0];
 teamPersonWidth = Number(teamPersonWidth);
 
-if (screenWidth > 505 || screenWidth < 361)
-    teamPersonWidth+=30;
-else
-    teamPersonWidth+=50;
+//if (screenWidth > 505 || screenWidth < 361)
+    teamPersonWidth = teamPersonWidth + 30 + teamPersonMarginLeft;
+//else
+    //teamPersonWidth+=50;
 
 console.log(screenWidth);
 console.log(teamPersonWidth);

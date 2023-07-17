@@ -2715,6 +2715,16 @@ h2 {
     margin-bottom: 10px;
   }
 }
+@media (max-width: 450px) {
+  .team__person {
+    min-width: 370px;
+    min-height: 600px;
+    margin-left: 10px;
+  }
+  .team__photo {
+    width: 370px;
+  }
+}
 @media (max-width: 376px) {
   .offer__text {
     text-align: center;
