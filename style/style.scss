@@ -42,9 +42,14 @@ body {
     font-family: 'Normal TT';
     font-size: 16px;
     font-weight: 500;
-    overflow-x: hidden;
+    //overflow: hidden;
 }
-
+section {
+    overflow: hidden;
+}
+header {
+    overflow: hidden;
+}
 .container {
     max-width: 1170px; //1170 + 30 на padding
     margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
@@ -1514,6 +1519,8 @@ h2 {
         width: 100%;
         position: absolute;
         top: 60px;
+
+        transform: translateX(-10px);
     }
 
     .header__container {

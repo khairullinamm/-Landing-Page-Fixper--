@@ -359,7 +359,14 @@ body {
   font-family: "Normal TT";
   font-size: 16px;
   font-weight: 500;
-  overflow-x: hidden;
+}
+
+section {
+  overflow: hidden;
+}
+
+header {
+  overflow: hidden;
 }
 
 .container {
@@ -1854,6 +1861,8 @@ h2 {
     width: 100%;
     position: absolute;
     top: 60px;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
   }
   .header__container {
     min-height: 136px;
