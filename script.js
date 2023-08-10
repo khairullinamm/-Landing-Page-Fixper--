@@ -1,12 +1,15 @@
+'use strict'
 
 
-/*---кнопки навигации в header и nav секциях----*/
+/*---------NAVIGATION BUTTONS IN HEADER AND NAV SECTIONS----------*/
+//----------------------------------------------------------
 const navigationBtn = document.querySelectorAll('.document__nav');
 navigationBtn.forEach(item => { item.addEventListener("click", () => {
-    console.log(item.classList[1]);
+    //берем второй класс (первый - document__nav) 
+    //и разделяем на подстроки, разделитель - __section, т.о получаем "название секции" и "section" и берем [0] - название секции
+    //т.о. получаем секцию по классу
     const section = document.querySelector(`.${item.classList[1].split('__section')[0]}`);
     
-    console.log(section);
     section.scrollIntoView({
         //start,center,end,nearest - по умолчанию start
         block: "center", //вертикальное позиционирование
@@ -18,7 +21,64 @@ navigationBtn.forEach(item => { item.addEventListener("click", () => {
         behavior: "smooth"
     });
   }); });
+//----------------------------------------------------------
 
+
+/*------------------------------ALERT-CALL-------------------------------*/
+//-----------------------------------------------------------------------
+const ButtonCall = document.querySelectorAll('.button-call'); //кнопки в header, offer и call
+const ButtonDiscount = document.querySelectorAll('.button__discount'); //кнопка в скидке
+const Alert = document.querySelector('.alert'); //секция с окном
+
+Alert.classList.add("select-hide"); 
+
+/*При нажатии на кнопку звонка или скидки вылезает окно*/
+ButtonCall.forEach(item => { item.addEventListener("click", (e) => {
+
+    e.preventDefault(); //для отмены перезагрузки страницы при кнопке для отправки формы
+
+    Alert.classList.remove("select-hide");
+
+}); });
+
+ButtonDiscount.forEach(item => { item.addEventListener("click", () => {
+    Alert.forEach(item => item.classList.remove("select-hide"));
+}); });
+
+
+/*меняем цвет креста на черный*/
+const crossAlertSVG = document.querySelectorAll('.svgInternalID');
+
+crossAlertSVG.forEach(item => {
+    item.setAttribute("stroke", "black");
+});
+
+
+/*при нажатии на крест скрываем*/
+const crossAlert = document.querySelector('.alert__cross');
+crossAlert.addEventListener("click", () => {
+    Alert.classList.add("select-hide");
+});
+//----------------------------------------------------------
+
+
+/*----------------------------CLOSE DISCOUNT----------------- */
+const crossDiscount = document.querySelector('.offer__close-discount');
+const discount = document.querySelector('.offer__discount');
+
+crossDiscount.addEventListener("click", () => {
+    discount.style.display = 'none';
+});
+//----------------------------------------------------------
+
+
+
+const questionShowAnswer = document.querySelectorAll('.questions__show');
+console.log(questionShowAnswer);
+questionShowAnswer.forEach(item => { item.addEventListener("click", () => {
+    console.log(item);
+    document.querySelector('.questions__answer').style.display = 'block';
+  }); });
 /*----CUSTOM SELECT---*/
 const selectHeader = document.querySelectorAll('.select__header');
 const selectItem = document.querySelectorAll('.select__item');
@@ -53,172 +113,142 @@ document.addEventListener("click", function (e) {
 //Изменить цвет крестика при нажатии в discount
 
 
-/*------------------------------ALERT-CALL-------------------------------*/
-const ButtonCall = document.querySelectorAll('.button-call');
-const ButtonDiscount = document.querySelectorAll('.button__discount');
-const Alert = document.querySelectorAll('.alert');
 
 
-Alert.forEach(item => item.classList.add("select-hide"));
-
-/*При нажатии на кнопку звонка или скидки вылезает окно*/
-ButtonCall.forEach(item => { item.addEventListener("click", (e) => {
-  //  console.log('sheeesh');
-    e.preventDefault();
-    //const windowScrollTop = window.scrollY;
-    //window.scrollTo(0,0);
-   // console.log(windowScrollTop);
-    Alert.forEach(item => item.classList.remove("select-hide"));
-
-}); });
-
-ButtonDiscount.forEach(item => { item.addEventListener("click", () => {
-    Alert.forEach(item => item.classList.remove("select-hide"));
-}); });
-
-
-/*меняем цвет креста на черный*/
-const crossAlertSVG = document.querySelectorAll('.svgInternalID');
-let i = 0;
-while (i < crossAlertSVG.length)
-{
-    crossAlertSVG[i].setAttribute("stroke", "black");
-    i++;
-}
-
-/*при нажатии на крест скрываем*/
-const crossAlert = document.querySelectorAll('.alert__cross');
-crossAlert.forEach(item => { item.addEventListener("click", () => {
-    Alert.forEach(item => item.classList.add("select-hide"));
-});
-});
-
-const crossDiscount = document.querySelectorAll('.offer__close-discount');
-const discount = document.querySelectorAll('.offer__discount');
-
-crossDiscount.forEach(item => { item.addEventListener("click", () => {
-    discount.forEach(item => item.style.display = 'none');
-});
-});
-
-/*---------Нажатие на ДАЛЕЕ и изменение активного индикатора ---------*/
+/*------------------------------------Нажатие на ДАЛЕЕ и изменение активного индикатора ----------------------------------*/
 const defaultNavNextBtn = document.querySelectorAll('.nav__right');
-
 const defaultNavLeftBtn = document.querySelectorAll('.nav__left');
+
 const defaultNavIndicatorFeedback = document.querySelector('.nav__indicator.feedback');
 const defaultNavIndicatorTeam = document.querySelector('.nav__indicator.team');
+
 const teamPersons = document.querySelectorAll('.team__person');
 const teamWorkers = document.querySelector('.team__workers');
-
 
 const screenWidth = window.screen.width;
 const screenHeight = window.screen.height;
 
-let teamPersonMarginLeft = window.getComputedStyle(teamPersons[1]).marginLeft.split('px')[0];
-
-teamPersonMarginLeft = Number(teamPersonMarginLeft);
-
 let teamPersonWidth = window.getComputedStyle(teamPersons[0]).minWidth.split('px')[0];
 teamPersonWidth = Number(teamPersonWidth);
 
-//if (screenWidth > 505 || screenWidth < 361)
-    teamPersonWidth = teamPersonWidth + 30 + teamPersonMarginLeft;
-//else
-    //teamPersonWidth+=50;
+let teamPersonMarginRight = window.getComputedStyle(teamPersons[1]).marginRight.split('px')[0]; 
+teamPersonMarginRight = Number(teamPersonMarginRight);
 
-console.log(screenWidth);
-console.log(teamPersonWidth);
+teamPersonWidth = teamPersonWidth + teamPersonMarginRight;
 
 let position = 0;
-const checkBtns = () => {
+const checkBtns = TypeOfSection => {
     
-    defaultNavLeftBtn[0].disabled = position === 0;
-    console.log (position);
-    console.log(-((teamPersons.length - 3) * teamPersonWidth));
-    const defaultNavNextBtnTrue = defaultNavNextBtn[0].getElementsByTagName('button');
-    defaultNavNextBtnTrue[0].disabled = position <= -((teamPersons.length - 3) * teamPersonWidth);
-};
-checkBtns();
-defaultNavNextBtn.forEach(item => { item.addEventListener("click", () => {
-   
-    //checkBtns();
-    if (item.classList.contains('feedback'))
-   {
-    for (let i = 0; i < defaultNavIndicatorFeedback.children.length; i++) //проходимся по всем кружочкам и ищем эктив
+    if (TypeOfSection === 'team')
     {
-        if (defaultNavIndicatorFeedback.children[i].className === 'active') 
-            {
-                    const active = defaultNavIndicatorFeedback.children[i];
-                    const deepCopy = active.cloneNode(true);
+        defaultNavLeftBtn[0].disabled = position === 0; //устанавливаем disabled, если position == 0
 
-                    if (i!==3) /*если это не последний кружок*/
-                    {
-                        active.after(deepCopy); //добавляем active после текущего active
-                        active.remove(); //удаляем старый active
-
-                        const activenew = defaultNavIndicatorFeedback.querySelector('.active'); //находим новый active
-
-                        const navPage = document.createElement('div');
-                        navPage.classList.add('nav__page');
-
-                        activenew.before(navPage); //добавляем перед ним (взамен прошлого active) обычный кружок
-
-                        const navPagesAll = defaultNavIndicatorFeedback.querySelectorAll('.nav__page');
-                        navPagesAll[navPagesAll.length - 1].remove(); //удаляем кружок в конце
-                    }
-                    else //если мы на концеы
-                    {
-                        defaultNavIndicatorFeedback.prepend(deepCopy); //добавляем active в самое начало
-                        active.remove(); //удаляем старый из конца
-                    }
-                    break;
-            }   
+        const defaultNavNextBtnTrue = defaultNavNextBtn[0].getElementsByTagName('button');
+        defaultNavNextBtnTrue[0].disabled = position <= -((teamPersons.length - 3) * teamPersonWidth); 
     }
 
+    else if (TypeOfSection === 'feedback') 
+    {
+        defaultNavLeftBtn[1].disabled = position === 0; //устанавливаем disabled, если position == 0
+
+       // const defaultNavNextBtnTrue = defaultNavNextBtn[1].getElementsByTagName('button');
+       // defaultNavNextBtnTrue[1].disabled = position <= -((teamPersons.length - 3) * teamPersonWidth); 
+    }
+};
+
+checkBtns('team');
+checkBtns('feedback');
+
+defaultNavNextBtn.forEach(item => { item.addEventListener("click", () => {
+   
+    if (item.classList.contains('feedback'))
+    {  
+        for (let i = 0; i < defaultNavIndicatorFeedback.children.length; i++) //проходимся по всем кружочкам и ищем эктив
+            {
+            if (defaultNavIndicatorFeedback.children[i].className === 'active') 
+                {
+                        const active = defaultNavIndicatorFeedback.children[i];
+                        const deepCopy = active.cloneNode(true);
+
+                        if (i!==3) /*если это не последний кружок*/
+                        {
+                            active.after(deepCopy); //добавляем active после текущего active
+                            active.remove(); //удаляем старый active
+
+                            const activenew = defaultNavIndicatorFeedback.querySelector('.active'); //находим новый active
+
+                            const navPage = document.createElement('div');
+                            navPage.classList.add('nav__page');
+
+                            activenew.before(navPage); //добавляем перед ним (взамен прошлого active) обычный кружок
+
+                            const navPagesAll = defaultNavIndicatorFeedback.querySelectorAll('.nav__page');
+                            navPagesAll[navPagesAll.length - 1].remove(); //удаляем кружок в конце
+                        }
+
+                        else //если мы на концеы
+                        {
+                            defaultNavIndicatorFeedback.prepend(deepCopy); //добавляем active в самое начало
+                            active.remove(); //удаляем старый из конца
+                        }
+                        break;
+                }   
+        }
+        checkBtns('feedback');
    }
 
    else if (item.classList.contains('team'))
    {
+        for (let i = 0; i < defaultNavIndicatorTeam.children.length; i++)
+        {
+            if (defaultNavIndicatorTeam.children[i].className === 'active') 
+                {
+                    const active = defaultNavIndicatorTeam.children[i];
+                    const deepCopy = active.cloneNode(true);
 
-    for (let i = 0; i < defaultNavIndicatorTeam.children.length; i++)
-    {
-        if (defaultNavIndicatorTeam.children[i].className === 'active') 
-            {
-                const active = defaultNavIndicatorTeam.children[i];
-                const deepCopy = active.cloneNode(true);
+                    active.after(deepCopy); //добавляем active после текущего active
+                    active.remove(); //удаляем старый active
 
-                active.after(deepCopy); //добавляем active после текущего active
-                active.remove(); //удаляем старый active
+                    const activenew = defaultNavIndicatorTeam.querySelector('.active'); //находим новый active
 
-                const activenew = defaultNavIndicatorTeam.querySelector('.active'); //находим новый active
+                    const navPage = document.createElement('div');
+                    navPage.classList.add('nav__page');
 
-                const navPage = document.createElement('div');
-                navPage.classList.add('nav__page');
+                    activenew.before(navPage); //добавляем перед ним (взамен прошлого active) обычный кружок
 
-                activenew.before(navPage); //добавляем перед ним (взамен прошлого active) обычный кружок
-
-                const navPagesAll = defaultNavIndicatorTeam.querySelectorAll('.nav__page');
-                navPagesAll[navPagesAll.length - 1].remove(); //удаляем кружок в конце
-                
-                break;
-            }   
-    }
-
-    //if (screenWidth > 1100) {
+                    const navPagesAll = defaultNavIndicatorTeam.querySelectorAll('.nav__page');
+                    navPagesAll[navPagesAll.length - 1].remove(); //удаляем кружок в конце
+                    
+                    break;
+                }   
+        }
         position-=teamPersonWidth;
         teamWorkers.style.transform = `translateX(${position}px)`;
-
-    //}
-
    }
-   checkBtns();
+   checkBtns('team');
 }); });
 
+//назад
 defaultNavLeftBtn.forEach(item => { item.addEventListener("click", () => {
-  //  checkBtns();
     if  (item.classList.contains('feedback'))
     {
+        for (let i = 0; i < defaultNavIndicatorFeedback.children.length; i++)
+        {
+            if (defaultNavIndicatorFeedback.children[i].className === 'active') 
+                {
+                    const active = defaultNavIndicatorFeedback.children[i];
 
+                    defaultNavIndicatorFeedback.children[i-1].remove(); //удаляем старый active
+    
+                    const navPage = document.createElement('div');
+                    navPage.classList.add('nav__page');
+    
+                    active.after(navPage); //добавляем до него (взамен прошлого active) обычный кружок
+                    break;
+                }   
+        }
+
+        checkBtns('feedback');
     }
     
     else if (item.classList.contains('team'))
@@ -243,7 +273,7 @@ defaultNavLeftBtn.forEach(item => { item.addEventListener("click", () => {
         position+=teamPersonWidth;
         teamWorkers.style.transform = `translateX(${position}px)`;
 
-        checkBtns();
+        checkBtns('team');
     }
 }); });
 
