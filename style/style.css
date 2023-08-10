@@ -365,10 +365,6 @@ section {
   overflow: hidden;
 }
 
-header {
-  overflow: hidden;
-}
-
 .container {
   max-width: 1170px;
   margin: 0 auto; /*слева и справа автоматические отступы --> контент центрируется*/
@@ -499,7 +495,7 @@ h2 {
   margin-left: 74px;
 }
 .header__container .button {
-  margin-left: 40px;
+  margin-left: 31px;
   margin-right: 0;
   -webkit-transition: color 0.4s, border-color 0.4s;
   transition: color 0.4s, border-color 0.4s;
@@ -602,6 +598,7 @@ h2 {
   right: 0;
   top: 100%;
   border-top: none;
+  z-index: 15;
 }
 
 .select__item {
@@ -2489,8 +2486,47 @@ h2 {
   .offer__elipse {
     margin-left: 15px;
   }
+  /*-----stars-----*/
+  .stars__numbers {
+    font-size: 18px;
+  }
+  .stars__numbers strong {
+    font-size: 30px;
+  }
+  .stars__five img {
+    margin-right: 6px;
+  }
 }
 @media (max-width: 695px) {
+  /*-----header-----*/
+  .header__container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header__container nav {
+    display: none;
+  }
+  .header__burger {
+    display: block;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-right: 10px;
+    margin-left: 407px;
+  }
+  .header__burger-line {
+    background-color: #fff;
+    height: 1.5px;
+    width: 20px;
+  }
+  .header__burger-line:not(:last-child) {
+    margin-bottom: 3px;
+  }
+  .header__container .button {
+    padding: 12px 30px;
+    margin-left: 20px;
+  }
   /*------advantages--------*/
   .adantages__container {
     padding-left: 60px;
@@ -2523,6 +2559,35 @@ h2 {
   /*-----diagnostics-----*/
   .diagnoctics__square {
     right: 77vw;
+  }
+  /*-----stars-----*/
+  .stars__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .stars__item {
+    margin-right: 0;
+    padding: 20px;
+    width: auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-height: 65px;
+    width: 320px;
+  }
+  .stars__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  .stars__border {
+    width: 1px;
+    height: 65px;
+    margin-left: 15px;
   }
 }
 @media (max-width: 648px) {
@@ -2562,7 +2627,10 @@ h2 {
     width: calc(100vw - 60px);
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 581px) {
+  .header__burger {
+    margin-left: 292px;
+  }
   .adantages__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2609,34 +2677,6 @@ h2 {
   }
   h2, h3 {
     font-size: 30px;
-  }
-  .header__container {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .header__container nav {
-    display: none;
-  }
-  .header__burger {
-    display: block;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    margin-right: 10px;
-    margin-left: 220px;
-  }
-  .header__burger-line {
-    background-color: #fff;
-    height: 1.5px;
-    width: 20px;
-  }
-  .header__burger-line:not(:last-child) {
-    margin-bottom: 3px;
-  }
-  .header__container .button {
-    padding: 12px 30px;
-    margin-left: 20px;
   }
   .offer__container {
     min-height: 700px;
@@ -2743,34 +2783,6 @@ h2 {
     margin-left: calc((100vw - 60px - 360px) / 2);
     margin-right: calc((100vw - 60px - 360px) / 2);
   }
-  .stars__cards {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .stars__item {
-    margin-right: 0;
-    padding: 20px;
-    width: auto;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    max-height: 65px;
-    width: 320px;
-  }
-  .stars__item:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 25px;
-  }
-  .stars__border {
-    width: 1px;
-    height: 65px;
-    margin-left: 15px;
-  }
   .questions {
     padding-left: 15px;
     padding-right: 15px;
@@ -2830,6 +2842,11 @@ h2 {
   }
   .alert__form input {
     min-width: 300px;
+  }
+}
+@media (max-width: 460px) {
+  .header__burger {
+    margin-left: 172px;
   }
 }
 @media (max-width: 420px) {
