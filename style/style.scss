@@ -1055,6 +1055,7 @@ h2 {
     border-radius: 15px;
 
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -1072,7 +1073,7 @@ h2 {
 
 .call__form {
 
-    margin-left: 60px;
+    //margin-left: 60px;
 
     input {
         border: 0px;
@@ -1400,7 +1401,7 @@ h2 {
     }
  }
 
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
    
     .diagnoctics__notice-desktop {
         display: flex;
@@ -1423,8 +1424,16 @@ h2 {
     }
 
     .call__form {
+        
+       // margin-left: 0px;
+
+        
         input {
             width: 250px;
+        }
+
+        button {
+            padding: 25px 76px;
         }
     }
     .geo__title-desktop {

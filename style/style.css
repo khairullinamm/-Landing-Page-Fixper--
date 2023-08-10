@@ -1409,6 +1409,9 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1429,9 +1432,6 @@ h2 {
   line-height: normal;
 }
 
-.call__form {
-  margin-left: 60px;
-}
 .call__form input {
   border: 0px;
   border-radius: 10px;
@@ -1764,7 +1764,7 @@ h2 {
     margin-right: auto;
   }
 }
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
   .diagnoctics__notice-desktop {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1784,6 +1784,9 @@ h2 {
   }
   .call__form input {
     width: 250px;
+  }
+  .call__form button {
+    padding: 25px 76px;
   }
   .geo__title-desktop {
     display: -webkit-box;
