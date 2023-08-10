@@ -394,6 +394,7 @@ h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 35px;
+  margin-right: 10px;
 }
 
 .nav__indicator {
@@ -828,7 +829,6 @@ h2 {
 /*--------------diagnostics--------------------*/
 .diagnostics {
   background-color: #FAFAFA;
-  margin-top: 87px;
 }
 
 .diagnostics__container {
@@ -1909,7 +1909,7 @@ h2 {
   }
   .diagnoctics__square {
     bottom: 230px;
-    right: 63vw;
+    right: 70vw;
     width: 64px;
   }
   .diagnoctics__graphics {
@@ -2182,9 +2182,6 @@ h2 {
   .offer__discount {
     padding: 0px 15px;
   }
-  .diagnoctics__square {
-    right: 700px;
-  }
   .header__container nav {
     margin-left: 65px;
   }
@@ -2323,9 +2320,6 @@ h2 {
   .offer__discount button {
     margin-left: 190px;
   }
-  .diagnoctics__square {
-    right: 630px;
-  }
   /*------advantages------*/
   .advantages__el {
     font-size: 18px;
@@ -2454,9 +2448,6 @@ h2 {
   .offer__discount button {
     margin-left: 13px;
   }
-  .diagnoctics__square {
-    right: 523px;
-  }
   .price__list {
     max-width: 678px;
     -ms-grid-columns: 370px 150px 158px;
@@ -2529,6 +2520,10 @@ h2 {
   .navigation__item:not(:last-child) {
     margin-right: 0;
   }
+  /*-----diagnostics-----*/
+  .diagnoctics__square {
+    right: 77vw;
+  }
 }
 @media (max-width: 648px) {
   .alert__title {
@@ -2561,6 +2556,10 @@ h2 {
   }
   .geo__info .button {
     width: 162px;
+  }
+  /*----DIAGNOSTICS----*/
+  .diagnostics__input select {
+    width: calc(100vw - 60px);
   }
 }
 @media (max-width: 580px) {
@@ -2685,16 +2684,13 @@ h2 {
     min-height: 520px;
   }
   .diagnoctics__washmachine {
-    max-width: 296px;
+    max-width: 300px;
     max-height: 458px;
-    left: calc((100vw - 296px) / 2);
+    top: 270px;
   }
   .diagnoctics__graphics {
     right: 0;
     top: 80px;
-  }
-  .diagnostics__input select {
-    width: calc(100vw - 60px);
   }
   .price__container {
     padding-top: 75px;

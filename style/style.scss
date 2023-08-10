@@ -92,6 +92,8 @@ h2 {
     justify-content: space-between;
 
     margin-top: 35px;
+
+    margin-right: 10px;
 }
 
 .nav__indicator {
@@ -552,7 +554,6 @@ h2 {
 /*--------------diagnostics--------------------*/
 .diagnostics {
     background-color: $gray;
-    margin-top: 87px;
 }
 
 .diagnostics__container {
@@ -1568,7 +1569,7 @@ h2 {
 
 .diagnoctics__square {
     bottom: 230px;
-    right: 63vw;
+    right: calc(100vw - 30vw);
     width: 64px;
 }
 
@@ -1765,9 +1766,6 @@ margin: 0 auto;
     .offer__discount {
         padding: 0px 15px;
     }
-    .diagnoctics__square {
-        right: 700px;
-    }
 
     .header__container {
         nav {
@@ -1938,9 +1936,6 @@ margin: 0 auto;
         margin-left: 190px;
     }
 
-    .diagnoctics__square {
-        right: 630px;
-    }
 
 /*------advantages------*/
 
@@ -2118,10 +2113,6 @@ margin: 0 auto;
         margin-left: 13px;
     }
 
-    .diagnoctics__square {
-        right: 523px;
-    }
-
     .price__list {
         max-width: 370px+150px+158px;
         grid-template-columns: 370px 150px 158px;
@@ -2220,6 +2211,11 @@ margin: 0 auto;
             margin-right: 0;
         }
     }
+
+    /*-----diagnostics-----*/
+    .diagnoctics__square {
+        right: 77vw;
+    }
 }
 @media (max-width: 648px) {
 
@@ -2260,6 +2256,13 @@ margin: 0 auto;
             .button {
                 width: 162px;
             }
+    }
+
+    /*----DIAGNOSTICS----*/
+    .diagnostics__input {
+        select {
+            width: calc(100vw - 60px);
+        }
     }
 }
 @media (max-width: 580px) {
@@ -2409,21 +2412,14 @@ margin: 0 auto;
     }
 
     .diagnoctics__washmachine {
-        
-        max-width: 296px;
-        $mw: max-width;
+        max-width: 300px;
         max-height: 458px;
-
-        left: calc((100vw - 296px)/2);
+        top: 270px;
     }
 
     .diagnoctics__graphics {
         right: 0;
         top: 80px;
-    }
-
-    .diagnostics__input select {
-        width: calc(100vw - 60px);
     }
 
     .price__container {
