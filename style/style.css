@@ -2259,7 +2259,9 @@ h2 {
   }
   .offer__repairman {
     width: 674px;
-    left: 163px;
+    left: 50%;
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
   }
   .offer__graphics {
     height: 547px;
@@ -2317,6 +2319,9 @@ h2 {
   .offer__discount button {
     margin-left: 190px;
   }
+  .offer__title {
+    font-size: 52px;
+  }
   /*------advantages------*/
   .advantages__el {
     font-size: 18px;
@@ -2333,9 +2338,6 @@ h2 {
 @media (max-width: 906px) {
   .header__container nav {
     margin-left: 73px;
-  }
-  .offer__repairman {
-    bottom: 48px;
   }
   .offer__discount button {
     margin-left: 141px;
@@ -2367,6 +2369,9 @@ h2 {
 @media (max-width: 858px) {
   .offer__discount button {
     margin-left: 110px;
+  }
+  .offer__repairman {
+    bottom: 84px;
   }
   /*------advantages------*/
   .advantages__el:nth-child(3) {
@@ -2415,9 +2420,6 @@ h2 {
   }
   .header__container .button {
     margin-right: 10px;
-  }
-  .offer__title {
-    font-size: 60px;
   }
   .offer__discount button {
     margin-left: 40px;
@@ -2589,6 +2591,11 @@ h2 {
     height: 65px;
     margin-left: 15px;
   }
+  /*-----offer-----*/
+  .offer__repairman {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
 @media (max-width: 648px) {
   .alert__title {
@@ -2625,6 +2632,19 @@ h2 {
   /*----DIAGNOSTICS----*/
   .diagnostics__input select {
     width: calc(100vw - 60px);
+  }
+  /*-----OFFER-----*/
+  .offer__title {
+    font-size: 42px;
+  }
+  .offer__subtitile {
+    font-size: 18px;
+  }
+  .offer__subtitile br {
+    display: none;
+  }
+  .offer__repairman {
+    left: 58vw;
   }
 }
 @media (max-width: 581px) {
@@ -2669,6 +2689,9 @@ h2 {
     margin-right: 30px;
     margin-bottom: 0;
   }
+  .offer__title {
+    font-size: 38px;
+  }
 }
 @media (max-width: 505px) {
   .price__list-mobile {
@@ -2677,6 +2700,16 @@ h2 {
   }
   h2, h3 {
     font-size: 30px;
+  }
+  /*-----OFFER-----*/
+  .offer__discount {
+    top: 645px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .offer__discount p {
+    margin-left: 0;
   }
   .offer__container {
     min-height: 700px;
@@ -2706,15 +2739,21 @@ h2 {
   }
   .offer__repairman {
     width: 349px;
-    height: 335px;
-    left: 130px;
+    height: 330px;
+    bottom: 10px;
   }
   .offer__background {
     min-height: 350px;
     top: 250px;
   }
   .offer__text .button {
-    margin-top: 250px;
+    margin-top: 220px;
+  }
+  .offer__discount p {
+    font-size: 14px;
+  }
+  .button__discount {
+    font-size: 14px;
   }
   .diagnostics__title {
     font-size: 30px;
@@ -2848,6 +2887,13 @@ h2 {
   .header__burger {
     margin-left: 172px;
   }
+  .offer__elipse {
+    display: none;
+  }
+  .offer__discount p {
+    margin-left: 20px;
+    max-width: none;
+  }
 }
 @media (max-width: 420px) {
   /*---team----*/
@@ -2917,7 +2963,6 @@ h2 {
 }
 @media (max-width: 376px) {
   .offer__text {
-    text-align: center;
     left: 0px;
   }
   .offer__title {
@@ -2925,15 +2970,6 @@ h2 {
   }
   .offer__subtitile {
     font-size: 16px;
-  }
-  .offer__background {
-    top: 230px;
-  }
-  .offer__repairman {
-    left: 110px;
-  }
-  .offer__discount {
-    top: 640px;
   }
   .offer__elipse {
     display: none;
