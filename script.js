@@ -153,6 +153,24 @@ function TabToPrevBtn(item) {
     }
 }
 
+function ChangeOfferSectionHeight() {
+    const screenWidth = window.screen.width;
+    if (screenWidth < 1169) {
+
+        const discountHeight = discount.offsetHeight;
+
+        const offerSection = document.querySelector('.offer__container');
+        const offerMainSection = document.querySelector('.offer__main-part');
+
+        let offetSectionHeight = offerSection.offsetHeight;
+
+        offetSectionHeight -= discountHeight;
+
+        offerSection.style.minHeight = offetSectionHeight + 'px';
+        offerMainSection.style.maxHeight = offetSectionHeight + 'px';
+       
+    }
+}
 
 //---------------------navigation buttons in header and nav sections---------------------
 const navigationBtn = document.querySelectorAll('.document__nav');
@@ -200,16 +218,30 @@ crossAlert.addEventListener("click", () => {
 
 
 
+
 //---------------------close discount in offer section---------------------
 const crossDiscount = document.querySelector('.offer__close-discount');
 const discount = document.querySelector('.offer__discount');
 
 crossDiscount.addEventListener("click", () => {
+    ChangeOfferSectionHeight();
     discount.style.display = 'none';
 });
 
+//----------------- get discount ----------------
+const discountButton = document.querySelectorAll('.button__discount');
+const discountSection = document.querySelector('.discount');
+const discountCross = document.querySelectorAll('.discount__cross');
 
+discountSection.classList.add("select-hide"); 
 
+discountButton.forEach(item => { item.addEventListener("click", (e) => {
+    discountSection.classList.remove("select-hide");
+}); });
+
+discountCross.forEach(item => { item.addEventListener("click", (e) => {
+    discountSection.classList.add("select-hide");
+}); });
 
 
 //---------------------navigations sections in team and feedback sections---------------------
