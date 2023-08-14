@@ -172,6 +172,31 @@ function ChangeOfferSectionHeight() {
     }
 }
 
+function showPricesFunction(type) {
+
+    if (showAllPrices[0].classList.contains('delete__prices')) {
+        priceItems.forEach(item => {
+            if (item.classList.contains('price-add') && item.classList.contains(`${type}`)) {
+                item.classList.remove("price-add");
+            item.classList.add("select-hide");
+            }
+        })
+        showAllPrices[0].classList.remove('delete__prices');
+        showAllPrices[0].getElementsByTagName('button')[0].innerHTML = "Показать все цены";
+    }
+    else {
+        priceItems.forEach(item => {
+            if (item.classList.contains('select-hide') && item.classList.contains(`${type}`)) {
+                item.classList.remove("select-hide");
+                item.classList.add("price-add");
+            }
+        })
+        showAllPrices[0].classList.add('delete__prices');
+        showAllPrices[0].getElementsByTagName('button')[0].innerHTML = "Убрать дополнительные цены";
+    }
+}
+
+
 //---------------------navigation buttons in header and nav sections---------------------
 const navigationBtn = document.querySelectorAll('.document__nav');
 
@@ -284,6 +309,21 @@ questionShowAnswer.forEach(item => { item.addEventListener("click", () => {
 
 
 
+//------------------------show all prices-desktop-----------------------
+
+const showAllPrices = document.querySelectorAll('.price__show');
+const priceItems = document.querySelectorAll('.price__item');
+
+
+showAllPrices.forEach(item => {item.addEventListener("click", () => {
+   
+    if (window.screen.width > 580)
+        showPricesFunction('desktop');
+    else 
+        showPricesFunction('mobile');
+})
+
+})
 
 
 //---------------------custom select---------------------
