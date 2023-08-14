@@ -953,7 +953,7 @@ h2 {
 .price__container {
   padding-top: 100px;
   text-align: center;
-  padding-bottom: 170px;
+  padding-bottom: 100px;
 }
 
 .price__list {
@@ -2488,6 +2488,19 @@ h2 {
   .offer__elipse {
     margin-left: 15px;
   }
+  /*-----price-----*/
+  .price__list {
+    max-width: 510px;
+    -ms-grid-columns: 230px 135px 145px;
+    grid-template-columns: 230px 135px 145px;
+    font-size: 14px;
+  }
+  .price__free {
+    font-size: 16px;
+  }
+  .price__item span {
+    font-size: 16px;
+  }
   /*-----stars-----*/
   .stars__numbers {
     font-size: 18px;
@@ -2596,6 +2609,13 @@ h2 {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+  /*-----questions-----*/
+  .questions__item {
+    min-width: 500px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 @media (max-width: 648px) {
   .alert__title {
@@ -2692,15 +2712,79 @@ h2 {
   .offer__title {
     font-size: 38px;
   }
-}
-@media (max-width: 505px) {
+  /*-----price-----*/
   .price__list-mobile {
     display: -ms-grid;
     display: grid;
   }
+  .price__container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .price__list-desktop {
+    display: none;
+  }
+  .price__list {
+    -ms-grid-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    -ms-grid-rows: -webkit-min-content;
+    -ms-grid-rows: min-content;
+    grid-template-rows: -webkit-min-content;
+    grid-template-rows: min-content;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .price__list > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .price__list > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .price__item {
+    font-size: 16px;
+    text-align: left;
+    padding: 10px 0px;
+  }
+  .price__item:nth-child(2n) {
+    text-align: right;
+  }
   h2, h3 {
     font-size: 30px;
   }
+  .questions {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .questions__text {
+    text-align: left;
+    margin: 0;
+  }
+  .questions__title {
+    font-size: 30px;
+  }
+  .questions__subtitle {
+    text-align: left;
+    max-width: 340px;
+  }
+  .questions__item {
+    min-width: 295px;
+  }
+  .questions__question {
+    font-size: 16px;
+  }
+  .questions__list {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 35px;
+  }
+  .questions__show {
+    margin-left: 15px;
+  }
+}
+@media (max-width: 505px) {
   /*-----OFFER-----*/
   .offer__discount {
     top: 645px;
@@ -2771,26 +2855,6 @@ h2 {
     right: 0;
     top: 80px;
   }
-  .price__container {
-    padding-top: 75px;
-  }
-  .price__list-desktop {
-    display: none;
-  }
-  .price__list {
-    -ms-grid-columns: 2fr 1fr;
-    grid-template-columns: 2fr 1fr;
-  }
-  .price__item {
-    font-size: 16px;
-    text-align: left;
-  }
-  .price__item:nth-child(2n) {
-    text-align: right;
-  }
-  .price__show {
-    margin-top: 0;
-  }
   .feedback__container {
     padding-top: 75px;
   }
@@ -2821,31 +2885,6 @@ h2 {
   .feedback__nav {
     margin-left: calc((100vw - 60px - 360px) / 2);
     margin-right: calc((100vw - 60px - 360px) / 2);
-  }
-  .questions {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .questions__text {
-    text-align: left;
-  }
-  .questions__title {
-    font-size: 30px;
-  }
-  .questions__subtitle {
-    text-align: left;
-    max-width: 340px;
-  }
-  .questions__item {
-    min-width: 295px;
-  }
-  .questions__question {
-    font-size: 18px;
-  }
-  .questions__list {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 35px;
   }
   .call_container {
     padding: 75px 30px;
@@ -2927,6 +2966,9 @@ h2 {
   }
   /*------footer------*/
   .footer__container {
+    font-size: 14px;
+  }
+  .questions__question {
     font-size: 14px;
   }
 }
@@ -3057,8 +3099,15 @@ h2 {
     min-width: 200px;
     padding: 12px;
   }
-  .questions__question {
-    font-size: 16px;
+  .questions__show {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+  }
+  .questions__show img {
+    padding: 5px;
+    max-width: 10px;
+    max-height: 10px;
   }
   .call_container {
     padding: 60px 10px;
