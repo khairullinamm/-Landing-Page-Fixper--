@@ -106,8 +106,10 @@ function TabToNextBtn(item) {
 }
 
 function TabToPrevBtn(item) {
+    console.log('i');
     if  (item.classList.contains('feedback'))
     {
+        console.log('hey');
         for (let i = 0; i < defaultNavIndicatorFeedback.children.length; i++)
         {
             if (defaultNavIndicatorFeedback.children[i].className === 'active') 
@@ -129,6 +131,7 @@ function TabToPrevBtn(item) {
     
     else if (item.classList.contains('team'))
     {
+        console.log('hi');
 
         for (let i = 0; i < defaultNavIndicatorTeam.children.length; i++)
         {
@@ -196,12 +199,18 @@ function showPricesFunction(type) {
     }
 }
 
-
+function CheckBurger() {
+    if (burgerNav.style.display === 'block') 
+    {
+        setTimeout("burgerNav.style.display = 'none'", 1000);
+    }
+}
 //---------------------navigation buttons in header and nav sections---------------------
 const navigationBtn = document.querySelectorAll('.document__nav');
 
 navigationBtn.forEach(item => { item.addEventListener("click", () => {
     ScrollPageByNav(item);
+    CheckBurger();
   }); });
 
 
@@ -279,6 +288,12 @@ const defaultNavIndicatorTeam = document.querySelector('.nav__indicator.team');
 const teamPersons = document.querySelectorAll('.team__person');
 const teamWorkers = document.querySelector('.team__workers');
 
+
+const feedBackContainer = document.querySelector('.feedback__cards');
+const feedBackItem = document.querySelectorAll('.feedback__item');
+
+const feedbackItemWidth =  window.getComputedStyle(feedBackItem[0]).minWidth.split('px')[0];
+console.log(feedbackItemWidth);
 let teamPersonWidth = CalcWidthToScroll();
 
 let position = 0;
@@ -292,12 +307,23 @@ defaultNavNextBtn.forEach(item => {
 });
 
 //назад
-defaultNavLeftBtn.forEach(item => { item.addEventListener("click", () => TabToPrevBtn(item) ); 
+defaultNavLeftBtn.forEach(item => { item.addEventListener("click", () => {console.log(item);
+TabToPrevBtn(item) }); 
 });
 
 
 
 
+//----------show nav using burger menu-----------------------------
+const burgerMenu = document.querySelectorAll('.header__burger');
+const burgerNav = document.querySelector('.header__nav-mobile');
+
+burgerMenu.forEach(item => {
+    item.addEventListener("click", () => 
+    {
+        burgerNav.style.display = "block";
+    })
+})
 
 //---------------------show answers to questions---------------------
 const questionShowAnswer = document.querySelectorAll('.questions__show');
@@ -349,11 +375,17 @@ selectItem.forEach(item => { item.addEventListener("click", () => {
 });
 });
 
-//при нажатии на любое другое место будет скрываться
+//при нажатии на любое другое место будет скрываться (burger and select)
 document.addEventListener("click", function (e) { 
 
     if (e.target.className !== 'select__body' && e.target.className !== 'select__item' && e.target.className !== 'select__header' && e.target.className !== 'select__current')
         selectBody.forEach(item => item.classList.add("select-hide")); //скрываем body
+    
+        if (e.target.className != 'header__nav-mobile' && e.target.className != 'header__burger') 
+    {
+       
+       burgerNav.style.display = 'none';
+    }
 });
 
 //Решить проблему в select

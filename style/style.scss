@@ -218,6 +218,10 @@ h2 {
     }
 }
 
+.header__nav-mobile {
+    display: none;
+}
+
 .header__border {
     display: none;
 }
@@ -2305,15 +2309,118 @@ margin: 0 auto;
         margin-right: 10px;
         margin-left: 407px;
 
+        position: relative;
+        height: 18px;
+        width: 20px;
+        
+        cursor: pointer;
+
+        
+
+        span, &::before, &::after {
+            position: absolute;
+
+            left: 0;
+            height: 10%;
+            width: 100%;
+
+            transition: all 0.3s ease 0s;
+            background-color: #fff;
+        }
+
+        &::before, &::after {
+            content: "";
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        span {
+            top: 50%;
+            transform: scale(1) translate(0px, -50%);
+        }
+
     }
 
-    .header__burger-line {
-        background-color: #fff;
-        
-        height: 1.5px;
+    .header__nav-mobile {
+        display: none;
+
+        position: absolute;
+
+        height: 20px;
         width: 20px;
-        &:not(:last-child) {
-            margin-bottom: 3px;
+
+        background-color: $gray;
+        border-radius: 70px;
+
+        top: 0;
+        right: 0;
+
+        padding: 0;
+
+        z-index: 13;
+
+        color:#000;
+        
+        
+
+        animation: ani 2s forwards;
+
+        @keyframes ani {
+            0% {
+                border-radius: 70px;         
+                height: 20px;
+                width: 20px;
+
+              //  box-shadow: none;
+            }
+
+            100% {  border-radius: 0px;        
+                    height: 100vh;
+                    width: 30%;
+                
+                    padding: 20px;
+
+                   // box-shadow: 3px -20px 6px 2px rgba(0, 0, 0,70%);
+                }
+        }
+
+
+        li {
+            font-size: 20px;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            animation: lia 0.1s forwards;
+            animation-delay: 2s;
+            opacity: 0;
+
+            cursor: pointer;
+
+            @keyframes lia {
+                0% {
+                    opacity: 0;
+                }
+    
+                100% {  
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                color: $orange;
+            }
+
+            &:focus, &:active {
+                color: $blackOrange;
+            }
         }
     }
 
@@ -2806,6 +2913,12 @@ margin: 0 auto;
         margin-left: 172px;
     }
 
+    .header__nav-mobile {
+
+        li {
+            font-size: 16px;
+        }
+    }
     .offer__elipse {
         display: none;
     }
