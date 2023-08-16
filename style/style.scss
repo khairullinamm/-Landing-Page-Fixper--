@@ -2398,7 +2398,7 @@ margin: 0 auto;
                 margin-bottom: 20px;
             }
 
-            animation: lia 0.1s forwards;
+            animation: lia 0.5s forwards;
             animation-delay: 2s;
             opacity: 0;
 
@@ -2407,10 +2407,12 @@ margin: 0 auto;
             @keyframes lia {
                 0% {
                     opacity: 0;
+                  //  border-radius: 50px;
                 }
     
                 100% {  
                     opacity: 1;
+                    //border-radius: 0px;
                 }
             }
 

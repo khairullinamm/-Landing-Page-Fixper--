@@ -2662,8 +2662,8 @@ h2 {
   }
   .header__nav-mobile li {
     font-size: 20px;
-    -webkit-animation: lia 0.1s forwards;
-            animation: lia 0.1s forwards;
+    -webkit-animation: lia 0.5s forwards;
+            animation: lia 0.5s forwards;
     -webkit-animation-delay: 2s;
             animation-delay: 2s;
     opacity: 0;
