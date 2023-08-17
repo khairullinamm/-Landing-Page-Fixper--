@@ -225,7 +225,6 @@ const Alert = document.querySelector('.alert');
 Alert.classList.add("select-hide"); 
 
 ButtonCall.forEach(item => { item.addEventListener("click", (e) => {
-
     e.preventDefault(); //для отмены перезагрузки страницы при кнопке для отправки формы
     Alert.classList.remove("select-hide");
 
@@ -381,9 +380,9 @@ document.addEventListener("click", function (e) {
     if (e.target.className !== 'select__body' && e.target.className !== 'select__item' && e.target.className !== 'select__header' && e.target.className !== 'select__current')
         selectBody.forEach(item => item.classList.add("select-hide")); //скрываем body
     
-        if (e.target.className != 'header__nav-mobile' && e.target.className != 'header__burger') 
+    if (e.target.className != 'header__nav-mobile' && e.target.className != 'header__burger' && burgerNav.style.display === 'block') 
     {
-       
+       console.log("hi loh");
        burgerNav.style.display = 'none';
     }
 });
