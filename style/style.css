@@ -1221,6 +1221,8 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
 }
 
 .feedback__item {
@@ -1871,19 +1873,10 @@ h2 {
     padding-top: 100px;
     padding-left: 30px;
     padding-right: 30px;
-    max-width: 720px;
-  }
-  .feedback__cards {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    max-width: 590px;
   }
   .feedback__item {
     padding: 50px 62px;
-    min-width: auto;
-  }
-  .feedback__item:not(:last-child) {
-    margin-right: 0px;
   }
   .questions__title {
     max-width: 700px;
@@ -1906,9 +1899,6 @@ h2 {
     margin-left: 20px;
     margin-right: 30px;
     margin-top: 50px;
-  }
-  .feedback__item:nth-child(n+2) {
-    display: none;
   }
   .offer__title {
     font-size: 55px;
@@ -2832,6 +2822,12 @@ h2 {
   .offer__repairman {
     left: 58vw;
   }
+  .feedback__container {
+    max-width: 420px;
+  }
+  .feedback__item {
+    min-width: 300px;
+  }
 }
 @media (max-width: 581px) {
   /*-----dicsount-----*/
@@ -3028,6 +3024,7 @@ h2 {
   }
   .feedback__container {
     padding-top: 75px;
+    max-width: 370px;
   }
   .feedback__title {
     font-size: 30px;
@@ -3036,8 +3033,7 @@ h2 {
     margin-top: 35px;
   }
   .feedback__item {
-    width: 360px;
-    padding: 30px;
+    min-width: 250px;
   }
   .feedback__description {
     margin-top: 30px;
@@ -3148,6 +3144,14 @@ h2 {
   }
   .questions__question {
     font-size: 14px;
+  }
+  .feedback__container {
+    max-width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .feedback__item {
+    min-width: 200px;
   }
 }
 @media (max-width: 401px) {
@@ -3327,6 +3331,12 @@ h2 {
   }
   .team__photo {
     width: 300px;
+  }
+  .feedback__item {
+    min-width: 170px;
+  }
+  .feedback__container {
+    max-width: 295px;
   }
 }
 @media (max-width: 320px) {

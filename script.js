@@ -31,12 +31,18 @@ const checkBtns = TypeOfSection => {
         defaultNavLeftBtn[0].disabled = position === 0; //устанавливаем disabled, если position == 0
 
         const defaultNavNextBtnTrue = defaultNavNextBtn[0].getElementsByTagName('button');
+
+        console.log(defaultNavNextBtnTrue);
         defaultNavNextBtnTrue[0].disabled = position <= -((teamPersons.length - 3) * teamPersonWidth); 
     }
 
     else if (TypeOfSection === 'feedback') 
     {
+        console.log("pos = ",feedBackItem.length);
         defaultNavLeftBtn[1].disabled = position === 0; 
+
+        const defaultNavNextBtnTrue = defaultNavNextBtn[1].getElementsByTagName('button');
+        defaultNavNextBtnTrue[0].disabled = position <= -((feedBackItem.length - 2) * feedbackItemWidth); 
     }
 };
 
@@ -74,6 +80,9 @@ function TabToNextBtn(item) {
                         break;
                 }   
         }
+        
+        position = position - (feedbackItemWidth + feedbackItemMarginRight);
+        feedBackContainer.style.transform = `translateX(${position}px)`;
         checkBtns('feedback');
     }  
 
@@ -126,6 +135,8 @@ function TabToPrevBtn(item) {
                 }   
         }
 
+        position = position + (feedbackItemWidth + feedbackItemMarginRight);
+        feedBackContainer.style.transform = `translateX(${position}px)`;
         checkBtns('feedback');
     }
     
@@ -291,8 +302,12 @@ const teamWorkers = document.querySelector('.team__workers');
 const feedBackContainer = document.querySelector('.feedback__cards');
 const feedBackItem = document.querySelectorAll('.feedback__item');
 
-const feedbackItemWidth =  window.getComputedStyle(feedBackItem[0]).minWidth.split('px')[0];
-console.log(feedbackItemWidth);
+const feedbackItemWidth =  feedBackItem[0].offsetWidth;
+const feedbackItemMarginRight = Number(window.getComputedStyle(feedBackItem[0]).marginRight.split('px')[0]);
+
+console.log("mr = ", feedbackItemMarginRight);
+
+console.log("width = ",feedbackItemWidth);
 let teamPersonWidth = CalcWidthToScroll();
 
 let position = 0;
