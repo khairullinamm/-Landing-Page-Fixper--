@@ -6,7 +6,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -1823,6 +1823,146 @@ h2 {
   cursor: pointer;
 }
 
+/*-----------------PROBLEM-------------------------*/
+.problem {
+  background-color: #FAFAFA;
+  margin: 100px 0;
+  display: none;
+}
+
+.problem__container {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 818px;
+  max-width: 1600px;
+}
+
+.problem__right {
+  position: relative;
+  width: 100%;
+}
+
+.problem__graphics-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.problem__graphics-2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.problem__graphics-3 {
+  display: none;
+}
+
+.problem__wash {
+  position: absolute;
+  bottom: 0;
+  right: 62px;
+}
+
+.problem__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 10%;
+  padding-top: 9%;
+  width: 60%;
+}
+
+.problem__change {
+  font-size: 13px;
+  font-weight: 700;
+  color: #A95094;
+  letter-spacing: 0.65px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 0;
+  margin-left: 25px;
+}
+
+.problem__arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.problem__another {
+  margin-bottom: 15px;
+}
+
+.problem__title {
+  margin-bottom: 50px;
+}
+
+.problem__diagram {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: #FFC464 5px solid;
+}
+.problem__diagram p {
+  padding: 35px 30px 30px 30px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.problem__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+.problem__item:last-child {
+  margin-bottom: 50px;
+}
+
+.problem__text {
+  margin-left: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.problem__name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.problem__price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.problem__plus {
+  font-weight: 400;
+  color: #96317D;
+}
+
+.problem__call {
+  background-color: #000;
+  font-weight: 500;
+  color: #fff;
+  padding: 19px 50px;
+  border: 0;
+  border-radius: 15px;
+}
+
 /*------------------ADAPTIV------------------------*/
 @media (min-width: 1600px) {
   /*---DIAGNOSTICS---*/
@@ -2230,6 +2370,26 @@ h2 {
     margin-right: 30px;
     margin-left: 30px;
   }
+  .problem__wash, .problem__graphics-1, .problem__graphics-2 {
+    display: none;
+  }
+  .problem__graphics-3 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -160px;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .problem__left {
+    width: 80%;
+  }
+  .problem__right {
+    width: 30%;
+  }
+  .problem__call {
+    max-width: 397px;
+  }
 }
 @media (max-width: 1170px) {
   .header__container nav {
@@ -2520,6 +2680,21 @@ h2 {
   }
   .diagnostics__input select {
     width: 600px;
+  }
+  .problem__container {
+    min-height: auto;
+    padding-bottom: 75px;
+  }
+  .problem__right {
+    display: none;
+  }
+  .problem__left {
+    margin: 0 auto;
+    padding-left: 0;
+    width: auto;
+  }
+  .problem__title, .problem__another {
+    text-align: center;
   }
 }
 @media (max-width: 732px) {
@@ -2950,6 +3125,9 @@ h2 {
   .questions__show {
     margin-left: 15px;
   }
+  .problem__title {
+    font-size: 45px;
+  }
 }
 @media (max-width: 505px) {
   /*-----OFFER-----*/
@@ -3152,6 +3330,43 @@ h2 {
   }
   .feedback__item {
     min-width: 200px;
+  }
+  .problem__left {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .problem__title {
+    font-size: 30px;
+  }
+  .problem__diagram {
+    width: 80px;
+    height: 80px;
+  }
+  .problem__diagram p {
+    padding: 25px 16px 16px 20px;
+  }
+  .problem__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .problem__price {
+    font-size: 22px;
+    margin-bottom: 7px;
+  }
+  .problem__name {
+    font-size: 18px;
+  }
+  .problem__call {
+    max-width: 360px;
+    padding: 19px 30px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 @media (max-width: 401px) {

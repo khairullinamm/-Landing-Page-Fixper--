@@ -402,5 +402,20 @@ document.addEventListener("click", function (e) {
     }
 });
 
+
+
+
+
+//-------------diagnostics section----------------
+const diagnsticsButtons = document.querySelectorAll('.diagnostics__button');
+const problemSection = document.querySelector('.problem');
+const diagnosticsSection = document.querySelector('.diagnostics');
+
+diagnsticsButtons.forEach(item => {
+    item.addEventListener("click", () => {
+        problemSection.style.display = "block";
+        diagnosticsSection.style.display = "none";
+    })
+})
 //Решить проблему в select
 //Изменить цвет крестика при нажатии в discount
