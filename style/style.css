@@ -1826,7 +1826,7 @@ h2 {
 /*-----------------PROBLEM-------------------------*/
 .problem {
   background-color: #FAFAFA;
-  margin: 100px 0;
+  margin: 0;
   display: none;
 }
 
@@ -1893,15 +1893,31 @@ h2 {
   background-color: transparent;
   border: 0;
   margin-left: 25px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+.problem__change:hover {
+  color: #96317D;
+}
+.problem__change:hover + .problem__arrow {
+  -webkit-transform: rotate(180deg) translateX(5px);
+          transform: rotate(180deg) translateX(5px);
 }
 
 .problem__arrow {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
 .problem__another {
   margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .problem__title {
@@ -1961,6 +1977,15 @@ h2 {
   padding: 19px 50px;
   border: 0;
   border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+.problem__call:hover {
+  color: #FFC464;
+}
+.problem__call:active {
+  background-color: #1c1c1c;
 }
 
 /*------------------ADAPTIV------------------------*/

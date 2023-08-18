@@ -1475,7 +1475,7 @@ h2 {
 .problem {
     background-color: $gray;
 
-    margin: 100px 0;
+    margin: 0;
 
     display: none;
 
@@ -1547,14 +1547,28 @@ h2 {
     border: 0;
 
     margin-left: 25px;
+
+    order: 2;
+
+
+    &:hover 
+    {
+        color: $blackPink;
+        + .problem__arrow  {
+        transform:  rotate(180deg) translateX(5px);
+    }
+    }
+    
 }
 
 .problem__arrow {
+    order: 1;
     transform: rotate(180deg);
 }
 
 .problem__another {
     margin-bottom: 15px;
+    display: flex;
 }
 
 .problem__title {
@@ -1622,6 +1636,16 @@ h2 {
 
     border: 0;
     border-radius: 15px;
+
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+    &:hover {
+        color: $orange;
+    }
+    &:active {
+        background-color: #1c1c1c;
+    }
 }
 /*------------------ADAPTIV------------------------*/
 

@@ -406,7 +406,7 @@ document.addEventListener("click", function (e) {
 
 
 
-//-------------diagnostics section----------------
+//-------------diagnostics section--------------------
 const diagnsticsButtons = document.querySelectorAll('.diagnostics__button');
 const problemSection = document.querySelector('.problem');
 const diagnosticsSection = document.querySelector('.diagnostics');
@@ -417,5 +417,23 @@ diagnsticsButtons.forEach(item => {
         diagnosticsSection.style.display = "none";
     })
 })
-//Решить проблему в select
-//Изменить цвет крестика при нажатии в discount
+
+const diagnsticsSelect = document.querySelector('.diagnostics__input');
+diagnsticsSelect.addEventListener("change", () => {
+        console.log("hi");
+        problemSection.style.display = "block";
+        diagnosticsSection.style.display = 'none';
+        //diagnosticsSection.style.display = "none";
+    })
+
+
+const changeAnotherProblem = document.querySelector('.problem__change');
+changeAnotherProblem.addEventListener("click", () => {
+    problemSection.style.display = "none";
+    diagnosticsSection.style.display = "block"
+})
+
+const problemCall = document.querySelector('.problem__call');
+problemCall.addEventListener("click", () => {
+    Alert.classList.remove("select-hide");
+})
