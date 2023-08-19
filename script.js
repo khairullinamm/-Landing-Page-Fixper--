@@ -402,35 +402,83 @@ document.addEventListener("click", function (e) {
     }
 });
 
+let firstPercent = 0;
+let secondPercent = 0;
+let ThirdPercent = 0;
+let interval;
 
 
+function updatePercentFirst()  {
+    firstPercent++;
+    problemDiagram[0].children[0].innerHTML = `${firstPercent}%`;
 
+    updatePercentSecond();
+    updatePercentThird();
+
+    if (firstPercent > 50)
+    {
+        clearInterval(interval);
+    }
+}
+
+function updatePercentThird() {
+    if (ThirdPercent < 23)
+        ThirdPercent++;
+
+    problemDiagram[1].children[0].innerHTML = `${ThirdPercent}%`;
+}
+
+function updatePercentSecond() {
+    if (secondPercent < 31)
+        secondPercent++;
+    problemDiagram[2].children[0].innerHTML = `${secondPercent}%`;
+
+}
 
 //-------------diagnostics section--------------------
 const diagnsticsButtons = document.querySelectorAll('.diagnostics__button');
 const problemSection = document.querySelector('.problem');
 const diagnosticsSection = document.querySelector('.diagnostics');
 
+const problemDiagram = document.querySelectorAll('.problem__diagram');
+
 diagnsticsButtons.forEach(item => {
     item.addEventListener("click", () => {
+        
         problemSection.style.display = "block";
         diagnosticsSection.style.display = "none";
+        
+        interval = setInterval(function () {
+            updatePercentFirst();
+        }, 20);
+
     })
 })
 
 const diagnsticsSelect = document.querySelector('.diagnostics__input');
 diagnsticsSelect.addEventListener("change", () => {
-        console.log("hi");
         problemSection.style.display = "block";
         diagnosticsSection.style.display = 'none';
-        //diagnosticsSection.style.display = "none";
+
+        interval = setInterval(function () {
+            updatePercentFirst();
+        }, 20);
     })
 
 
 const changeAnotherProblem = document.querySelector('.problem__change');
 changeAnotherProblem.addEventListener("click", () => {
+    
     problemSection.style.display = "none";
     diagnosticsSection.style.display = "block"
+
+    problemDiagram[0].children[0].innerHTML = '0%';
+    problemDiagram[1].children[0].innerHTML = '0%';
+    problemDiagram[2].children[0].innerHTML = '0%';
+
+    firstPercent = 0;
+    secondPercent = 0;
+    ThirdPercent = 0;
 })
 
 const problemCall = document.querySelector('.problem__call');
