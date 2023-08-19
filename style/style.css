@@ -1335,6 +1335,24 @@ h2 {
   padding-left: 18px;
   margin-bottom: 15px;
   display: none;
+  -webkit-animation: answer 0.5s forwards;
+          animation: answer 0.5s forwards;
+}
+@-webkit-keyframes answer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes answer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .questions__title {
