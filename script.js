@@ -341,10 +341,27 @@ burgerMenu.forEach(item => {
 
 //---------------------show answers to questions---------------------
 const questionShowAnswer = document.querySelectorAll('.questions__show');
+const questionsAnswers = document.querySelectorAll('.questions__answer');
 console.log(questionShowAnswer);
 questionShowAnswer.forEach(item => { item.addEventListener("click", () => {
-    console.log(item);
-    document.querySelector('.questions__answer').style.display = 'block';
+
+    if (!item.classList.contains("tab"))
+    {
+        questionsAnswers[item.id-1].style.display = 'block';
+        item.children[0].setAttribute("src", "./img/icons/minus.svg");
+        item.children[0].style.padding = "17px 12px";
+        item.classList.add("tab");
+    }
+
+    else 
+    {
+        questionsAnswers[item.id-1].style.display = 'none';
+        item.children[0].setAttribute("src", "./img/icons/+.svg");
+        item.children[0].style.padding = "12px";
+        item.classList.remove("tab");
+    }
+
+
   }); });
 
 
@@ -408,28 +425,28 @@ let ThirdPercent = 0;
 let interval;
 
 
-function updatePercentFirst()  {
+function updatePercentFirst(firstMax, secondMax, thirdMax)  {
     firstPercent++;
     problemDiagram[0].children[0].innerHTML = `${firstPercent}%`;
 
-    updatePercentSecond();
-    updatePercentThird();
+    updatePercentSecond(secondMax);
+    updatePercentThird(thirdMax);
 
-    if (firstPercent > 50)
+    if (firstPercent > firstMax)
     {
         clearInterval(interval);
     }
 }
 
-function updatePercentThird() {
-    if (ThirdPercent < 23)
+function updatePercentThird(thirdMax) {
+    if (ThirdPercent < thirdMax)
         ThirdPercent++;
 
     problemDiagram[1].children[0].innerHTML = `${ThirdPercent}%`;
 }
 
-function updatePercentSecond() {
-    if (secondPercent < 31)
+function updatePercentSecond(secondMax) {
+    if (secondPercent < secondMax)
         secondPercent++;
     problemDiagram[2].children[0].innerHTML = `${secondPercent}%`;
 
@@ -440,6 +457,7 @@ const diagnsticsButtons = document.querySelectorAll('.diagnostics__button');
 const problemSection = document.querySelector('.problem');
 const diagnosticsSection = document.querySelector('.diagnostics');
 
+
 const problemDiagram = document.querySelectorAll('.problem__diagram');
 
 diagnsticsButtons.forEach(item => {
@@ -447,11 +465,16 @@ diagnsticsButtons.forEach(item => {
         
         problemSection.style.display = "block";
         diagnosticsSection.style.display = "none";
-        
-        interval = setInterval(function () {
-            updatePercentFirst();
-        }, 20);
 
+        for (let i = 0; i < diagnsticsButtons.length; i++)
+        {
+            if (item === diagnsticsButtons[i])
+            {
+                interval = setInterval(function () {
+                    updatePercentFirst(50 + i, 20 + i, 13 + i);
+                }, 20);
+            }
+        }
     })
 })
 
