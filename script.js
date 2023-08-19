@@ -508,3 +508,61 @@ const problemCall = document.querySelector('.problem__call');
 problemCall.addEventListener("click", () => {
     Alert.classList.remove("select-hide");
 })
+
+
+//---------------------------forms-----------------------------
+
+const formAlert = document.querySelector('.alert__form');
+
+formAlert.addEventListener('submit', formSend); 
+async function formSend(e) {
+    e.preventDefault();
+    console.log('tab');
+
+    let error = formValidate(formAlert);
+
+    function formValidate(form) {
+        
+        let error = 0;
+        let formReq = document.querySelectorAll('.req');
+
+        console.log(formReq)
+
+        for (let index = 0; index < formReq.length; index++)
+        {
+            const input = formReq[index];
+            console.log(input)
+            removeError(input);
+
+            if (input.classList.contains('input__name')) {
+                
+                if (!nameTest(input))
+                {
+                    addError(input);
+                    error++;
+                }
+
+                if (input.value === '') {
+                    addError(input);
+                    error++;
+                }
+            }
+        }
+    }
+
+    function addError(input) {
+        console.log('error');
+        input.parentElement.classList.add('error');
+        input.classList.add('error');
+    }
+
+    function removeError(input) {
+        input.parentElement.classList.remove('error');
+        input.classList.remove('error');
+    }
+
+    function nameTest(input) {
+        console.log(/[а-яА-ЯЁё]/.test(input.value))
+        return /[а-яА-ЯЁё]/.test(input.value);
+    }
+}

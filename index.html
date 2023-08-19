@@ -681,14 +681,14 @@
                     </g>
                 </svg>
 
-                <form name="test" method="post" action="input1.php" class="alert__form">
+                <form name="test" id="form" class="alert__form" action="#">
                     <p>Имя</p>
-                    <input type="text" value="" placeholder="Как Вас зовут?">
+                    <input type="text" value="" placeholder="Как Вас зовут?" class="input__name req">
 
                     <p>Телефон</p>
-                    <input type="text" placeholder="+7">
+                    <input type="tel" placeholder="+7" class="input__phone req">
 
-                    <button class="button">Перезвонить</button>
+                    <button class="button" type="submit">Перезвонить</button>
                 </form>
                 
             </div>

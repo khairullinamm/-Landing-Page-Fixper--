@@ -39,7 +39,6 @@ $blackOrange: #dfac5c;
 $bc: transparent;
 
 $sz: 2px;
-
 body {
     font-family: 'Normal TT';
     font-size: 16px;
@@ -1660,6 +1659,12 @@ h2 {
         background-color: #1c1c1c;
     }
 }
+.alert__form {
+.error {
+    border: 2px solid red;
+    }
+}
+
 /*------------------ADAPTIV------------------------*/
 
 @media (min-width: 1600px)
