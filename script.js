@@ -523,6 +523,7 @@ async function formSend(e) {
     let error = formValidate(formAlert);
     let formData = new FormData(form);
 
+    
     if (error === 0) {
         
         Alert.classList.add('sending'); 

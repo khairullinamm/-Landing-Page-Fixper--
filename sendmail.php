@@ -12,7 +12,7 @@ $mail->setLanguage('ru', 'PHPMailer-master\language');
 $mail->IsHTML(true);
 
 //От кого письмо
-$mail->setForm('fixper@gmail.com', 'Fixper');
+$mail->setForm('hmm2002@yandex.ru', 'Fixper');
 
 //кому
 $mail->addAddress('hmm2002@yandex.ru');
