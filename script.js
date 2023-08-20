@@ -28,21 +28,21 @@ const checkBtns = TypeOfSection => {
     
     if (TypeOfSection === 'team')
     {
-        defaultNavLeftBtn[0].disabled = position === 0; //устанавливаем disabled, если position == 0
+        defaultNavLeftBtn[0].disabled = positionTeam === 0; //устанавливаем disabled, если position == 0
 
         const defaultNavNextBtnTrue = defaultNavNextBtn[0].getElementsByTagName('button');
 
         console.log(defaultNavNextBtnTrue);
-        defaultNavNextBtnTrue[0].disabled = position <= -((teamPersons.length - 3) * teamPersonWidth); 
+        defaultNavNextBtnTrue[0].disabled = positionTeam <= -((teamPersons.length - 3) * teamPersonWidth); 
     }
 
     else if (TypeOfSection === 'feedback') 
     {
         console.log("pos = ",feedBackItem.length);
-        defaultNavLeftBtn[1].disabled = position === 0; 
+        defaultNavLeftBtn[1].disabled = positionFeedback === 0; 
 
         const defaultNavNextBtnTrue = defaultNavNextBtn[1].getElementsByTagName('button');
-        defaultNavNextBtnTrue[0].disabled = position <= -((feedBackItem.length - 2) * feedbackItemWidth); 
+        defaultNavNextBtnTrue[0].disabled = positionFeedback <= -((feedBackItem.length - 2) * feedbackItemWidth); 
     }
 };
 
@@ -81,8 +81,8 @@ function TabToNextBtn(item) {
                 }   
         }
         
-        position = position - (feedbackItemWidth + feedbackItemMarginRight);
-        feedBackContainer.style.transform = `translateX(${position}px)`;
+        positionFeedback = positionFeedback - (feedbackItemWidth + feedbackItemMarginRight);
+        feedBackContainer.style.transform = `translateX(${positionFeedback}px)`;
         checkBtns('feedback');
     }  
 
@@ -107,8 +107,8 @@ function TabToNextBtn(item) {
                 break;
             }   
         }
-            position-=teamPersonWidth;
-            teamWorkers.style.transform = `translateX(${position}px)`;
+            positionTeam-=teamPersonWidth;
+            teamWorkers.style.transform = `translateX(${positionTeam}px)`;
             checkBtns('team');
     }
     
@@ -135,8 +135,8 @@ function TabToPrevBtn(item) {
                 }   
         }
 
-        position = position + (feedbackItemWidth + feedbackItemMarginRight);
-        feedBackContainer.style.transform = `translateX(${position}px)`;
+        positionFeedback = positionFeedback + (feedbackItemWidth + feedbackItemMarginRight);
+        feedBackContainer.style.transform = `translateX(${positionFeedback}px)`;
         checkBtns('feedback');
     }
     
@@ -160,8 +160,8 @@ function TabToPrevBtn(item) {
                 }   
         }
 
-        position+=teamPersonWidth;
-        teamWorkers.style.transform = `translateX(${position}px)`;
+        positionTeam+=teamPersonWidth;
+        teamWorkers.style.transform = `translateX(${positionTeam}px)`;
 
         checkBtns('team');
     }
@@ -237,6 +237,12 @@ Alert.classList.add("select-hide");
 
 ButtonCall.forEach(item => { item.addEventListener("click", (e) => {
     e.preventDefault(); //для отмены перезагрузки страницы при кнопке для отправки формы
+
+    if (item.parentElement.classList.contains('call__form'))
+    {
+        document.querySelector('.input__phone').value = item.parentElement.children[0].value;
+    }
+        //console.log(item.parentElement.children[]);
     Alert.classList.remove("select-hide");
 
 }); });
@@ -259,6 +265,11 @@ crossAlert.addEventListener("click", () => {
     document.querySelector('.alert__alert').style.display = 'none';
     document.querySelector('.alert__alert').style.color = 'red';
     document.querySelector('.alert__alert').innerHTML = 'Ошибка в заполнении полей, попробуйте еще раз';
+
+    document.querySelectorAll('.error').forEach(item => {
+        console.log(item)
+        item.classList.remove('error');
+    })
 });
 
 
@@ -313,7 +324,8 @@ console.log("mr = ", feedbackItemMarginRight);
 console.log("width = ",feedbackItemWidth);
 let teamPersonWidth = CalcWidthToScroll();
 
-let position = 0;
+let positionTeam = 0;
+let positionFeedback = 0;
 
 checkBtns('team');
 checkBtns('feedback');
@@ -481,13 +493,13 @@ diagnsticsButtons.forEach(item => {
     })
 })
 
-const diagnsticsSelect = document.querySelector('.diagnostics__input');
-diagnsticsSelect.addEventListener("change", () => {
+const diagnsticsSelect = document.querySelector('.diagnostics__select');
+diagnsticsSelect.addEventListener("change", (e) => {
         problemSection.style.display = "block";
         diagnosticsSection.style.display = 'none';
-
+        let i = Number(e.target.value);
         interval = setInterval(function () {
-            updatePercentFirst();
+            updatePercentFirst(50 + i, 20 + i, 13 + i);
         }, 20);
     })
 
@@ -505,6 +517,9 @@ changeAnotherProblem.addEventListener("click", () => {
     firstPercent = 0;
     secondPercent = 0;
     ThirdPercent = 0;
+
+    diagnsticsSelect.value = "true";
+    console.log(diagnsticsSelect);
 })
 
 const problemCall = document.querySelector('.problem__call');

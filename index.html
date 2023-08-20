@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon">
     <title>Fixper</title>
 </head>
 <body>
@@ -116,12 +117,13 @@
                     </div>
                 </div>
                 <form class="diagnostics__input">
-                    <select name="fffff" id="" class="diagnostics__input">Выберите вашу проблему
-                        <option value="off" class="diagnostics__option">Не включается</option>
-                        <option value="off" class="diagnostics__option">Не крутится барабан</option>
-                        <option value="off" class="diagnostics__option">Не выключается</option>
-                        <option value="off" class="diagnostics__option">Все работет, но мне скучно и я хочу пообщаться с мастером</option>
-                        <option value="off" class="diagnostics__option">Иная проблема</option>
+                    <select name="fffff" id="" class="diagnostics__select">Выберите вашу проблему
+                        <option selected="true" disabled="disabled" value="true">Выберите вашу проблему</option>  
+                        <option value="0" class="diagnostics__option">Не включается</option>
+                        <option value="8" class="diagnostics__option">Не крутится барабан</option>
+                        <option value="1" class="diagnostics__option">Не выключается</option>
+                        <option value="3" class="diagnostics__option">Все работет, но мне скучно и я хочу пообщаться с мастером</option>
+                        <option value="7" class="diagnostics__option">Иная проблема</option>
                     </select>
                 </form>
             <div class="diagnostics__background">
@@ -470,10 +472,10 @@
                     </div>
                     <div class="feedback__item">
                         <div class="feedback__person">
-                            <img src="./img/icons/avatar-two.png" alt="avatar">
+                            <img src="./img/icons/avatar-four.png" alt="avatar">
                             <div class="feedback__person-text">
-                                <p class="name">Федор Трубин</p>
-                                <p class="status">03 апреля 2021</p>
+                                <p class="name">Екатерина Третьякова</p>
+                                <p class="status">23 февраля 2022</p>
                             </div>
                         </div>
                         <p class="feedback__description">
@@ -484,10 +486,10 @@
                     </div>
                     <div class="feedback__item">
                         <div class="feedback__person">
-                            <img src="./img/icons/avatar-two.png" alt="avatar">
+                            <img src="./img/icons/avatar-five.png" alt="avatar">
                             <div class="feedback__person-text">
-                                <p class="name">Федор Трубин</p>
-                                <p class="status">03 апреля 2021</p>
+                                <p class="name">Генадий Шалашов</p>
+                                <p class="status">18 мая 2022</p>
                             </div>
                         </div>
                         <p class="feedback__description">
@@ -610,7 +612,7 @@
                     <p class="call__subtitle">Оставьте заявку сейчас и получите <strong>скидку 15%</strong></p>
                 </div>
                     <form action="" class="call__form">
-                        <input type="text" value="Номер телефона">
+                        <input type="text" placeholder="Номер телефона">
                         <button class="button button-call">Заказать звонок</button>
                     </form>
                     
