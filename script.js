@@ -511,7 +511,7 @@ problemCall.addEventListener("click", () => {
 
 
 //---------------------------forms-----------------------------
-
+let id = 1; 
 const formAlert = document.querySelector('.alert__form');
 
 formAlert.addEventListener('submit', formSend); 
@@ -521,25 +521,51 @@ async function formSend(e) {
     console.log('tab');
 
     let error = formValidate(formAlert);
-    let formData = new FormData(form);
-
     
     if (error === 0) {
         
         Alert.classList.add('sending'); 
-        let response = await fetch('sendmail.php', {
-            method: 'POST',
-            body: formData
-        });
 
+        let user = {
+            id,
+            "name": `${document.querySelector('.input__name').value}`,
+            "phone": `${document.querySelector('.input__phone').value}`
+          };
+
+        console.log(user);
+        let response = await fetch('http://localhost:3000/users');
+
+        if (response.ok) { 
+            let json = await response.json();
+            user.id = json[json.length - 1].id + 1;
+        } 
+        else {
+        alert("Ошибка HTTP: " + response.status);
+        }
+
+
+          response = await fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+          });
+          
         if (response.ok) {
-            let result = await response.json();
-            alert(result.message);
+
+          //  let result = await response.json();
             form.reset();
             Alert.classList.remove('sending'); 
+
+            document.querySelector('.alert__alert').style.display = 'block';
+            document.querySelector('.alert__alert').style.color = 'green';
+            document.querySelector('.alert__alert').innerHTML = 'Ваши данные успешно отправлены!';
+            
         } else {
-            alert("Ошибка");
             Alert.classList.remove('sending'); 
+            alert(response.message)
+            alert("Ошибка");
         }
 
     } else {
