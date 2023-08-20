@@ -517,9 +517,34 @@ const formAlert = document.querySelector('.alert__form');
 formAlert.addEventListener('submit', formSend); 
 async function formSend(e) {
     e.preventDefault();
+    document.querySelector('.alert__alert').style.display = 'none';
     console.log('tab');
 
     let error = formValidate(formAlert);
+    let formData = new FormData(form);
+
+    if (error === 0) {
+        
+        Alert.classList.add('sending'); 
+        let response = await fetch('sendmail.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            let result = await response.json();
+            alert(result.message);
+            form.reset();
+            Alert.classList.remove('sending'); 
+        } else {
+            alert("Ошибка");
+            Alert.classList.remove('sending'); 
+        }
+
+    } else {
+        
+        document.querySelector('.alert__alert').style.display = 'block';
+    }
 
     function formValidate(form) {
         
@@ -547,7 +572,20 @@ async function formSend(e) {
                     error++;
                 }
             }
+
+            if (input.classList.contains('input__phone')) {
+                if (!phoneTest(input)) {
+                    addError(input);
+                    error++;
+                }
+                if (input.value === '') {
+                    addError(input);
+                    error++;
+                }
+            }
         }
+
+        return error;
     }
 
     function addError(input) {
@@ -564,5 +602,9 @@ async function formSend(e) {
     function nameTest(input) {
         console.log(/[а-яА-ЯЁё]/.test(input.value))
         return /[а-яА-ЯЁё]/.test(input.value);
+    }
+
+    function phoneTest(input) {
+        return /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
     }
 }

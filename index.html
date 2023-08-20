@@ -683,12 +683,14 @@
 
                 <form name="test" id="form" class="alert__form" action="#">
                     <p>Имя</p>
-                    <input type="text" value="" placeholder="Как Вас зовут?" class="input__name req">
+                    <input type="text" value="" placeholder="Как Вас зовут?" class="input__name req" name="name">
 
                     <p>Телефон</p>
-                    <input type="tel" placeholder="+7" class="input__phone req">
+                    <input type="tel" placeholder="+7" class="input__phone req" name="phone">
 
                     <button class="button" type="submit">Перезвонить</button>
+
+                    <p class="alert__alert">Ошибка в заполнении полей, попробуйте еще раз</p>
                 </form>
                 
             </div>
