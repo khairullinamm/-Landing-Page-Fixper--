@@ -256,6 +256,9 @@ crossAlertSVG.forEach(item => {
 const crossAlert = document.querySelector('.alert__cross');
 crossAlert.addEventListener("click", () => {
     Alert.classList.add("select-hide");
+    document.querySelector('.alert__alert').style.display = 'none';
+    document.querySelector('.alert__alert').style.color = 'red';
+    document.querySelector('.alert__alert').innerHTML = 'Ошибка в заполнении полей, попробуйте еще раз';
 });
 
 
