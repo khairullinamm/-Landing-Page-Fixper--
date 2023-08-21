@@ -1466,6 +1466,9 @@ h2 {
   font-weight: 500;
   width: 296px;
 }
+.call__form input.error {
+  border: 2px solid red;
+}
 .call__form button {
   margin-left: 27px;
   line-height: normal;

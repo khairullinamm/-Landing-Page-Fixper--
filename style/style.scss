@@ -1118,8 +1118,12 @@ h2 {
         font-weight: 500;
 
         width: 296px;
-    }
 
+    }
+     input.error {
+            border: 2px solid red;
+
+     }
     button {
         margin-left: 27px;
         line-height: $lh;

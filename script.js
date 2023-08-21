@@ -240,11 +240,20 @@ ButtonCall.forEach(item => { item.addEventListener("click", (e) => {
 
     if (item.parentElement.classList.contains('call__form'))
     {
-        document.querySelector('.input__phone').value = item.parentElement.children[0].value;
-    }
-        //console.log(item.parentElement.children[]);
-    Alert.classList.remove("select-hide");
+        item.parentElement.children[0].classList.remove('error');
+        if ((phoneTest(item.parentElement.children[0])) && (item.parentElement.children[0].value != ''))
+        {
+            document.querySelector('.input__phone').value = item.parentElement.children[0].value;
+            Alert.classList.remove("select-hide");
 
+            item.parentElement.reset();
+        }
+        else 
+            item.parentElement.children[0].classList.add('error');
+    }
+    else {
+        Alert.classList.remove("select-hide");
+    }
 }); });
 
 ButtonDiscount.forEach(item => { item.addEventListener("click", () => {
@@ -261,15 +270,17 @@ crossAlertSVG.forEach(item => {
 //hide cross when we tab to it
 const crossAlert = document.querySelector('.alert__cross');
 crossAlert.addEventListener("click", () => {
+    
     Alert.classList.add("select-hide");
     document.querySelector('.alert__alert').style.display = 'none';
     document.querySelector('.alert__alert').style.color = 'red';
     document.querySelector('.alert__alert').innerHTML = 'Ошибка в заполнении полей, попробуйте еще раз';
 
     document.querySelectorAll('.error').forEach(item => {
-        console.log(item)
         item.classList.remove('error');
     })
+
+    form.reset();
 });
 
 
@@ -532,13 +543,18 @@ problemCall.addEventListener("click", () => {
 let id = 1; 
 const formAlert = document.querySelector('.alert__form');
 
+function phoneTest(input) 
+{
+    return /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
+}
+
 formAlert.addEventListener('submit', formSend); 
 async function formSend(e) {
+    
     e.preventDefault();
     document.querySelector('.alert__alert').style.display = 'none';
-    console.log('tab');
-
-    let error = formValidate(formAlert);
+    
+    let error = formValidate();
     
     if (error === 0) {
         
@@ -550,29 +566,43 @@ async function formSend(e) {
             "phone": `${document.querySelector('.input__phone').value}`
           };
 
-        console.log(user);
-        let response = await fetch('http://localhost:3000/users');
+        let response = await fetch('http://localhost:3000/users').catch(
+            () => {
+                document.querySelector('.alert__alert').style.display = 'block';
+                document.querySelector('.alert__alert').innerHTML = 'К сожалению, в настоящее время сервер для отправки данных недоступен';
 
+                form.reset();
+                Alert.classList.remove('sending'); 
+
+                return;
+            })
+        
         if (response.ok) { 
             let json = await response.json();
             user.id = json[json.length - 1].id + 1;
         } 
+
         else {
-        alert("Ошибка HTTP: " + response.status);
+                document.querySelector('.alert__alert').style.display = 'block';
+                document.querySelector('.alert__alert').innerHTML = 'К сожалению, в настоящее время сервер для отправки данных недоступен';
+
+                form.reset();
+                Alert.classList.remove('sending'); 
+
+                return;
         }
 
 
-          response = await fetch('http://localhost:3000/users', {
+        response = await fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json;charset=utf-8'
+                'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(user)
-          });
-          
+        });
+        
         if (response.ok) {
 
-          //  let result = await response.json();
             form.reset();
             Alert.classList.remove('sending'); 
 
@@ -580,28 +610,30 @@ async function formSend(e) {
             document.querySelector('.alert__alert').style.color = 'green';
             document.querySelector('.alert__alert').innerHTML = 'Ваши данные успешно отправлены!';
             
-        } else {
+        } 
+        
+        else 
+        {
             Alert.classList.remove('sending'); 
-            alert(response.message)
-            alert("Ошибка");
+            
+            document.querySelector('.alert__alert').style.display = 'block';
+            document.querySelector('.alert__alert').innerHTML = 'Произошла оошибка с отправкой данных, попробуйте еще раз';
         }
 
-    } else {
+    } 
+    else {
         
         document.querySelector('.alert__alert').style.display = 'block';
     }
 
-    function formValidate(form) {
+    function formValidate() {
         
         let error = 0;
         let formReq = document.querySelectorAll('.req');
 
-        console.log(formReq)
-
         for (let index = 0; index < formReq.length; index++)
         {
             const input = formReq[index];
-            console.log(input)
             removeError(input);
 
             if (input.classList.contains('input__name')) {
@@ -633,23 +665,22 @@ async function formSend(e) {
         return error;
     }
 
-    function addError(input) {
-        console.log('error');
+    function addError(input) 
+    {
         input.parentElement.classList.add('error');
         input.classList.add('error');
     }
 
-    function removeError(input) {
+    function removeError(input) 
+    {
         input.parentElement.classList.remove('error');
         input.classList.remove('error');
     }
 
-    function nameTest(input) {
+    function nameTest(input) 
+    {
         console.log(/[а-яА-ЯЁё]/.test(input.value))
         return /[а-яА-ЯЁё]/.test(input.value);
     }
 
-    function phoneTest(input) {
-        return /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
-    }
 }
