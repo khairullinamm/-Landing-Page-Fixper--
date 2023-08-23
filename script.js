@@ -578,6 +578,7 @@ async function formSend(e) {
                 Alert.classList.remove('sending'); 
 
                 return;
+                
             })
         
         if (response.ok) { 
