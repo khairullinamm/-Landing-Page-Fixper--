@@ -529,7 +529,7 @@ changeAnotherProblem.addEventListener("click", () => {
     secondPercent = 0;
     ThirdPercent = 0;
 
-    diagnsticsSelect.value = "true";
+    diagnsticsSelect.value = "choose";
     console.log(diagnsticsSelect);
 })
 
