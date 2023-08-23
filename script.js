@@ -568,6 +568,9 @@ async function formSend(e) {
 
         let response = await fetch('http://localhost:3000/users').catch(
             () => {
+                
+                setTimeout(() => {  console.log("World!"); }, 2000);
+
                 document.querySelector('.alert__alert').style.display = 'block';
                 document.querySelector('.alert__alert').innerHTML = 'К сожалению, в настоящее время сервер для отправки данных недоступен';
 
