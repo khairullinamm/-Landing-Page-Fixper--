@@ -1685,7 +1685,8 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.75) url('../img/icons/loading.gif') center / 200px no-repeat;
+    background-image: url('../img/icons/loading.gif');
+    background: rgba(255, 255, 255, 0.75)  center / 200px no-repeat;
 
     opacity: 0;
     visibility: hidden;
