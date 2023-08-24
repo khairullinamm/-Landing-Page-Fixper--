@@ -2,29 +2,34 @@
 
 ![Иллюстрация к проекту](fixper.jpg)
 
-## Описание
-Проект выполнен с целью применения полученных в процессе изучения навыков на практике. Fixper - это одностраничный, адаптивный, интерактивный сайт, сделанный по макету Figma с использованием HTML, CSS и JavaScript.
+## Description
+The goal of the project is to put the skills into practice. Fixper is a one-page, adaptive, interactive website made according to the Figma layout using HTML, CSS, and JavaScript. 
 
-**Проект доступен по ссылке**: https://khairullinamm.github.io/-Landing-Page-Fixper--/
+**The project is available at the link**: https://khairullinamm.github.io/-Landing-Page-Fixper--/
 
 ![Иконка JavScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Иконка CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Иконка HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-## Используемые технологии
-1. Нейминг по методологии БЭМ
+## Technology stack
+1. BEM naming
 2. FlexBox и Grid Layot
-3. Отзывчиво-адаптивная верстка
-4. Валидный HTML-код (W3C)
-5. Использование препроцессора SCSS
-6. Использование Fetch API 
+3. Adaptive layout
+4. HTML code checked by the W3C
+5. SCSS preprocessor 
+6. Fetch API 
    
-## Функционал
-1. Открытие/закрытие и гамбургер именю
-2. Слайдер из карточек с отзывами и работниками
-3. Базовая валидация форм (имя пользователя и номер телефона)
-4. Отправка и получение данных с локального фейкового сервера (json-server)
-5. Навигация по странице при помощи нажатия на названия секций
-6. Открытия pop-up окон при клике на кнопки (получение скидки и заказ звонка) с возможностью закрытия при нажатии на крест
+## Features
+1. Hamburger Menu
+2. Sliders
+3. Form validation using regular expressions
+4. Sending and getting data from a fake local server (npm json-server)
+5. Navigation on the page
+6. Popup windows (with the possibility to close)
 
-_Статус проекта: законечен._
+## Project status
+_Project is: complete._
+
+## Contacts 
+[@milanahmm](https://t.me/milanahmm) - contact me!
+
